@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="ContactLab SOAP API PHP Client" default="generate:code" basedir="." description="The PHP client for the ContactLab SOAP API">
+
+    <taskdef name="generate-code" classname="ContactLab\Api\Client\Phing\GenerateCodeTask" />
+
+    <target name="generate:code" description="Generate the ContactLab SOAP API client PHP classes (-Dproxy=false to ignore the configured proxy, -Dwsdl.url={url} to target a custom service URL)">
+        <generate-code />
+    </target>
+
+</project>

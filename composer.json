@@ -1,0 +1,35 @@
+{
+    "name": "contactlab/soap-api-php-client",
+    "description": "The PHP client for the ContactLab SOAP API",
+    "keywords": [
+        "contactlab",
+        "api",
+        "soap",
+        "client"
+    ],
+    "homepage": "http://github.com/contactlab/soap-api-php-client.git",
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=5.3.0",
+        "ext-soap": "*"
+    },
+    "require-dev": {
+        "fabpot/php-cs-fixer": "~1.6",
+        "phing/phing": "~2.10",
+        "league/url": "~3.3",
+        "wsdl2phpgenerator/wsdl2phpgenerator": "~2.5"
+    },
+    "autoload": {
+        "files": [ "src/ClabService.php" ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ContactLab\\Api\\Client\\Phing\\": "tasks/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php vendor-scripts/patch-vendors.php"
+        ]
+    }
+}
