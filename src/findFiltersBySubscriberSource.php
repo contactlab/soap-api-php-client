@@ -18,7 +18,6 @@
 
 class findFiltersBySubscriberSource
 {
-
     /**
      * @var AuthToken $token
      * @access public

@@ -18,7 +18,6 @@
 
 class Attachment
 {
-
     /**
      * @var int $identifier
      * @access public

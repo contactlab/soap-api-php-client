@@ -18,7 +18,6 @@
 
 class pushTemplate
 {
-
     /**
      * @var PushEndpointType $pushEndpointType
      * @access public

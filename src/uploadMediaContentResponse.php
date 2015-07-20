@@ -18,7 +18,6 @@
 
 class uploadMediaContentResponse
 {
-
     /**
      * @var string $return
      * @access public

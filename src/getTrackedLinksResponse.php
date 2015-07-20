@@ -18,7 +18,6 @@
 
 class getTrackedLinksResponse
 {
-
     /**
      * @var TrackedLink[] $return
      * @access public

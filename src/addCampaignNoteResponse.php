@@ -18,7 +18,6 @@
 
 class addCampaignNoteResponse
 {
-
     /**
      * @var CampaignNote $return
      * @access public

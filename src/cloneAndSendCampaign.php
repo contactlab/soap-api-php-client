@@ -18,7 +18,6 @@
 
 class cloneAndSendCampaign
 {
-
     /**
      * @var AuthToken $token
      * @access public

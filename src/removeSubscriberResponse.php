@@ -18,7 +18,6 @@
 
 class removeSubscriberResponse
 {
-
     /**
      * @var boolean $return
      * @access public

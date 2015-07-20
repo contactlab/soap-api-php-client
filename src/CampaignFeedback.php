@@ -18,7 +18,6 @@
 
 class CampaignFeedback
 {
-
     /**
      * @var int $campaignIdentifier
      * @access public

@@ -18,7 +18,6 @@
 
 class triggerDeliveryByAlias
 {
-
     /**
      * @var AuthToken $token
      * @access public

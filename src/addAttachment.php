@@ -18,7 +18,6 @@
 
 class addAttachment
 {
-
     /**
      * @var AuthToken $token
      * @access public

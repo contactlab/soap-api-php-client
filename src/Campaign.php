@@ -18,7 +18,6 @@
 
 class Campaign
 {
-
     /**
      * @var int $identifier
      * @access public
@@ -102,4 +101,10 @@ class Campaign
      * @access public
      */
     public $subscribersCount = null;
+
+    /**
+     * @var deliveryStatus $status
+     * @access public
+     */
+    public $status = null;
 }

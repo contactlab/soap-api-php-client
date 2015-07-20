@@ -18,7 +18,6 @@
 
 class findCampaignsBySubscriberSourceFilter
 {
-
     /**
      * @var AuthToken $token
      * @access public

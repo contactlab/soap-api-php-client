@@ -18,7 +18,6 @@
 
 class findTriggerableCampaigns
 {
-
     /**
      * @var AuthToken $token
      * @access public

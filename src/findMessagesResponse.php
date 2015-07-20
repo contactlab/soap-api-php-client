@@ -18,7 +18,6 @@
 
 class findMessagesResponse
 {
-
     /**
      * @var MessageModels $return
      * @access public

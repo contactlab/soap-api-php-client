@@ -18,7 +18,6 @@
 
 class trackableLink
 {
-
     /**
      * @var int $categoryId
      * @access public

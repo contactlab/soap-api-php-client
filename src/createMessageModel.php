@@ -18,7 +18,6 @@
 
 class createMessageModel
 {
-
     /**
      * @var AuthToken $token
      * @access public

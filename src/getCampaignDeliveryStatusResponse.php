@@ -18,7 +18,6 @@
 
 class getCampaignDeliveryStatusResponse
 {
-
     /**
      * @var deliveryStatus $return
      * @access public

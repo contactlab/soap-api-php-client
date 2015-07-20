@@ -18,7 +18,6 @@
 
 class createCampaign
 {
-
     /**
      * @var AuthToken $token
      * @access public

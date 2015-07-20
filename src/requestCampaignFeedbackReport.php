@@ -18,7 +18,6 @@
 
 class requestCampaignFeedbackReport
 {
-
     /**
      * @var AuthToken $token
      * @access public

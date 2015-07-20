@@ -24,4 +24,5 @@ class CampaignType
     const PERIODIC = 'PERIODIC';
     const SMARTRELAY = 'SMARTRELAY';
     const IMMEDIATE = 'IMMEDIATE';
+    const SPLIT_TEST = 'SPLIT_TEST';
 }

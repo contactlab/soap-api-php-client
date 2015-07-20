@@ -18,7 +18,6 @@
 
 class getCryptoKey
 {
-
     /**
      * @var AuthToken $token
      * @access public

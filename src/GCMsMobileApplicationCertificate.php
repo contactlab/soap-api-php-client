@@ -20,7 +20,6 @@ include_once('MobileApplicationCertificate.php');
 
 class GCMsMobileApplicationCertificate extends MobileApplicationCertificate
 {
-
     /**
      * @var components $components
      * @access public

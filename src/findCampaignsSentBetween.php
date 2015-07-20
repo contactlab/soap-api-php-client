@@ -18,7 +18,6 @@
 
 class findCampaignsSentBetween
 {
-
     /**
      * @var AuthToken $token
      * @access public

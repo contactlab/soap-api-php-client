@@ -18,7 +18,6 @@
 
 class findCampaignsByNameOrSubject
 {
-
     /**
      * @var AuthToken $token
      * @access public

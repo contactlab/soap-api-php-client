@@ -18,7 +18,6 @@
 
 class getCampaignFeedbackResponse
 {
-
     /**
      * @var CampaignFeedback $return
      * @access public

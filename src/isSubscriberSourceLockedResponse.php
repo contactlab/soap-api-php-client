@@ -18,7 +18,6 @@
 
 class isSubscriberSourceLockedResponse
 {
-
     /**
      * @var boolean $return
      * @access public

@@ -18,7 +18,6 @@
 
 class publishOnWeb
 {
-
     /**
      * @var AuthToken $token
      * @access public

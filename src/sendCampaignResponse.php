@@ -18,7 +18,6 @@
 
 class sendCampaignResponse
 {
-
     /**
      * @var int $return
      * @access public

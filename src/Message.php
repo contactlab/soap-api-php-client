@@ -18,7 +18,6 @@
 
 class Message
 {
-
     /**
      * @var charset $charset
      * @access public

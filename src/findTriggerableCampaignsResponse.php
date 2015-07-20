@@ -18,7 +18,6 @@
 
 class findTriggerableCampaignsResponse
 {
-
     /**
      * @var Campaigns $return
      * @access public

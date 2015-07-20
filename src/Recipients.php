@@ -18,7 +18,6 @@
 
 class Recipients
 {
-
     /**
      * @var int $subscriberSourceIdentifier
      * @access public

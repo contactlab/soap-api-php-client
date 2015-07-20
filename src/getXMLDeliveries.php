@@ -18,7 +18,6 @@
 
 class getXMLDeliveries
 {
-
     /**
      * @var AuthToken $token
      * @access public

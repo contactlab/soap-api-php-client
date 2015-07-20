@@ -18,7 +18,6 @@
 
 class keepaliveTokenResponse
 {
-
     /**
      * @var boolean $return
      * @access public

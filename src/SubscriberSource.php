@@ -18,7 +18,6 @@
 
 class SubscriberSource
 {
-
     /**
      * @var int $identifier
      * @access public

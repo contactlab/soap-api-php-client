@@ -18,7 +18,6 @@
 
 class getAttachmentByCampaignId
 {
-
     /**
      * @var AuthToken $token
      * @access public

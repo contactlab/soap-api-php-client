@@ -18,7 +18,6 @@
 
 class Sender
 {
-
     /**
      * @var string $name
      * @access public

@@ -18,7 +18,6 @@
 
 class getMobileApplicationByCode
 {
-
     /**
      * @var AuthToken $token
      * @access public

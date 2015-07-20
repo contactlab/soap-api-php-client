@@ -18,7 +18,6 @@
 
 class countSubscribersResponse
 {
-
     /**
      * @var int $return
      * @access public

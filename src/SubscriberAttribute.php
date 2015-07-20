@@ -18,7 +18,6 @@
 
 class SubscriberAttribute
 {
-
     /**
      * @var string $key
      * @access public

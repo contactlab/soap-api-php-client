@@ -18,7 +18,6 @@
 
 class findArchivedFiltersBySubscriberSourceResponse
 {
-
     /**
      * @var SubscriberSourceFilters $return
      * @access public

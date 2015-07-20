@@ -18,7 +18,6 @@
 
 class addSubscribersResponse
 {
-
     /**
      * @var int $return
      * @access public

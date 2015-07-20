@@ -18,7 +18,6 @@
 
 class countSubscribers
 {
-
     /**
      * @var AuthToken $token
      * @access public

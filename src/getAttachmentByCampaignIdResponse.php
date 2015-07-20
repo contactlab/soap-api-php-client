@@ -18,7 +18,6 @@
 
 class getAttachmentByCampaignIdResponse
 {
-
     /**
      * @var Attachment[] $return
      * @access public

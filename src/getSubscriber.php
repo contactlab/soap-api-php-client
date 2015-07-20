@@ -18,7 +18,6 @@
 
 class getSubscriber
 {
-
     /**
      * @var AuthToken $token
      * @access public

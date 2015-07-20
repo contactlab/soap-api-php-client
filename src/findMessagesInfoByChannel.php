@@ -18,7 +18,6 @@
 
 class findMessagesInfoByChannel
 {
-
     /**
      * @var AuthToken $token
      * @access public

@@ -18,7 +18,6 @@
 
 class findSubscribers
 {
-
     /**
      * @var AuthToken $token
      * @access public

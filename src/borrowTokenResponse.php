@@ -18,7 +18,6 @@
 
 class borrowTokenResponse
 {
-
     /**
      * @var AuthToken $return
      * @access public

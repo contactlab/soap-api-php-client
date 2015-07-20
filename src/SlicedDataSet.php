@@ -18,7 +18,6 @@
 
 class SlicedDataSet
 {
-
     /**
      * @var int $currentPageNumber
      * @access public

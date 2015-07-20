@@ -18,7 +18,6 @@
 
 class sendImmediateMessageSDataCIdCAResponse
 {
-
     /**
      * @var int $return
      * @access public

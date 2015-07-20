@@ -20,7 +20,6 @@ include_once('pushTemplate.php');
 
 class gcMsPushTemplate extends pushTemplate
 {
-
     /**
      * @var variants $variants
      * @access public

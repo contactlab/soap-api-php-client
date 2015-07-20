@@ -18,7 +18,6 @@
 
 class CampaignNote
 {
-
     /**
      * @var int $identifier
      * @access public

@@ -18,7 +18,6 @@
 
 class removeSubscriber
 {
-
     /**
      * @var AuthToken $token
      * @access public

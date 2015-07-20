@@ -18,7 +18,6 @@
 
 class archiveSubscriberSourceFilter
 {
-
     /**
      * @var AuthToken $token
      * @access public

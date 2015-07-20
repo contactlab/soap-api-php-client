@@ -18,7 +18,6 @@
 
 class getSubscriberDataExchangeStatus
 {
-
     /**
      * @var AuthToken $token
      * @access public

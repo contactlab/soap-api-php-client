@@ -18,7 +18,6 @@
 
 class cancelCampaign
 {
-
     /**
      * @var AuthToken $token
      * @access public

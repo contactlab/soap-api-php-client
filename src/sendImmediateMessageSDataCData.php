@@ -18,7 +18,6 @@
 
 class sendImmediateMessageSDataCData
 {
-
     /**
      * @var string $apiKey
      * @access public

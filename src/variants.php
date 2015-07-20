@@ -18,7 +18,6 @@
 
 class variants
 {
-
     /**
      * @var entry $entry
      * @access public

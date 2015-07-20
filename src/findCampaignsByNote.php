@@ -18,7 +18,6 @@
 
 class findCampaignsByNote
 {
-
     /**
      * @var AuthToken $token
      * @access public

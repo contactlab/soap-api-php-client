@@ -18,7 +18,6 @@
 
 class countSubscribersIncludedInFilter
 {
-
     /**
      * @var AuthToken $token
      * @access public

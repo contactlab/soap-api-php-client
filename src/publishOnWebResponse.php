@@ -18,7 +18,6 @@
 
 class publishOnWebResponse
 {
-
     /**
      * @var string $return
      * @access public

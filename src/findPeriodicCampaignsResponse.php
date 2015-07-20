@@ -18,7 +18,6 @@
 
 class findPeriodicCampaignsResponse
 {
-
     /**
      * @var Campaigns $return
      * @access public

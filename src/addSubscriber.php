@@ -18,7 +18,6 @@
 
 class addSubscriber
 {
-
     /**
      * @var AuthToken $token
      * @access public

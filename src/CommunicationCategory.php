@@ -18,7 +18,6 @@
 
 class CommunicationCategory
 {
-
     /**
      * @var boolean $active
      * @access public

@@ -18,7 +18,6 @@
 
 class setCampaignRecurrency
 {
-
     /**
      * @var AuthToken $token
      * @access public

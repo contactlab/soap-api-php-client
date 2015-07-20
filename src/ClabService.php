@@ -30,6 +30,10 @@ include_once('variants.php');
 include_once('entry.php');
 include_once('SubscriberSourceFilter.php');
 include_once('CommunicationCategory.php');
+include_once('Subscriber.php');
+include_once('SubscriberAttribute.php');
+include_once('SendImmediateOptions.php');
+include_once('Attachment.php');
 include_once('LookupPreferences.php');
 include_once('CampaignLookupPreferences.php');
 include_once('XMLDeliveryInfos.php');
@@ -46,14 +50,13 @@ include_once('CampaignNote.php');
 include_once('TrackedLinks.php');
 include_once('TrackedLink.php');
 include_once('Subscribers.php');
-include_once('Subscriber.php');
-include_once('SubscriberAttribute.php');
-include_once('Attachment.php');
 include_once('MobileApplicationCertificate.php');
 include_once('MobileApplicationCertificateAssignment.php');
 include_once('APNsMobileApplicationCertificate.php');
 include_once('components.php');
 include_once('GCMsMobileApplicationCertificate.php');
+include_once('SplitTestCampaign.php');
+include_once('DeliverySplitConfig.php');
 include_once('CampaignFeedback.php');
 include_once('BounceDetail.php');
 include_once('charset.php');
@@ -67,12 +70,12 @@ include_once('LookupMatchingMode.php');
 include_once('LookupSortingMode.php');
 include_once('CampaignSortingOption.php');
 include_once('CampaignType.php');
+include_once('deliveryStatus.php');
 include_once('field.php');
 include_once('channel.php');
 include_once('ActivityStatus.php');
 include_once('APNsMobileApplicationCertificateComponentEnum.php');
 include_once('GCMsMobileApplicationCertificateComponentEnum.php');
-include_once('deliveryStatus.php');
 include_once('keepaliveToken.php');
 include_once('keepaliveTokenResponse.php');
 include_once('findMessageInfoByCampaignId.php');
@@ -88,6 +91,8 @@ include_once('addSubscriberSourceFilter.php');
 include_once('addSubscriberSourceFilterResponse.php');
 include_once('getAvailableCommunicationCategories.php');
 include_once('getAvailableCommunicationCategoriesResponse.php');
+include_once('sendImmediateByCampaignAliasToSubscriber.php');
+include_once('sendImmediateByCampaignAliasToSubscriberResponse.php');
 include_once('getArchivedSubscriberSourceFilter.php');
 include_once('getArchivedSubscriberSourceFilterResponse.php');
 include_once('getXMLDeliveries.php');
@@ -159,28 +164,38 @@ include_once('getMessageModelById.php');
 include_once('getMessageModelByIdResponse.php');
 include_once('getSubscriber.php');
 include_once('getSubscriberResponse.php');
+include_once('sendSplitTest.php');
+include_once('sendSplitTestResponse.php');
 include_once('borrowToken.php');
 include_once('borrowTokenResponse.php');
 include_once('modifySubscriberSubscriptionStatus.php');
 include_once('modifySubscriberSubscriptionStatusResponse.php');
 include_once('findPeriodicCampaigns.php');
 include_once('findPeriodicCampaignsResponse.php');
+include_once('sendImmediateByCampaignIdToSubscriber.php');
+include_once('sendImmediateByCampaignIdToSubscriberResponse.php');
 include_once('findNotesByCampaign.php');
 include_once('findNotesByCampaignResponse.php');
 include_once('modifySubscriberSubscriptionStatusByMailqId.php');
 include_once('modifySubscriberSubscriptionStatusByMailqIdResponse.php');
+include_once('sendImmediateByCampaignAliasToSubscriberId.php');
+include_once('sendImmediateByCampaignAliasToSubscriberIdResponse.php');
 include_once('unmarshalPushTemplateEnvelope.php');
 include_once('unmarshalPushTemplateEnvelopeResponse.php');
 include_once('isSubscriberSourceLocked.php');
 include_once('isSubscriberSourceLockedResponse.php');
 include_once('startSubscriberDataExchange.php');
 include_once('startSubscriberDataExchangeResponse.php');
+include_once('sendSplitTestWinner.php');
+include_once('sendSplitTestWinnerResponse.php');
 include_once('getCampaignDeliveryStatus.php');
 include_once('getCampaignDeliveryStatusResponse.php');
 include_once('removeSubscriber.php');
 include_once('removeSubscriberResponse.php');
 include_once('addAttachment.php');
 include_once('addAttachmentResponse.php');
+include_once('sendImmediateByCampaignIdToSubscriberId.php');
+include_once('sendImmediateByCampaignIdToSubscriberIdResponse.php');
 include_once('findFiltersBySubscriberSource.php');
 include_once('findFiltersBySubscriberSourceResponse.php');
 include_once('setCampaignRecurrency.php');
@@ -217,10 +232,16 @@ include_once('findCampaignsBySubscriberSourceFilter.php');
 include_once('findCampaignsBySubscriberSourceFilterResponse.php');
 include_once('sendImmediateMessageSidCAl.php');
 include_once('sendImmediateMessageSidCAlResponse.php');
+include_once('createSplitTest.php');
+include_once('createSplitTestResponse.php');
+include_once('sendImmediateByCampaignToSubscriber.php');
+include_once('sendImmediateByCampaignToSubscriberResponse.php');
 include_once('findCampaignsByStatus.php');
 include_once('findCampaignsByStatusResponse.php');
 include_once('getSubscriberSource.php');
 include_once('getSubscriberSourceResponse.php');
+include_once('sendImmediateByCampaignToSubscriberId.php');
+include_once('sendImmediateByCampaignToSubscriberIdResponse.php');
 include_once('findSubscribers.php');
 include_once('findSubscribersResponse.php');
 include_once('findTriggerableCampaigns.php');
@@ -257,10 +278,11 @@ include_once('xmlDeliveryStatusType.php');
 include_once('xmlDeliverySubStatusType.php');
 include_once('deliveryRoleType.php');
 include_once('mobileApplicationEnvironmentEnum.php');
+include_once('winningCriterion.php');
+include_once('deliverySplitType.php');
 
 class ClabService extends \SoapClient
 {
-
     /**
      * @var array $classmap The defined classes
      * @access private
@@ -280,6 +302,10 @@ class ClabService extends \SoapClient
       'entry' => '\entry',
       'SubscriberSourceFilter' => '\SubscriberSourceFilter',
       'CommunicationCategory' => '\CommunicationCategory',
+      'Subscriber' => '\Subscriber',
+      'SubscriberAttribute' => '\SubscriberAttribute',
+      'SendImmediateOptions' => '\SendImmediateOptions',
+      'Attachment' => '\Attachment',
       'LookupPreferences' => '\LookupPreferences',
       'CampaignLookupPreferences' => '\CampaignLookupPreferences',
       'XMLDeliveryInfos' => '\XMLDeliveryInfos',
@@ -296,14 +322,13 @@ class ClabService extends \SoapClient
       'TrackedLinks' => '\TrackedLinks',
       'TrackedLink' => '\TrackedLink',
       'Subscribers' => '\Subscribers',
-      'Subscriber' => '\Subscriber',
-      'SubscriberAttribute' => '\SubscriberAttribute',
-      'Attachment' => '\Attachment',
       'MobileApplicationCertificate' => '\MobileApplicationCertificate',
       'MobileApplicationCertificateAssignment' => '\MobileApplicationCertificateAssignment',
       'APNsMobileApplicationCertificate' => '\APNsMobileApplicationCertificate',
       'components' => '\components',
       'GCMsMobileApplicationCertificate' => '\GCMsMobileApplicationCertificate',
+      'SplitTestCampaign' => '\SplitTestCampaign',
+      'DeliverySplitConfig' => '\DeliverySplitConfig',
       'CampaignFeedback' => '\CampaignFeedback',
       'BounceDetail' => '\BounceDetail',
       'keepaliveToken' => '\keepaliveToken',
@@ -321,6 +346,8 @@ class ClabService extends \SoapClient
       'addSubscriberSourceFilterResponse' => '\addSubscriberSourceFilterResponse',
       'getAvailableCommunicationCategories' => '\getAvailableCommunicationCategories',
       'getAvailableCommunicationCategoriesResponse' => '\getAvailableCommunicationCategoriesResponse',
+      'sendImmediateByCampaignAliasToSubscriber' => '\sendImmediateByCampaignAliasToSubscriber',
+      'sendImmediateByCampaignAliasToSubscriberResponse' => '\sendImmediateByCampaignAliasToSubscriberResponse',
       'getArchivedSubscriberSourceFilter' => '\getArchivedSubscriberSourceFilter',
       'getArchivedSubscriberSourceFilterResponse' => '\getArchivedSubscriberSourceFilterResponse',
       'getXMLDeliveries' => '\getXMLDeliveries',
@@ -392,28 +419,38 @@ class ClabService extends \SoapClient
       'getMessageModelByIdResponse' => '\getMessageModelByIdResponse',
       'getSubscriber' => '\getSubscriber',
       'getSubscriberResponse' => '\getSubscriberResponse',
+      'sendSplitTest' => '\sendSplitTest',
+      'sendSplitTestResponse' => '\sendSplitTestResponse',
       'borrowToken' => '\borrowToken',
       'borrowTokenResponse' => '\borrowTokenResponse',
       'modifySubscriberSubscriptionStatus' => '\modifySubscriberSubscriptionStatus',
       'modifySubscriberSubscriptionStatusResponse' => '\modifySubscriberSubscriptionStatusResponse',
       'findPeriodicCampaigns' => '\findPeriodicCampaigns',
       'findPeriodicCampaignsResponse' => '\findPeriodicCampaignsResponse',
+      'sendImmediateByCampaignIdToSubscriber' => '\sendImmediateByCampaignIdToSubscriber',
+      'sendImmediateByCampaignIdToSubscriberResponse' => '\sendImmediateByCampaignIdToSubscriberResponse',
       'findNotesByCampaign' => '\findNotesByCampaign',
       'findNotesByCampaignResponse' => '\findNotesByCampaignResponse',
       'modifySubscriberSubscriptionStatusByMailqId' => '\modifySubscriberSubscriptionStatusByMailqId',
       'modifySubscriberSubscriptionStatusByMailqIdResponse' => '\modifySubscriberSubscriptionStatusByMailqIdResponse',
+      'sendImmediateByCampaignAliasToSubscriberId' => '\sendImmediateByCampaignAliasToSubscriberId',
+      'sendImmediateByCampaignAliasToSubscriberIdResponse' => '\sendImmediateByCampaignAliasToSubscriberIdResponse',
       'unmarshalPushTemplateEnvelope' => '\unmarshalPushTemplateEnvelope',
       'unmarshalPushTemplateEnvelopeResponse' => '\unmarshalPushTemplateEnvelopeResponse',
       'isSubscriberSourceLocked' => '\isSubscriberSourceLocked',
       'isSubscriberSourceLockedResponse' => '\isSubscriberSourceLockedResponse',
       'startSubscriberDataExchange' => '\startSubscriberDataExchange',
       'startSubscriberDataExchangeResponse' => '\startSubscriberDataExchangeResponse',
+      'sendSplitTestWinner' => '\sendSplitTestWinner',
+      'sendSplitTestWinnerResponse' => '\sendSplitTestWinnerResponse',
       'getCampaignDeliveryStatus' => '\getCampaignDeliveryStatus',
       'getCampaignDeliveryStatusResponse' => '\getCampaignDeliveryStatusResponse',
       'removeSubscriber' => '\removeSubscriber',
       'removeSubscriberResponse' => '\removeSubscriberResponse',
       'addAttachment' => '\addAttachment',
       'addAttachmentResponse' => '\addAttachmentResponse',
+      'sendImmediateByCampaignIdToSubscriberId' => '\sendImmediateByCampaignIdToSubscriberId',
+      'sendImmediateByCampaignIdToSubscriberIdResponse' => '\sendImmediateByCampaignIdToSubscriberIdResponse',
       'findFiltersBySubscriberSource' => '\findFiltersBySubscriberSource',
       'findFiltersBySubscriberSourceResponse' => '\findFiltersBySubscriberSourceResponse',
       'setCampaignRecurrency' => '\setCampaignRecurrency',
@@ -450,10 +487,16 @@ class ClabService extends \SoapClient
       'findCampaignsBySubscriberSourceFilterResponse' => '\findCampaignsBySubscriberSourceFilterResponse',
       'sendImmediateMessageSidCAl' => '\sendImmediateMessageSidCAl',
       'sendImmediateMessageSidCAlResponse' => '\sendImmediateMessageSidCAlResponse',
+      'createSplitTest' => '\createSplitTest',
+      'createSplitTestResponse' => '\createSplitTestResponse',
+      'sendImmediateByCampaignToSubscriber' => '\sendImmediateByCampaignToSubscriber',
+      'sendImmediateByCampaignToSubscriberResponse' => '\sendImmediateByCampaignToSubscriberResponse',
       'findCampaignsByStatus' => '\findCampaignsByStatus',
       'findCampaignsByStatusResponse' => '\findCampaignsByStatusResponse',
       'getSubscriberSource' => '\getSubscriberSource',
       'getSubscriberSourceResponse' => '\getSubscriberSourceResponse',
+      'sendImmediateByCampaignToSubscriberId' => '\sendImmediateByCampaignToSubscriberId',
+      'sendImmediateByCampaignToSubscriberIdResponse' => '\sendImmediateByCampaignToSubscriberIdResponse',
       'findSubscribers' => '\findSubscribers',
       'findSubscribersResponse' => '\findSubscribersResponse',
       'findTriggerableCampaigns' => '\findTriggerableCampaigns',
@@ -998,6 +1041,16 @@ class ClabService extends \SoapClient
     }
 
     /**
+     * @param sendSplitTest $parameters
+     * @access public
+     * @return sendSplitTestResponse
+     */
+    public function sendSplitTest(sendSplitTest $parameters)
+    {
+        return $this->__soapCall('sendSplitTest', array($parameters));
+    }
+
+    /**
      * @param cloneAndSendCampaign $parameters
      * @access public
      * @return cloneAndSendCampaignResponse
@@ -1055,6 +1108,16 @@ class ClabService extends \SoapClient
     public function cancelCampaign(cancelCampaign $parameters)
     {
         return $this->__soapCall('cancelCampaign', array($parameters));
+    }
+
+    /**
+     * @param countSubscribersIncludedInFilter $parameters
+     * @access public
+     * @return countSubscribersIncludedInFilterResponse
+     */
+    public function countSubscribersIncludedInFilter(countSubscribersIncludedInFilter $parameters)
+    {
+        return $this->__soapCall('countSubscribersIncludedInFilter', array($parameters));
     }
 
     /**
@@ -1118,16 +1181,6 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param countSubscribersIncludedInFilter $parameters
-     * @access public
-     * @return countSubscribersIncludedInFilterResponse
-     */
-    public function countSubscribersIncludedInFilter(countSubscribersIncludedInFilter $parameters)
-    {
-        return $this->__soapCall('countSubscribersIncludedInFilter', array($parameters));
-    }
-
-    /**
      * @param findSubscribers $parameters
      * @access public
      * @return findSubscribersResponse
@@ -1175,6 +1228,26 @@ class ClabService extends \SoapClient
     public function invalidateToken(invalidateToken $parameters)
     {
         return $this->__soapCall('invalidateToken', array($parameters));
+    }
+
+    /**
+     * @param sendSplitTestWinner $parameters
+     * @access public
+     * @return sendSplitTestWinnerResponse
+     */
+    public function sendSplitTestWinner(sendSplitTestWinner $parameters)
+    {
+        return $this->__soapCall('sendSplitTestWinner', array($parameters));
+    }
+
+    /**
+     * @param createSplitTest $parameters
+     * @access public
+     * @return createSplitTestResponse
+     */
+    public function createSplitTest(createSplitTest $parameters)
+    {
+        return $this->__soapCall('createSplitTest', array($parameters));
     }
 
     /**
@@ -1355,6 +1428,66 @@ class ClabService extends \SoapClient
     public function sendImmediateMessageSidCAlCA(sendImmediateMessageSidCAlCA $parameters)
     {
         return $this->__soapCall('sendImmediateMessageSidCAlCA', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateByCampaignIdToSubscriber $parameters
+     * @access public
+     * @return sendImmediateByCampaignIdToSubscriberResponse
+     */
+    public function sendImmediateByCampaignIdToSubscriber(sendImmediateByCampaignIdToSubscriber $parameters)
+    {
+        return $this->__soapCall('sendImmediateByCampaignIdToSubscriber', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateByCampaignToSubscriber $parameters
+     * @access public
+     * @return sendImmediateByCampaignToSubscriberResponse
+     */
+    public function sendImmediateByCampaignToSubscriber(sendImmediateByCampaignToSubscriber $parameters)
+    {
+        return $this->__soapCall('sendImmediateByCampaignToSubscriber', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateByCampaignToSubscriberId $parameters
+     * @access public
+     * @return sendImmediateByCampaignToSubscriberIdResponse
+     */
+    public function sendImmediateByCampaignToSubscriberId(sendImmediateByCampaignToSubscriberId $parameters)
+    {
+        return $this->__soapCall('sendImmediateByCampaignToSubscriberId', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateByCampaignIdToSubscriberId $parameters
+     * @access public
+     * @return sendImmediateByCampaignIdToSubscriberIdResponse
+     */
+    public function sendImmediateByCampaignIdToSubscriberId(sendImmediateByCampaignIdToSubscriberId $parameters)
+    {
+        return $this->__soapCall('sendImmediateByCampaignIdToSubscriberId', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateByCampaignAliasToSubscriber $parameters
+     * @access public
+     * @return sendImmediateByCampaignAliasToSubscriberResponse
+     */
+    public function sendImmediateByCampaignAliasToSubscriber(sendImmediateByCampaignAliasToSubscriber $parameters)
+    {
+        return $this->__soapCall('sendImmediateByCampaignAliasToSubscriber', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateByCampaignAliasToSubscriberId $parameters
+     * @access public
+     * @return sendImmediateByCampaignAliasToSubscriberIdResponse
+     */
+    public function sendImmediateByCampaignAliasToSubscriberId(sendImmediateByCampaignAliasToSubscriberId $parameters)
+    {
+        return $this->__soapCall('sendImmediateByCampaignAliasToSubscriberId', array($parameters));
     }
 
     /**

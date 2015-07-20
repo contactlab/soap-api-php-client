@@ -18,7 +18,6 @@
 
 class sendImmediateMessageSidCAl
 {
-
     /**
      * @var string $apiKey
      * @access public

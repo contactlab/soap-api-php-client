@@ -18,7 +18,6 @@
 
 class getSubscriberResponse
 {
-
     /**
      * @var Subscriber $return
      * @access public

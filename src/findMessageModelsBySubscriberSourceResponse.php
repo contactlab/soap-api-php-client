@@ -18,7 +18,6 @@
 
 class findMessageModelsBySubscriberSourceResponse
 {
-
     /**
      * @var MessageModels $return
      * @access public

@@ -18,7 +18,6 @@
 
 class sendImmediateMessageSDataCIdCA
 {
-
     /**
      * @var string $apiKey
      * @access public

@@ -18,7 +18,6 @@
 
 class getRequestStatusResponse
 {
-
     /**
      * @var ActivityStatus $return
      * @access public

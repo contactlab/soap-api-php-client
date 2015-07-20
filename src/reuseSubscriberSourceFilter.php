@@ -18,7 +18,6 @@
 
 class reuseSubscriberSourceFilter
 {
-
     /**
      * @var AuthToken $token
      * @access public
