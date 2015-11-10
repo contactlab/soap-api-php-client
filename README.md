@@ -10,7 +10,7 @@ Add this package to your project dependencies using [Composer](https://getcompos
 
 #### Require the last version
 
-You can choose to install any version of the client, but if you don't specify any version, Composer will automatically select the last available version for you, using the `~` operator:
+You can choose to install any version of the client, but if you don't specify any version, Composer will automatically select the last available version for you, using the `^` operator:
 
 ```
 composer require contactlab/soap-api-php-client
