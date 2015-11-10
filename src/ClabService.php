@@ -186,6 +186,9 @@ include_once('isSubscriberSourceLocked.php');
 include_once('isSubscriberSourceLockedResponse.php');
 include_once('startSubscriberDataExchange.php');
 include_once('startSubscriberDataExchangeResponse.php');
+include_once('getDeliveryStatus.php');
+include_once('getDeliveryStatusResponse.php');
+include_once('deliveryInformation.php');
 include_once('sendSplitTestWinner.php');
 include_once('sendSplitTestWinnerResponse.php');
 include_once('getCampaignDeliveryStatus.php');
@@ -441,6 +444,9 @@ class ClabService extends \SoapClient
       'isSubscriberSourceLockedResponse' => '\isSubscriberSourceLockedResponse',
       'startSubscriberDataExchange' => '\startSubscriberDataExchange',
       'startSubscriberDataExchangeResponse' => '\startSubscriberDataExchangeResponse',
+      'getDeliveryStatus' => '\getDeliveryStatus',
+      'getDeliveryStatusResponse' => '\getDeliveryStatusResponse',
+      'deliveryInformation' => '\deliveryInformation',
       'sendSplitTestWinner' => '\sendSplitTestWinner',
       'sendSplitTestWinnerResponse' => '\sendSplitTestWinnerResponse',
       'getCampaignDeliveryStatus' => '\getCampaignDeliveryStatus',
@@ -1488,6 +1494,16 @@ class ClabService extends \SoapClient
     public function sendImmediateByCampaignAliasToSubscriberId(sendImmediateByCampaignAliasToSubscriberId $parameters)
     {
         return $this->__soapCall('sendImmediateByCampaignAliasToSubscriberId', array($parameters));
+    }
+
+    /**
+     * @param getDeliveryStatus $parameters
+     * @access public
+     * @return getDeliveryStatusResponse
+     */
+    public function getDeliveryStatus(getDeliveryStatus $parameters)
+    {
+        return $this->__soapCall('getDeliveryStatus', array($parameters));
     }
 
     /**
