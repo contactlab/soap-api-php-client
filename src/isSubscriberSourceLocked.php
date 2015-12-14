@@ -18,6 +18,7 @@
 
 class isSubscriberSourceLocked
 {
+
     /**
      * @var AuthToken $token
      * @access public

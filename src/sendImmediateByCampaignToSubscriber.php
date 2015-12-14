@@ -18,6 +18,7 @@
 
 class sendImmediateByCampaignToSubscriber
 {
+
     /**
      * @var string $apiKey
      * @access public

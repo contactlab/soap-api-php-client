@@ -20,6 +20,7 @@ include_once('Message.php');
 
 class FaxMessage extends Message
 {
+
     /**
      * @var base64Binary $content
      * @access public

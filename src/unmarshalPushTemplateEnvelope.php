@@ -18,6 +18,7 @@
 
 class unmarshalPushTemplateEnvelope
 {
+
     /**
      * @var string $pushTemplateEnvelope
      * @access public

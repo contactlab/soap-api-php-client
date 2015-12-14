@@ -18,6 +18,7 @@
 
 class findNotesByCampaignResponse
 {
+
     /**
      * @var CampaignNotes $return
      * @access public

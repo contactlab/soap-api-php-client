@@ -18,6 +18,7 @@
 
 class findMessageInfoByCampaignId
 {
+
     /**
      * @var AuthToken $token
      * @access public

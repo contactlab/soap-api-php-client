@@ -18,6 +18,7 @@
 
 class getDeliveryStatus
 {
+
     /**
      * @var string $apiKey
      * @access public

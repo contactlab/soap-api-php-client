@@ -18,6 +18,7 @@
 
 class xmlDeliveryInfo
 {
+
     /**
      * @var dateTime $beginsAt
      * @access public

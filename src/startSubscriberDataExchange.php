@@ -18,6 +18,7 @@
 
 class startSubscriberDataExchange
 {
+
     /**
      * @var AuthToken $token
      * @access public

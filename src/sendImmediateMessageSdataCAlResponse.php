@@ -18,6 +18,7 @@
 
 class sendImmediateMessageSdataCAlResponse
 {
+
     /**
      * @var int $return
      * @access public

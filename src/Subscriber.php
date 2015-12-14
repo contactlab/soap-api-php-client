@@ -18,6 +18,7 @@
 
 class Subscriber
 {
+
     /**
      * @var int $identifier
      * @access public

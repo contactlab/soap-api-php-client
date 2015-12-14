@@ -18,6 +18,7 @@
 
 class invalidateTokenResponse
 {
+
     /**
      * @var boolean $return
      * @access public

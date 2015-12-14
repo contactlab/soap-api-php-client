@@ -18,6 +18,7 @@
 
 class getTrackedLinks
 {
+
     /**
      * @var AuthToken $token
      * @access public

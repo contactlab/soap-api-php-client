@@ -20,6 +20,7 @@ include_once('trackableLink.php');
 
 class PushLink extends trackableLink
 {
+
     /**
      * @var boolean $shorten
      * @access public

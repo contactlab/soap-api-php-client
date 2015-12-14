@@ -18,6 +18,7 @@
 
 class unmarshalPushTemplateEnvelopeResponse
 {
+
     /**
      * @var pushTemplateEnvelope $return
      * @access public

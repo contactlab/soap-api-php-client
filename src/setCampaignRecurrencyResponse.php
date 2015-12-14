@@ -18,6 +18,7 @@
 
 class setCampaignRecurrencyResponse
 {
+
     /**
      * @var int $return
      * @access public

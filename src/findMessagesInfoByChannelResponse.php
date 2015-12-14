@@ -18,6 +18,7 @@
 
 class findMessagesInfoByChannelResponse
 {
+
     /**
      * @var MessageModels $return
      * @access public

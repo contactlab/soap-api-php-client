@@ -18,6 +18,7 @@
 
 class getEmptyPushTemplateResponse
 {
+
     /**
      * @var pushTemplateEnvelope $return
      * @access public

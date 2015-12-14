@@ -18,6 +18,7 @@
 
 class MobileApplicationCertificate
 {
+
     /**
      * @var int $id
      * @access public

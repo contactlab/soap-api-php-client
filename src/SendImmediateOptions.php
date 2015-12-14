@@ -18,6 +18,7 @@
 
 class SendImmediateOptions
 {
+
     /**
      * @var string[] $ccRecipients
      * @access public

@@ -18,6 +18,7 @@
 
 class sendImmediateMessage
 {
+
     /**
      * @var string $apiKey
      * @access public

@@ -18,6 +18,7 @@
 
 class findCampaignsResponse
 {
+
     /**
      * @var Campaigns $return
      * @access public

@@ -18,6 +18,7 @@
 
 class triggerDeliveryById
 {
+
     /**
      * @var AuthToken $token
      * @access public

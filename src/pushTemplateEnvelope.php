@@ -18,6 +18,7 @@
 
 class pushTemplateEnvelope
 {
+
     /**
      * @var pushTemplate[] $PushTemplate
      * @access public

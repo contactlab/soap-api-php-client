@@ -18,6 +18,7 @@
 
 class createMessageModelResponse
 {
+
     /**
      * @var Message $return
      * @access public

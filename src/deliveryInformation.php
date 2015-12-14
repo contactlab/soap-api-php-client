@@ -18,6 +18,7 @@
 
 class deliveryInformation
 {
+
     /**
      * @var int $campaignId
      * @access public

@@ -18,6 +18,7 @@
 
 class getXMLDeliveriesResponse
 {
+
     /**
      * @var XMLDeliveryInfos $return
      * @access public

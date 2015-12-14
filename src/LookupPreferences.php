@@ -18,6 +18,7 @@
 
 class LookupPreferences
 {
+
     /**
      * @var int $pageNumber
      * @access public

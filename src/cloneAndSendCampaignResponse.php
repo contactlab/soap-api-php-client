@@ -18,6 +18,7 @@
 
 class cloneAndSendCampaignResponse
 {
+
     /**
      * @var int $return
      * @access public

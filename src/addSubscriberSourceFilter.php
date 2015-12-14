@@ -18,6 +18,7 @@
 
 class addSubscriberSourceFilter
 {
+
     /**
      * @var AuthToken $token
      * @access public

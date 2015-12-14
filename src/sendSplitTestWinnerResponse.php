@@ -18,6 +18,7 @@
 
 class sendSplitTestWinnerResponse
 {
+
     /**
      * @var int $return
      * @access public

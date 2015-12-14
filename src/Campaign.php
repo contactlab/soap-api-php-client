@@ -18,6 +18,7 @@
 
 class Campaign
 {
+
     /**
      * @var int $identifier
      * @access public

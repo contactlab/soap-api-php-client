@@ -18,6 +18,7 @@
 
 class getCampaignFeedback
 {
+
     /**
      * @var AuthToken $token
      * @access public

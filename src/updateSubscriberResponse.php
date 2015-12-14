@@ -18,6 +18,7 @@
 
 class updateSubscriberResponse
 {
+
     /**
      * @var Subscriber $return
      * @access public

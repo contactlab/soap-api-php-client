@@ -18,6 +18,7 @@
 
 class AuthToken
 {
+
     /**
      * @var string $content
      * @access public

@@ -18,6 +18,7 @@
 
 class BounceDetail
 {
+
     /**
      * @var int $code
      * @access public

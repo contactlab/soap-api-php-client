@@ -18,6 +18,7 @@
 
 class TrackedLink
 {
+
     /**
      * @var int $identifier
      * @access public

@@ -20,6 +20,7 @@ include_once('Message.php');
 
 class PushMessage extends Message
 {
+
     /**
      * @var pushTemplateEnvelope $envelope
      * @access public

@@ -18,6 +18,7 @@
 
 class findFiltersBySubscriberSourceResponse
 {
+
     /**
      * @var SubscriberSourceFilters $return
      * @access public

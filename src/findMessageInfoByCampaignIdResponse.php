@@ -18,6 +18,7 @@
 
 class findMessageInfoByCampaignIdResponse
 {
+
     /**
      * @var Message $return
      * @access public

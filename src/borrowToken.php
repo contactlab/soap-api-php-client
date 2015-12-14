@@ -18,6 +18,7 @@
 
 class borrowToken
 {
+
     /**
      * @var string $apiKey
      * @access public

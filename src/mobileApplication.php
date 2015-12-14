@@ -18,6 +18,7 @@
 
 class mobileApplication
 {
+
     /**
      * @var int $id
      * @access public

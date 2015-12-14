@@ -18,6 +18,7 @@
 
 class SplitTestCampaign
 {
+
     /**
      * @var int $splitTestId
      * @access public

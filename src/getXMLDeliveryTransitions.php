@@ -18,6 +18,7 @@
 
 class getXMLDeliveryTransitions
 {
+
     /**
      * @var AuthToken $token
      * @access public

@@ -18,6 +18,7 @@
 
 class sendCampaign
 {
+
     /**
      * @var AuthToken $token
      * @access public

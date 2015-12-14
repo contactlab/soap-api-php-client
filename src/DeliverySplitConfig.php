@@ -18,6 +18,7 @@
 
 class DeliverySplitConfig
 {
+
     /**
      * @var int $splitPercent
      * @access public

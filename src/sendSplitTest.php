@@ -18,6 +18,7 @@
 
 class sendSplitTest
 {
+
     /**
      * @var AuthToken $token
      * @access public

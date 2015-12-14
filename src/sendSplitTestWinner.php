@@ -18,6 +18,7 @@
 
 class sendSplitTestWinner
 {
+
     /**
      * @var AuthToken $token
      * @access public

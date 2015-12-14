@@ -18,6 +18,7 @@
 
 class findSubscribersIncludedInFilter
 {
+
     /**
      * @var AuthToken $token
      * @access public

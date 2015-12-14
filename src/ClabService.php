@@ -29,34 +29,34 @@ include_once('APNsPushTemplate.php');
 include_once('variants.php');
 include_once('entry.php');
 include_once('SubscriberSourceFilter.php');
-include_once('CommunicationCategory.php');
 include_once('Subscriber.php');
 include_once('SubscriberAttribute.php');
 include_once('SendImmediateOptions.php');
 include_once('Attachment.php');
+include_once('CampaignNote.php');
+include_once('MobileApplicationCertificate.php');
+include_once('MobileApplicationCertificateAssignment.php');
+include_once('APNsMobileApplicationCertificate.php');
+include_once('components.php');
+include_once('GCMsMobileApplicationCertificate.php');
 include_once('LookupPreferences.php');
 include_once('CampaignLookupPreferences.php');
-include_once('XMLDeliveryInfos.php');
+include_once('MessageModels.php');
 include_once('SlicedDataSet.php');
 include_once('Campaigns.php');
 include_once('Campaign.php');
 include_once('SubscriberSources.php');
 include_once('SubscriberSource.php');
 include_once('SubscriberSourceField.php');
-include_once('MessageModels.php');
 include_once('SubscriberSourceFilters.php');
 include_once('CampaignNotes.php');
-include_once('CampaignNote.php');
 include_once('TrackedLinks.php');
 include_once('TrackedLink.php');
 include_once('Subscribers.php');
-include_once('MobileApplicationCertificate.php');
-include_once('MobileApplicationCertificateAssignment.php');
-include_once('APNsMobileApplicationCertificate.php');
-include_once('components.php');
-include_once('GCMsMobileApplicationCertificate.php');
 include_once('SplitTestCampaign.php');
 include_once('DeliverySplitConfig.php');
+include_once('CommunicationCategory.php');
+include_once('XMLDeliveryInfos.php');
 include_once('CampaignFeedback.php');
 include_once('BounceDetail.php');
 include_once('charset.php');
@@ -66,18 +66,16 @@ include_once('PushEndpointType.php');
 include_once('APNsPushStandardFieldEnum.php');
 include_once('GCMsPushStandardFieldEnum.php');
 include_once('SubscriberSourceFilterType.php');
+include_once('APNsMobileApplicationCertificateComponentEnum.php');
+include_once('GCMsMobileApplicationCertificateComponentEnum.php');
+include_once('channel.php');
 include_once('LookupMatchingMode.php');
 include_once('LookupSortingMode.php');
 include_once('CampaignSortingOption.php');
 include_once('CampaignType.php');
 include_once('deliveryStatus.php');
 include_once('field.php');
-include_once('channel.php');
 include_once('ActivityStatus.php');
-include_once('APNsMobileApplicationCertificateComponentEnum.php');
-include_once('GCMsMobileApplicationCertificateComponentEnum.php');
-include_once('keepaliveToken.php');
-include_once('keepaliveTokenResponse.php');
 include_once('findMessageInfoByCampaignId.php');
 include_once('findMessageInfoByCampaignIdResponse.php');
 include_once('pushTemplateEnvelope.php');
@@ -85,63 +83,120 @@ include_once('pushTemplate.php');
 include_once('customData.php');
 include_once('trackableLink.php');
 include_once('gcMsPushTemplate.php');
-include_once('triggerDeliveryByAlias.php');
-include_once('triggerDeliveryByAliasResponse.php');
 include_once('addSubscriberSourceFilter.php');
 include_once('addSubscriberSourceFilterResponse.php');
-include_once('getAvailableCommunicationCategories.php');
-include_once('getAvailableCommunicationCategoriesResponse.php');
 include_once('sendImmediateByCampaignAliasToSubscriber.php');
 include_once('sendImmediateByCampaignAliasToSubscriberResponse.php');
+include_once('countSubscribers.php');
+include_once('countSubscribersResponse.php');
+include_once('getXMLDeliveryTransitions.php');
+include_once('getXMLDeliveryTransitionsResponse.php');
+include_once('xmlDeliveryTransitionInfo.php');
+include_once('sendImmediateMessageSdataCAlCA.php');
+include_once('sendImmediateMessageSdataCAlCAResponse.php');
+include_once('addCampaignNote.php');
+include_once('addCampaignNoteResponse.php');
+include_once('sendImmediateMessageSidCAlCA.php');
+include_once('sendImmediateMessageSidCAlCAResponse.php');
+include_once('updateSubscriber.php');
+include_once('updateSubscriberResponse.php');
+include_once('getMobileApplicationByCode.php');
+include_once('getMobileApplicationByCodeResponse.php');
+include_once('mobileApplication.php');
+include_once('getCryptoKey.php');
+include_once('getCryptoKeyResponse.php');
+include_once('findMessageModels.php');
+include_once('findMessageModelsResponse.php');
+include_once('uploadMediaContent.php');
+include_once('uploadMediaContentResponse.php');
+include_once('archiveSubscriberSourceFilter.php');
+include_once('archiveSubscriberSourceFilterResponse.php');
+include_once('sendImmediateMessageSDataCDataCA.php');
+include_once('sendImmediateMessageSDataCDataCAResponse.php');
+include_once('findMessagesInfoByChannel.php');
+include_once('findMessagesInfoByChannelResponse.php');
+include_once('sendImmediateMessageSDataCIdCA.php');
+include_once('sendImmediateMessageSDataCIdCAResponse.php');
+include_once('getAttachmentByCampaignId.php');
+include_once('getAttachmentByCampaignIdResponse.php');
+include_once('getSubscriber.php');
+include_once('getSubscriberResponse.php');
+include_once('findPeriodicCampaigns.php');
+include_once('findPeriodicCampaignsResponse.php');
+include_once('modifySubscriberSubscriptionStatus.php');
+include_once('modifySubscriberSubscriptionStatusResponse.php');
+include_once('findNotesByCampaign.php');
+include_once('findNotesByCampaignResponse.php');
+include_once('modifySubscriberSubscriptionStatusByMailqId.php');
+include_once('modifySubscriberSubscriptionStatusByMailqIdResponse.php');
+include_once('sendImmediateByCampaignAliasToSubscriberId.php');
+include_once('sendImmediateByCampaignAliasToSubscriberIdResponse.php');
+include_once('isSubscriberSourceLocked.php');
+include_once('isSubscriberSourceLockedResponse.php');
+include_once('removeSubscriber.php');
+include_once('removeSubscriberResponse.php');
+include_once('getCampaignDeliveryStatus.php');
+include_once('getCampaignDeliveryStatusResponse.php');
+include_once('getDeliveryStatus.php');
+include_once('getDeliveryStatusResponse.php');
+include_once('deliveryInformation.php');
+include_once('addAttachment.php');
+include_once('addAttachmentResponse.php');
+include_once('findSubscriberSources.php');
+include_once('findSubscriberSourcesResponse.php');
+include_once('findMessageModelsBySubscriberSource.php');
+include_once('findMessageModelsBySubscriberSourceResponse.php');
+include_once('addSubscriberSource.php');
+include_once('addSubscriberSourceResponse.php');
+include_once('findMessages.php');
+include_once('findMessagesResponse.php');
+include_once('sendImmediateMessageSDataCData.php');
+include_once('sendImmediateMessageSDataCDataResponse.php');
+include_once('sendImmediateMessageSIdCDataCA.php');
+include_once('sendImmediateMessageSIdCDataCAResponse.php');
+include_once('sendImmediateMessageSIdCData.php');
+include_once('sendImmediateMessageSIdCDataResponse.php');
+include_once('createSplitTest.php');
+include_once('createSplitTestResponse.php');
+include_once('findCampaignsByStatus.php');
+include_once('findCampaignsByStatusResponse.php');
+include_once('findSubscribers.php');
+include_once('findSubscribersResponse.php');
+include_once('reuseSubscriberSourceFilter.php');
+include_once('reuseSubscriberSourceFilterResponse.php');
+include_once('createMessageModel.php');
+include_once('createMessageModelResponse.php');
+include_once('findSubscribersIncludedInFilter.php');
+include_once('findSubscribersIncludedInFilterResponse.php');
+include_once('keepaliveToken.php');
+include_once('keepaliveTokenResponse.php');
+include_once('triggerDeliveryByAlias.php');
+include_once('triggerDeliveryByAliasResponse.php');
+include_once('getAvailableCommunicationCategories.php');
+include_once('getAvailableCommunicationCategoriesResponse.php');
 include_once('getArchivedSubscriberSourceFilter.php');
 include_once('getArchivedSubscriberSourceFilterResponse.php');
 include_once('getXMLDeliveries.php');
 include_once('getXMLDeliveriesResponse.php');
 include_once('xmlDeliveryInfo.php');
-include_once('getEmptyPushTemplate.php');
-include_once('getEmptyPushTemplateResponse.php');
+include_once('scheduleCampaignFeedbackReport.php');
+include_once('scheduleCampaignFeedbackReportResponse.php');
 include_once('sendCampaign.php');
 include_once('sendCampaignResponse.php');
+include_once('getEmptyPushTemplate.php');
+include_once('getEmptyPushTemplateResponse.php');
 include_once('findCampaignsSentBetween.php');
 include_once('findCampaignsSentBetweenResponse.php');
-include_once('countSubscribers.php');
-include_once('countSubscribersResponse.php');
-include_once('sendImmediateMessageSdataCAlCA.php');
-include_once('sendImmediateMessageSdataCAlCAResponse.php');
-include_once('getXMLDeliveryTransitions.php');
-include_once('getXMLDeliveryTransitionsResponse.php');
-include_once('xmlDeliveryTransitionInfo.php');
 include_once('findCampaignsByNameOrSubject.php');
 include_once('findCampaignsByNameOrSubjectResponse.php');
-include_once('sendImmediateMessageSidCAlCA.php');
-include_once('sendImmediateMessageSidCAlCAResponse.php');
-include_once('addCampaignNote.php');
-include_once('addCampaignNoteResponse.php');
-include_once('triggerDeliveryById.php');
-include_once('triggerDeliveryByIdResponse.php');
-include_once('findCampaigns.php');
-include_once('findCampaignsResponse.php');
 include_once('getRequestStatus.php');
 include_once('getRequestStatusResponse.php');
-include_once('getMobileApplicationByCode.php');
-include_once('getMobileApplicationByCodeResponse.php');
-include_once('mobileApplication.php');
-include_once('updateSubscriber.php');
-include_once('updateSubscriberResponse.php');
-include_once('getCryptoKey.php');
-include_once('getCryptoKeyResponse.php');
-include_once('archiveSubscriberSourceFilter.php');
-include_once('archiveSubscriberSourceFilterResponse.php');
+include_once('findCampaigns.php');
+include_once('findCampaignsResponse.php');
+include_once('triggerDeliveryById.php');
+include_once('triggerDeliveryByIdResponse.php');
 include_once('cloneAndSendCampaign.php');
 include_once('cloneAndSendCampaignResponse.php');
-include_once('uploadMediaContent.php');
-include_once('uploadMediaContentResponse.php');
-include_once('findMessageModels.php');
-include_once('findMessageModelsResponse.php');
-include_once('sendImmediateMessageSDataCDataCA.php');
-include_once('sendImmediateMessageSDataCDataCAResponse.php');
-include_once('findMessagesInfoByChannel.php');
-include_once('findMessagesInfoByChannelResponse.php');
 include_once('getCampaign.php');
 include_once('getCampaignResponse.php');
 include_once('addSubscribers.php');
@@ -150,115 +205,66 @@ include_once('sendImmediateMessageSidCid.php');
 include_once('sendImmediateMessageSidCidResponse.php');
 include_once('findMessagesInfo.php');
 include_once('findMessagesInfoResponse.php');
-include_once('sendImmediateMessageSDataCIdCA.php');
-include_once('sendImmediateMessageSDataCIdCAResponse.php');
 include_once('getSubscriberSourceFilter.php');
 include_once('getSubscriberSourceFilterResponse.php');
 include_once('findMessagesByChannel.php');
 include_once('findMessagesByChannelResponse.php');
-include_once('findArchivedFiltersBySubscriberSource.php');
-include_once('findArchivedFiltersBySubscriberSourceResponse.php');
-include_once('getAttachmentByCampaignId.php');
-include_once('getAttachmentByCampaignIdResponse.php');
 include_once('getMessageModelById.php');
 include_once('getMessageModelByIdResponse.php');
-include_once('getSubscriber.php');
-include_once('getSubscriberResponse.php');
+include_once('findArchivedFiltersBySubscriberSource.php');
+include_once('findArchivedFiltersBySubscriberSourceResponse.php');
 include_once('sendSplitTest.php');
 include_once('sendSplitTestResponse.php');
 include_once('borrowToken.php');
 include_once('borrowTokenResponse.php');
-include_once('modifySubscriberSubscriptionStatus.php');
-include_once('modifySubscriberSubscriptionStatusResponse.php');
-include_once('findPeriodicCampaigns.php');
-include_once('findPeriodicCampaignsResponse.php');
 include_once('sendImmediateByCampaignIdToSubscriber.php');
 include_once('sendImmediateByCampaignIdToSubscriberResponse.php');
-include_once('findNotesByCampaign.php');
-include_once('findNotesByCampaignResponse.php');
-include_once('modifySubscriberSubscriptionStatusByMailqId.php');
-include_once('modifySubscriberSubscriptionStatusByMailqIdResponse.php');
-include_once('sendImmediateByCampaignAliasToSubscriberId.php');
-include_once('sendImmediateByCampaignAliasToSubscriberIdResponse.php');
 include_once('unmarshalPushTemplateEnvelope.php');
 include_once('unmarshalPushTemplateEnvelopeResponse.php');
-include_once('isSubscriberSourceLocked.php');
-include_once('isSubscriberSourceLockedResponse.php');
 include_once('startSubscriberDataExchange.php');
 include_once('startSubscriberDataExchangeResponse.php');
-include_once('getDeliveryStatus.php');
-include_once('getDeliveryStatusResponse.php');
-include_once('deliveryInformation.php');
 include_once('sendSplitTestWinner.php');
 include_once('sendSplitTestWinnerResponse.php');
-include_once('getCampaignDeliveryStatus.php');
-include_once('getCampaignDeliveryStatusResponse.php');
-include_once('removeSubscriber.php');
-include_once('removeSubscriberResponse.php');
-include_once('addAttachment.php');
-include_once('addAttachmentResponse.php');
 include_once('sendImmediateByCampaignIdToSubscriberId.php');
 include_once('sendImmediateByCampaignIdToSubscriberIdResponse.php');
-include_once('findFiltersBySubscriberSource.php');
-include_once('findFiltersBySubscriberSourceResponse.php');
 include_once('setCampaignRecurrency.php');
 include_once('setCampaignRecurrencyResponse.php');
+include_once('findFiltersBySubscriberSource.php');
+include_once('findFiltersBySubscriberSourceResponse.php');
 include_once('countSubscribersIncludedInFilter.php');
 include_once('countSubscribersIncludedInFilterResponse.php');
 include_once('sendImmediateMessageSidCidCA.php');
 include_once('sendImmediateMessageSidCidCAResponse.php');
-include_once('findSubscriberSources.php');
-include_once('findSubscriberSourcesResponse.php');
-include_once('addSubscriberSource.php');
-include_once('addSubscriberSourceResponse.php');
-include_once('findMessageModelsBySubscriberSource.php');
-include_once('findMessageModelsBySubscriberSourceResponse.php');
-include_once('sendImmediateMessageSdataCAl.php');
-include_once('sendImmediateMessageSdataCAlResponse.php');
 include_once('findCampaignsByModel.php');
 include_once('findCampaignsByModelResponse.php');
-include_once('findMessages.php');
-include_once('findMessagesResponse.php');
-include_once('sendImmediateMessageSDataCData.php');
-include_once('sendImmediateMessageSDataCDataResponse.php');
+include_once('sendImmediateMessageSdataCAl.php');
+include_once('sendImmediateMessageSdataCAlResponse.php');
 include_once('getSubscriberDataExchangeStatus.php');
 include_once('getSubscriberDataExchangeStatusResponse.php');
-include_once('sendImmediateMessageSIdCDataCA.php');
-include_once('sendImmediateMessageSIdCDataCAResponse.php');
 include_once('sendImmediateMessage.php');
 include_once('sendImmediateMessageResponse.php');
-include_once('sendImmediateMessageSIdCData.php');
-include_once('sendImmediateMessageSIdCDataResponse.php');
 include_once('findMessagesInfoByCampaignName.php');
 include_once('findMessagesInfoByCampaignNameResponse.php');
 include_once('findCampaignsBySubscriberSourceFilter.php');
 include_once('findCampaignsBySubscriberSourceFilterResponse.php');
 include_once('sendImmediateMessageSidCAl.php');
 include_once('sendImmediateMessageSidCAlResponse.php');
-include_once('createSplitTest.php');
-include_once('createSplitTestResponse.php');
 include_once('sendImmediateByCampaignToSubscriber.php');
 include_once('sendImmediateByCampaignToSubscriberResponse.php');
-include_once('findCampaignsByStatus.php');
-include_once('findCampaignsByStatusResponse.php');
 include_once('getSubscriberSource.php');
 include_once('getSubscriberSourceResponse.php');
 include_once('sendImmediateByCampaignToSubscriberId.php');
 include_once('sendImmediateByCampaignToSubscriberIdResponse.php');
-include_once('findSubscribers.php');
-include_once('findSubscribersResponse.php');
 include_once('findTriggerableCampaigns.php');
 include_once('findTriggerableCampaignsResponse.php');
 include_once('findMessageByCampaignId.php');
 include_once('findMessageByCampaignIdResponse.php');
 include_once('findCampaignsByNote.php');
 include_once('findCampaignsByNoteResponse.php');
-include_once('invalidateToken.php');
-include_once('invalidateTokenResponse.php');
 include_once('publishOnWeb.php');
 include_once('publishOnWebResponse.php');
-include_once('reuseSubscriberSourceFilter.php');
-include_once('reuseSubscriberSourceFilterResponse.php');
+include_once('invalidateToken.php');
+include_once('invalidateTokenResponse.php');
 include_once('findMessagesByCampaignName.php');
 include_once('findMessagesByCampaignNameResponse.php');
 include_once('createCampaign.php');
@@ -271,21 +277,18 @@ include_once('getCampaignFeedback.php');
 include_once('getCampaignFeedbackResponse.php');
 include_once('requestCampaignFeedbackReport.php');
 include_once('requestCampaignFeedbackReportResponse.php');
-include_once('createMessageModel.php');
-include_once('createMessageModelResponse.php');
 include_once('cancelCampaign.php');
 include_once('cancelCampaignResponse.php');
-include_once('findSubscribersIncludedInFilter.php');
-include_once('findSubscribersIncludedInFilterResponse.php');
-include_once('xmlDeliveryStatusType.php');
 include_once('xmlDeliverySubStatusType.php');
-include_once('deliveryRoleType.php');
 include_once('mobileApplicationEnvironmentEnum.php');
+include_once('deliveryRoleType.php');
 include_once('winningCriterion.php');
 include_once('deliverySplitType.php');
+include_once('xmlDeliveryStatusType.php');
 
 class ClabService extends \SoapClient
 {
+
     /**
      * @var array $classmap The defined classes
      * @access private
@@ -304,38 +307,36 @@ class ClabService extends \SoapClient
       'variants' => '\variants',
       'entry' => '\entry',
       'SubscriberSourceFilter' => '\SubscriberSourceFilter',
-      'CommunicationCategory' => '\CommunicationCategory',
       'Subscriber' => '\Subscriber',
       'SubscriberAttribute' => '\SubscriberAttribute',
       'SendImmediateOptions' => '\SendImmediateOptions',
       'Attachment' => '\Attachment',
+      'CampaignNote' => '\CampaignNote',
+      'MobileApplicationCertificate' => '\MobileApplicationCertificate',
+      'MobileApplicationCertificateAssignment' => '\MobileApplicationCertificateAssignment',
+      'APNsMobileApplicationCertificate' => '\APNsMobileApplicationCertificate',
+      'components' => '\components',
+      'GCMsMobileApplicationCertificate' => '\GCMsMobileApplicationCertificate',
       'LookupPreferences' => '\LookupPreferences',
       'CampaignLookupPreferences' => '\CampaignLookupPreferences',
-      'XMLDeliveryInfos' => '\XMLDeliveryInfos',
+      'MessageModels' => '\MessageModels',
       'SlicedDataSet' => '\SlicedDataSet',
       'Campaigns' => '\Campaigns',
       'Campaign' => '\Campaign',
       'SubscriberSources' => '\SubscriberSources',
       'SubscriberSource' => '\SubscriberSource',
       'SubscriberSourceField' => '\SubscriberSourceField',
-      'MessageModels' => '\MessageModels',
       'SubscriberSourceFilters' => '\SubscriberSourceFilters',
       'CampaignNotes' => '\CampaignNotes',
-      'CampaignNote' => '\CampaignNote',
       'TrackedLinks' => '\TrackedLinks',
       'TrackedLink' => '\TrackedLink',
       'Subscribers' => '\Subscribers',
-      'MobileApplicationCertificate' => '\MobileApplicationCertificate',
-      'MobileApplicationCertificateAssignment' => '\MobileApplicationCertificateAssignment',
-      'APNsMobileApplicationCertificate' => '\APNsMobileApplicationCertificate',
-      'components' => '\components',
-      'GCMsMobileApplicationCertificate' => '\GCMsMobileApplicationCertificate',
       'SplitTestCampaign' => '\SplitTestCampaign',
       'DeliverySplitConfig' => '\DeliverySplitConfig',
+      'CommunicationCategory' => '\CommunicationCategory',
+      'XMLDeliveryInfos' => '\XMLDeliveryInfos',
       'CampaignFeedback' => '\CampaignFeedback',
       'BounceDetail' => '\BounceDetail',
-      'keepaliveToken' => '\keepaliveToken',
-      'keepaliveTokenResponse' => '\keepaliveTokenResponse',
       'findMessageInfoByCampaignId' => '\findMessageInfoByCampaignId',
       'findMessageInfoByCampaignIdResponse' => '\findMessageInfoByCampaignIdResponse',
       'pushTemplateEnvelope' => '\pushTemplateEnvelope',
@@ -343,63 +344,120 @@ class ClabService extends \SoapClient
       'customData' => '\customData',
       'trackableLink' => '\trackableLink',
       'gcMsPushTemplate' => '\gcMsPushTemplate',
-      'triggerDeliveryByAlias' => '\triggerDeliveryByAlias',
-      'triggerDeliveryByAliasResponse' => '\triggerDeliveryByAliasResponse',
       'addSubscriberSourceFilter' => '\addSubscriberSourceFilter',
       'addSubscriberSourceFilterResponse' => '\addSubscriberSourceFilterResponse',
-      'getAvailableCommunicationCategories' => '\getAvailableCommunicationCategories',
-      'getAvailableCommunicationCategoriesResponse' => '\getAvailableCommunicationCategoriesResponse',
       'sendImmediateByCampaignAliasToSubscriber' => '\sendImmediateByCampaignAliasToSubscriber',
       'sendImmediateByCampaignAliasToSubscriberResponse' => '\sendImmediateByCampaignAliasToSubscriberResponse',
+      'countSubscribers' => '\countSubscribers',
+      'countSubscribersResponse' => '\countSubscribersResponse',
+      'getXMLDeliveryTransitions' => '\getXMLDeliveryTransitions',
+      'getXMLDeliveryTransitionsResponse' => '\getXMLDeliveryTransitionsResponse',
+      'xmlDeliveryTransitionInfo' => '\xmlDeliveryTransitionInfo',
+      'sendImmediateMessageSdataCAlCA' => '\sendImmediateMessageSdataCAlCA',
+      'sendImmediateMessageSdataCAlCAResponse' => '\sendImmediateMessageSdataCAlCAResponse',
+      'addCampaignNote' => '\addCampaignNote',
+      'addCampaignNoteResponse' => '\addCampaignNoteResponse',
+      'sendImmediateMessageSidCAlCA' => '\sendImmediateMessageSidCAlCA',
+      'sendImmediateMessageSidCAlCAResponse' => '\sendImmediateMessageSidCAlCAResponse',
+      'updateSubscriber' => '\updateSubscriber',
+      'updateSubscriberResponse' => '\updateSubscriberResponse',
+      'getMobileApplicationByCode' => '\getMobileApplicationByCode',
+      'getMobileApplicationByCodeResponse' => '\getMobileApplicationByCodeResponse',
+      'mobileApplication' => '\mobileApplication',
+      'getCryptoKey' => '\getCryptoKey',
+      'getCryptoKeyResponse' => '\getCryptoKeyResponse',
+      'findMessageModels' => '\findMessageModels',
+      'findMessageModelsResponse' => '\findMessageModelsResponse',
+      'uploadMediaContent' => '\uploadMediaContent',
+      'uploadMediaContentResponse' => '\uploadMediaContentResponse',
+      'archiveSubscriberSourceFilter' => '\archiveSubscriberSourceFilter',
+      'archiveSubscriberSourceFilterResponse' => '\archiveSubscriberSourceFilterResponse',
+      'sendImmediateMessageSDataCDataCA' => '\sendImmediateMessageSDataCDataCA',
+      'sendImmediateMessageSDataCDataCAResponse' => '\sendImmediateMessageSDataCDataCAResponse',
+      'findMessagesInfoByChannel' => '\findMessagesInfoByChannel',
+      'findMessagesInfoByChannelResponse' => '\findMessagesInfoByChannelResponse',
+      'sendImmediateMessageSDataCIdCA' => '\sendImmediateMessageSDataCIdCA',
+      'sendImmediateMessageSDataCIdCAResponse' => '\sendImmediateMessageSDataCIdCAResponse',
+      'getAttachmentByCampaignId' => '\getAttachmentByCampaignId',
+      'getAttachmentByCampaignIdResponse' => '\getAttachmentByCampaignIdResponse',
+      'getSubscriber' => '\getSubscriber',
+      'getSubscriberResponse' => '\getSubscriberResponse',
+      'findPeriodicCampaigns' => '\findPeriodicCampaigns',
+      'findPeriodicCampaignsResponse' => '\findPeriodicCampaignsResponse',
+      'modifySubscriberSubscriptionStatus' => '\modifySubscriberSubscriptionStatus',
+      'modifySubscriberSubscriptionStatusResponse' => '\modifySubscriberSubscriptionStatusResponse',
+      'findNotesByCampaign' => '\findNotesByCampaign',
+      'findNotesByCampaignResponse' => '\findNotesByCampaignResponse',
+      'modifySubscriberSubscriptionStatusByMailqId' => '\modifySubscriberSubscriptionStatusByMailqId',
+      'modifySubscriberSubscriptionStatusByMailqIdResponse' => '\modifySubscriberSubscriptionStatusByMailqIdResponse',
+      'sendImmediateByCampaignAliasToSubscriberId' => '\sendImmediateByCampaignAliasToSubscriberId',
+      'sendImmediateByCampaignAliasToSubscriberIdResponse' => '\sendImmediateByCampaignAliasToSubscriberIdResponse',
+      'isSubscriberSourceLocked' => '\isSubscriberSourceLocked',
+      'isSubscriberSourceLockedResponse' => '\isSubscriberSourceLockedResponse',
+      'removeSubscriber' => '\removeSubscriber',
+      'removeSubscriberResponse' => '\removeSubscriberResponse',
+      'getCampaignDeliveryStatus' => '\getCampaignDeliveryStatus',
+      'getCampaignDeliveryStatusResponse' => '\getCampaignDeliveryStatusResponse',
+      'getDeliveryStatus' => '\getDeliveryStatus',
+      'getDeliveryStatusResponse' => '\getDeliveryStatusResponse',
+      'deliveryInformation' => '\deliveryInformation',
+      'addAttachment' => '\addAttachment',
+      'addAttachmentResponse' => '\addAttachmentResponse',
+      'findSubscriberSources' => '\findSubscriberSources',
+      'findSubscriberSourcesResponse' => '\findSubscriberSourcesResponse',
+      'findMessageModelsBySubscriberSource' => '\findMessageModelsBySubscriberSource',
+      'findMessageModelsBySubscriberSourceResponse' => '\findMessageModelsBySubscriberSourceResponse',
+      'addSubscriberSource' => '\addSubscriberSource',
+      'addSubscriberSourceResponse' => '\addSubscriberSourceResponse',
+      'findMessages' => '\findMessages',
+      'findMessagesResponse' => '\findMessagesResponse',
+      'sendImmediateMessageSDataCData' => '\sendImmediateMessageSDataCData',
+      'sendImmediateMessageSDataCDataResponse' => '\sendImmediateMessageSDataCDataResponse',
+      'sendImmediateMessageSIdCDataCA' => '\sendImmediateMessageSIdCDataCA',
+      'sendImmediateMessageSIdCDataCAResponse' => '\sendImmediateMessageSIdCDataCAResponse',
+      'sendImmediateMessageSIdCData' => '\sendImmediateMessageSIdCData',
+      'sendImmediateMessageSIdCDataResponse' => '\sendImmediateMessageSIdCDataResponse',
+      'createSplitTest' => '\createSplitTest',
+      'createSplitTestResponse' => '\createSplitTestResponse',
+      'findCampaignsByStatus' => '\findCampaignsByStatus',
+      'findCampaignsByStatusResponse' => '\findCampaignsByStatusResponse',
+      'findSubscribers' => '\findSubscribers',
+      'findSubscribersResponse' => '\findSubscribersResponse',
+      'reuseSubscriberSourceFilter' => '\reuseSubscriberSourceFilter',
+      'reuseSubscriberSourceFilterResponse' => '\reuseSubscriberSourceFilterResponse',
+      'createMessageModel' => '\createMessageModel',
+      'createMessageModelResponse' => '\createMessageModelResponse',
+      'findSubscribersIncludedInFilter' => '\findSubscribersIncludedInFilter',
+      'findSubscribersIncludedInFilterResponse' => '\findSubscribersIncludedInFilterResponse',
+      'keepaliveToken' => '\keepaliveToken',
+      'keepaliveTokenResponse' => '\keepaliveTokenResponse',
+      'triggerDeliveryByAlias' => '\triggerDeliveryByAlias',
+      'triggerDeliveryByAliasResponse' => '\triggerDeliveryByAliasResponse',
+      'getAvailableCommunicationCategories' => '\getAvailableCommunicationCategories',
+      'getAvailableCommunicationCategoriesResponse' => '\getAvailableCommunicationCategoriesResponse',
       'getArchivedSubscriberSourceFilter' => '\getArchivedSubscriberSourceFilter',
       'getArchivedSubscriberSourceFilterResponse' => '\getArchivedSubscriberSourceFilterResponse',
       'getXMLDeliveries' => '\getXMLDeliveries',
       'getXMLDeliveriesResponse' => '\getXMLDeliveriesResponse',
       'xmlDeliveryInfo' => '\xmlDeliveryInfo',
-      'getEmptyPushTemplate' => '\getEmptyPushTemplate',
-      'getEmptyPushTemplateResponse' => '\getEmptyPushTemplateResponse',
+      'scheduleCampaignFeedbackReport' => '\scheduleCampaignFeedbackReport',
+      'scheduleCampaignFeedbackReportResponse' => '\scheduleCampaignFeedbackReportResponse',
       'sendCampaign' => '\sendCampaign',
       'sendCampaignResponse' => '\sendCampaignResponse',
+      'getEmptyPushTemplate' => '\getEmptyPushTemplate',
+      'getEmptyPushTemplateResponse' => '\getEmptyPushTemplateResponse',
       'findCampaignsSentBetween' => '\findCampaignsSentBetween',
       'findCampaignsSentBetweenResponse' => '\findCampaignsSentBetweenResponse',
-      'countSubscribers' => '\countSubscribers',
-      'countSubscribersResponse' => '\countSubscribersResponse',
-      'sendImmediateMessageSdataCAlCA' => '\sendImmediateMessageSdataCAlCA',
-      'sendImmediateMessageSdataCAlCAResponse' => '\sendImmediateMessageSdataCAlCAResponse',
-      'getXMLDeliveryTransitions' => '\getXMLDeliveryTransitions',
-      'getXMLDeliveryTransitionsResponse' => '\getXMLDeliveryTransitionsResponse',
-      'xmlDeliveryTransitionInfo' => '\xmlDeliveryTransitionInfo',
       'findCampaignsByNameOrSubject' => '\findCampaignsByNameOrSubject',
       'findCampaignsByNameOrSubjectResponse' => '\findCampaignsByNameOrSubjectResponse',
-      'sendImmediateMessageSidCAlCA' => '\sendImmediateMessageSidCAlCA',
-      'sendImmediateMessageSidCAlCAResponse' => '\sendImmediateMessageSidCAlCAResponse',
-      'addCampaignNote' => '\addCampaignNote',
-      'addCampaignNoteResponse' => '\addCampaignNoteResponse',
-      'triggerDeliveryById' => '\triggerDeliveryById',
-      'triggerDeliveryByIdResponse' => '\triggerDeliveryByIdResponse',
-      'findCampaigns' => '\findCampaigns',
-      'findCampaignsResponse' => '\findCampaignsResponse',
       'getRequestStatus' => '\getRequestStatus',
       'getRequestStatusResponse' => '\getRequestStatusResponse',
-      'getMobileApplicationByCode' => '\getMobileApplicationByCode',
-      'getMobileApplicationByCodeResponse' => '\getMobileApplicationByCodeResponse',
-      'mobileApplication' => '\mobileApplication',
-      'updateSubscriber' => '\updateSubscriber',
-      'updateSubscriberResponse' => '\updateSubscriberResponse',
-      'getCryptoKey' => '\getCryptoKey',
-      'getCryptoKeyResponse' => '\getCryptoKeyResponse',
-      'archiveSubscriberSourceFilter' => '\archiveSubscriberSourceFilter',
-      'archiveSubscriberSourceFilterResponse' => '\archiveSubscriberSourceFilterResponse',
+      'findCampaigns' => '\findCampaigns',
+      'findCampaignsResponse' => '\findCampaignsResponse',
+      'triggerDeliveryById' => '\triggerDeliveryById',
+      'triggerDeliveryByIdResponse' => '\triggerDeliveryByIdResponse',
       'cloneAndSendCampaign' => '\cloneAndSendCampaign',
       'cloneAndSendCampaignResponse' => '\cloneAndSendCampaignResponse',
-      'uploadMediaContent' => '\uploadMediaContent',
-      'uploadMediaContentResponse' => '\uploadMediaContentResponse',
-      'findMessageModels' => '\findMessageModels',
-      'findMessageModelsResponse' => '\findMessageModelsResponse',
-      'sendImmediateMessageSDataCDataCA' => '\sendImmediateMessageSDataCDataCA',
-      'sendImmediateMessageSDataCDataCAResponse' => '\sendImmediateMessageSDataCDataCAResponse',
-      'findMessagesInfoByChannel' => '\findMessagesInfoByChannel',
-      'findMessagesInfoByChannelResponse' => '\findMessagesInfoByChannelResponse',
       'getCampaign' => '\getCampaign',
       'getCampaignResponse' => '\getCampaignResponse',
       'addSubscribers' => '\addSubscribers',
@@ -408,115 +466,66 @@ class ClabService extends \SoapClient
       'sendImmediateMessageSidCidResponse' => '\sendImmediateMessageSidCidResponse',
       'findMessagesInfo' => '\findMessagesInfo',
       'findMessagesInfoResponse' => '\findMessagesInfoResponse',
-      'sendImmediateMessageSDataCIdCA' => '\sendImmediateMessageSDataCIdCA',
-      'sendImmediateMessageSDataCIdCAResponse' => '\sendImmediateMessageSDataCIdCAResponse',
       'getSubscriberSourceFilter' => '\getSubscriberSourceFilter',
       'getSubscriberSourceFilterResponse' => '\getSubscriberSourceFilterResponse',
       'findMessagesByChannel' => '\findMessagesByChannel',
       'findMessagesByChannelResponse' => '\findMessagesByChannelResponse',
-      'findArchivedFiltersBySubscriberSource' => '\findArchivedFiltersBySubscriberSource',
-      'findArchivedFiltersBySubscriberSourceResponse' => '\findArchivedFiltersBySubscriberSourceResponse',
-      'getAttachmentByCampaignId' => '\getAttachmentByCampaignId',
-      'getAttachmentByCampaignIdResponse' => '\getAttachmentByCampaignIdResponse',
       'getMessageModelById' => '\getMessageModelById',
       'getMessageModelByIdResponse' => '\getMessageModelByIdResponse',
-      'getSubscriber' => '\getSubscriber',
-      'getSubscriberResponse' => '\getSubscriberResponse',
+      'findArchivedFiltersBySubscriberSource' => '\findArchivedFiltersBySubscriberSource',
+      'findArchivedFiltersBySubscriberSourceResponse' => '\findArchivedFiltersBySubscriberSourceResponse',
       'sendSplitTest' => '\sendSplitTest',
       'sendSplitTestResponse' => '\sendSplitTestResponse',
       'borrowToken' => '\borrowToken',
       'borrowTokenResponse' => '\borrowTokenResponse',
-      'modifySubscriberSubscriptionStatus' => '\modifySubscriberSubscriptionStatus',
-      'modifySubscriberSubscriptionStatusResponse' => '\modifySubscriberSubscriptionStatusResponse',
-      'findPeriodicCampaigns' => '\findPeriodicCampaigns',
-      'findPeriodicCampaignsResponse' => '\findPeriodicCampaignsResponse',
       'sendImmediateByCampaignIdToSubscriber' => '\sendImmediateByCampaignIdToSubscriber',
       'sendImmediateByCampaignIdToSubscriberResponse' => '\sendImmediateByCampaignIdToSubscriberResponse',
-      'findNotesByCampaign' => '\findNotesByCampaign',
-      'findNotesByCampaignResponse' => '\findNotesByCampaignResponse',
-      'modifySubscriberSubscriptionStatusByMailqId' => '\modifySubscriberSubscriptionStatusByMailqId',
-      'modifySubscriberSubscriptionStatusByMailqIdResponse' => '\modifySubscriberSubscriptionStatusByMailqIdResponse',
-      'sendImmediateByCampaignAliasToSubscriberId' => '\sendImmediateByCampaignAliasToSubscriberId',
-      'sendImmediateByCampaignAliasToSubscriberIdResponse' => '\sendImmediateByCampaignAliasToSubscriberIdResponse',
       'unmarshalPushTemplateEnvelope' => '\unmarshalPushTemplateEnvelope',
       'unmarshalPushTemplateEnvelopeResponse' => '\unmarshalPushTemplateEnvelopeResponse',
-      'isSubscriberSourceLocked' => '\isSubscriberSourceLocked',
-      'isSubscriberSourceLockedResponse' => '\isSubscriberSourceLockedResponse',
       'startSubscriberDataExchange' => '\startSubscriberDataExchange',
       'startSubscriberDataExchangeResponse' => '\startSubscriberDataExchangeResponse',
-      'getDeliveryStatus' => '\getDeliveryStatus',
-      'getDeliveryStatusResponse' => '\getDeliveryStatusResponse',
-      'deliveryInformation' => '\deliveryInformation',
       'sendSplitTestWinner' => '\sendSplitTestWinner',
       'sendSplitTestWinnerResponse' => '\sendSplitTestWinnerResponse',
-      'getCampaignDeliveryStatus' => '\getCampaignDeliveryStatus',
-      'getCampaignDeliveryStatusResponse' => '\getCampaignDeliveryStatusResponse',
-      'removeSubscriber' => '\removeSubscriber',
-      'removeSubscriberResponse' => '\removeSubscriberResponse',
-      'addAttachment' => '\addAttachment',
-      'addAttachmentResponse' => '\addAttachmentResponse',
       'sendImmediateByCampaignIdToSubscriberId' => '\sendImmediateByCampaignIdToSubscriberId',
       'sendImmediateByCampaignIdToSubscriberIdResponse' => '\sendImmediateByCampaignIdToSubscriberIdResponse',
-      'findFiltersBySubscriberSource' => '\findFiltersBySubscriberSource',
-      'findFiltersBySubscriberSourceResponse' => '\findFiltersBySubscriberSourceResponse',
       'setCampaignRecurrency' => '\setCampaignRecurrency',
       'setCampaignRecurrencyResponse' => '\setCampaignRecurrencyResponse',
+      'findFiltersBySubscriberSource' => '\findFiltersBySubscriberSource',
+      'findFiltersBySubscriberSourceResponse' => '\findFiltersBySubscriberSourceResponse',
       'countSubscribersIncludedInFilter' => '\countSubscribersIncludedInFilter',
       'countSubscribersIncludedInFilterResponse' => '\countSubscribersIncludedInFilterResponse',
       'sendImmediateMessageSidCidCA' => '\sendImmediateMessageSidCidCA',
       'sendImmediateMessageSidCidCAResponse' => '\sendImmediateMessageSidCidCAResponse',
-      'findSubscriberSources' => '\findSubscriberSources',
-      'findSubscriberSourcesResponse' => '\findSubscriberSourcesResponse',
-      'addSubscriberSource' => '\addSubscriberSource',
-      'addSubscriberSourceResponse' => '\addSubscriberSourceResponse',
-      'findMessageModelsBySubscriberSource' => '\findMessageModelsBySubscriberSource',
-      'findMessageModelsBySubscriberSourceResponse' => '\findMessageModelsBySubscriberSourceResponse',
-      'sendImmediateMessageSdataCAl' => '\sendImmediateMessageSdataCAl',
-      'sendImmediateMessageSdataCAlResponse' => '\sendImmediateMessageSdataCAlResponse',
       'findCampaignsByModel' => '\findCampaignsByModel',
       'findCampaignsByModelResponse' => '\findCampaignsByModelResponse',
-      'findMessages' => '\findMessages',
-      'findMessagesResponse' => '\findMessagesResponse',
-      'sendImmediateMessageSDataCData' => '\sendImmediateMessageSDataCData',
-      'sendImmediateMessageSDataCDataResponse' => '\sendImmediateMessageSDataCDataResponse',
+      'sendImmediateMessageSdataCAl' => '\sendImmediateMessageSdataCAl',
+      'sendImmediateMessageSdataCAlResponse' => '\sendImmediateMessageSdataCAlResponse',
       'getSubscriberDataExchangeStatus' => '\getSubscriberDataExchangeStatus',
       'getSubscriberDataExchangeStatusResponse' => '\getSubscriberDataExchangeStatusResponse',
-      'sendImmediateMessageSIdCDataCA' => '\sendImmediateMessageSIdCDataCA',
-      'sendImmediateMessageSIdCDataCAResponse' => '\sendImmediateMessageSIdCDataCAResponse',
       'sendImmediateMessage' => '\sendImmediateMessage',
       'sendImmediateMessageResponse' => '\sendImmediateMessageResponse',
-      'sendImmediateMessageSIdCData' => '\sendImmediateMessageSIdCData',
-      'sendImmediateMessageSIdCDataResponse' => '\sendImmediateMessageSIdCDataResponse',
       'findMessagesInfoByCampaignName' => '\findMessagesInfoByCampaignName',
       'findMessagesInfoByCampaignNameResponse' => '\findMessagesInfoByCampaignNameResponse',
       'findCampaignsBySubscriberSourceFilter' => '\findCampaignsBySubscriberSourceFilter',
       'findCampaignsBySubscriberSourceFilterResponse' => '\findCampaignsBySubscriberSourceFilterResponse',
       'sendImmediateMessageSidCAl' => '\sendImmediateMessageSidCAl',
       'sendImmediateMessageSidCAlResponse' => '\sendImmediateMessageSidCAlResponse',
-      'createSplitTest' => '\createSplitTest',
-      'createSplitTestResponse' => '\createSplitTestResponse',
       'sendImmediateByCampaignToSubscriber' => '\sendImmediateByCampaignToSubscriber',
       'sendImmediateByCampaignToSubscriberResponse' => '\sendImmediateByCampaignToSubscriberResponse',
-      'findCampaignsByStatus' => '\findCampaignsByStatus',
-      'findCampaignsByStatusResponse' => '\findCampaignsByStatusResponse',
       'getSubscriberSource' => '\getSubscriberSource',
       'getSubscriberSourceResponse' => '\getSubscriberSourceResponse',
       'sendImmediateByCampaignToSubscriberId' => '\sendImmediateByCampaignToSubscriberId',
       'sendImmediateByCampaignToSubscriberIdResponse' => '\sendImmediateByCampaignToSubscriberIdResponse',
-      'findSubscribers' => '\findSubscribers',
-      'findSubscribersResponse' => '\findSubscribersResponse',
       'findTriggerableCampaigns' => '\findTriggerableCampaigns',
       'findTriggerableCampaignsResponse' => '\findTriggerableCampaignsResponse',
       'findMessageByCampaignId' => '\findMessageByCampaignId',
       'findMessageByCampaignIdResponse' => '\findMessageByCampaignIdResponse',
       'findCampaignsByNote' => '\findCampaignsByNote',
       'findCampaignsByNoteResponse' => '\findCampaignsByNoteResponse',
-      'invalidateToken' => '\invalidateToken',
-      'invalidateTokenResponse' => '\invalidateTokenResponse',
       'publishOnWeb' => '\publishOnWeb',
       'publishOnWebResponse' => '\publishOnWebResponse',
-      'reuseSubscriberSourceFilter' => '\reuseSubscriberSourceFilter',
-      'reuseSubscriberSourceFilterResponse' => '\reuseSubscriberSourceFilterResponse',
+      'invalidateToken' => '\invalidateToken',
+      'invalidateTokenResponse' => '\invalidateTokenResponse',
       'findMessagesByCampaignName' => '\findMessagesByCampaignName',
       'findMessagesByCampaignNameResponse' => '\findMessagesByCampaignNameResponse',
       'createCampaign' => '\createCampaign',
@@ -529,12 +538,8 @@ class ClabService extends \SoapClient
       'getCampaignFeedbackResponse' => '\getCampaignFeedbackResponse',
       'requestCampaignFeedbackReport' => '\requestCampaignFeedbackReport',
       'requestCampaignFeedbackReportResponse' => '\requestCampaignFeedbackReportResponse',
-      'createMessageModel' => '\createMessageModel',
-      'createMessageModelResponse' => '\createMessageModelResponse',
       'cancelCampaign' => '\cancelCampaign',
-      'cancelCampaignResponse' => '\cancelCampaignResponse',
-      'findSubscribersIncludedInFilter' => '\findSubscribersIncludedInFilter',
-      'findSubscribersIncludedInFilterResponse' => '\findSubscribersIncludedInFilterResponse');
+      'cancelCampaignResponse' => '\cancelCampaignResponse');
 
     /**
      * @param array $options A array of config values
@@ -1264,6 +1269,16 @@ class ClabService extends \SoapClient
     public function unmarshalPushTemplateEnvelope(unmarshalPushTemplateEnvelope $parameters)
     {
         return $this->__soapCall('unmarshalPushTemplateEnvelope', array($parameters));
+    }
+
+    /**
+     * @param scheduleCampaignFeedbackReport $parameters
+     * @access public
+     * @return scheduleCampaignFeedbackReportResponse
+     */
+    public function scheduleCampaignFeedbackReport(scheduleCampaignFeedbackReport $parameters)
+    {
+        return $this->__soapCall('scheduleCampaignFeedbackReport', array($parameters));
     }
 
     /**

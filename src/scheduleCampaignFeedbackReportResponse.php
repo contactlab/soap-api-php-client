@@ -16,36 +16,12 @@
  * limitations under the License.
  */
 
-class sendImmediateMessageSidCAl
+class scheduleCampaignFeedbackReportResponse
 {
 
     /**
-     * @var string $apiKey
+     * @var boolean $return
      * @access public
      */
-    public $apiKey = null;
-
-    /**
-     * @var string $userKey
-     * @access public
-     */
-    public $userKey = null;
-
-    /**
-     * @var string $campaignAlias
-     * @access public
-     */
-    public $campaignAlias = null;
-
-    /**
-     * @var int $sourceIdentifier
-     * @access public
-     */
-    public $sourceIdentifier = null;
-
-    /**
-     * @var int $subscriberIdentifier
-     * @access public
-     */
-    public $subscriberIdentifier = null;
+    public $return = null;
 }

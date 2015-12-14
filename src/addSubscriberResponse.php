@@ -18,6 +18,7 @@
 
 class addSubscriberResponse
 {
+
     /**
      * @var Subscriber $return
      * @access public

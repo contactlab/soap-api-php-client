@@ -18,6 +18,7 @@
 
 class findMessages
 {
+
     /**
      * @var AuthToken $token
      * @access public

@@ -18,6 +18,7 @@
 
 class findArchivedFiltersBySubscriberSource
 {
+
     /**
      * @var AuthToken $token
      * @access public

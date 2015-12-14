@@ -18,6 +18,7 @@
 
 class getCryptoKeyResponse
 {
+
     /**
      * @var string $return
      * @access public

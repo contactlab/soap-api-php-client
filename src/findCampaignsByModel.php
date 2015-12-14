@@ -18,6 +18,7 @@
 
 class findCampaignsByModel
 {
+
     /**
      * @var AuthToken $token
      * @access public

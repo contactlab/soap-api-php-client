@@ -18,6 +18,7 @@
 
 class sendImmediateMessageSidCAlCAResponse
 {
+
     /**
      * @var int $return
      * @access public

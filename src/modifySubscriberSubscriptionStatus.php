@@ -18,6 +18,7 @@
 
 class modifySubscriberSubscriptionStatus
 {
+
     /**
      * @var AuthToken $token
      * @access public

@@ -18,6 +18,7 @@
 
 class triggerDeliveryByAliasResponse
 {
+
     /**
      * @var int $return
      * @access public

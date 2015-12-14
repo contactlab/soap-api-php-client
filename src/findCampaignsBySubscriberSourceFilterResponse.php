@@ -18,6 +18,7 @@
 
 class findCampaignsBySubscriberSourceFilterResponse
 {
+
     /**
      * @var Campaigns $return
      * @access public

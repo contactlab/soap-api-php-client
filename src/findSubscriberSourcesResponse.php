@@ -18,6 +18,7 @@
 
 class findSubscriberSourcesResponse
 {
+
     /**
      * @var SubscriberSources $return
      * @access public

@@ -18,6 +18,7 @@
 
 class sendImmediateMessageSDataCDataResponse
 {
+
     /**
      * @var int $return
      * @access public

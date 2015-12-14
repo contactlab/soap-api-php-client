@@ -18,6 +18,7 @@
 
 class sendImmediateByCampaignAliasToSubscriberResponse
 {
+
     /**
      * @var string $return
      * @access public

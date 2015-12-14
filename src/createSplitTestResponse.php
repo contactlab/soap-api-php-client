@@ -18,6 +18,7 @@
 
 class createSplitTestResponse
 {
+
     /**
      * @var SplitTestCampaign $return
      * @access public

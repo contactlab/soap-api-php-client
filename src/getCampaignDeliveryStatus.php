@@ -18,6 +18,7 @@
 
 class getCampaignDeliveryStatus
 {
+
     /**
      * @var AuthToken $token
      * @access public

@@ -18,6 +18,7 @@
 
 class findCampaignsByStatus
 {
+
     /**
      * @var AuthToken $token
      * @access public

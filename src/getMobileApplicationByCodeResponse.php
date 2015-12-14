@@ -18,6 +18,7 @@
 
 class getMobileApplicationByCodeResponse
 {
+
     /**
      * @var mobileApplication $return
      * @access public

@@ -18,6 +18,7 @@
 
 class invalidateToken
 {
+
     /**
      * @var AuthToken $token
      * @access public

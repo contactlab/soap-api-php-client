@@ -18,6 +18,7 @@
 
 class triggerDeliveryByIdResponse
 {
+
     /**
      * @var int $return
      * @access public

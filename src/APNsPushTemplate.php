@@ -20,6 +20,7 @@ include_once('pushTemplate.php');
 
 class APNsPushTemplate extends pushTemplate
 {
+
     /**
      * @var variants $variants
      * @access public

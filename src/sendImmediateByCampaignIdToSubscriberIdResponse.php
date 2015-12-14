@@ -18,6 +18,7 @@
 
 class sendImmediateByCampaignIdToSubscriberIdResponse
 {
+
     /**
      * @var string $return
      * @access public

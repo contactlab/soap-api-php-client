@@ -18,6 +18,7 @@
 
 class countSubscribersIncludedInFilterResponse
 {
+
     /**
      * @var int $return
      * @access public

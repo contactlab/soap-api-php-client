@@ -18,6 +18,7 @@
 
 class findMessageModelsBySubscriberSource
 {
+
     /**
      * @var AuthToken $token
      * @access public

@@ -18,6 +18,7 @@
 
 class customData
 {
+
     /**
      * @var entry $entry
      * @access public

@@ -18,6 +18,7 @@
 
 class entry
 {
+
     /**
      * @var GCMsPushStandardFieldEnum $key
      * @access public

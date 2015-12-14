@@ -18,6 +18,7 @@
 
 class getMessageModelById
 {
+
     /**
      * @var AuthToken $token
      * @access public

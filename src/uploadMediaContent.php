@@ -18,6 +18,7 @@
 
 class uploadMediaContent
 {
+
     /**
      * @var AuthToken $token
      * @access public

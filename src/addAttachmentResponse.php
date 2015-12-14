@@ -18,6 +18,7 @@
 
 class addAttachmentResponse
 {
+
     /**
      * @var Attachment $return
      * @access public

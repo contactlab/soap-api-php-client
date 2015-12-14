@@ -18,6 +18,7 @@
 
 class getDeliveryStatusResponse
 {
+
     /**
      * @var deliveryInformation[] $return
      * @access public

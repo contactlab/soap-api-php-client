@@ -20,6 +20,7 @@ include_once('MobileApplicationCertificate.php');
 
 class APNsMobileApplicationCertificate extends MobileApplicationCertificate
 {
+
     /**
      * @var components $components
      * @access public

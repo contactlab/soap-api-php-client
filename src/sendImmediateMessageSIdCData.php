@@ -18,6 +18,7 @@
 
 class sendImmediateMessageSIdCData
 {
+
     /**
      * @var string $apiKey
      * @access public

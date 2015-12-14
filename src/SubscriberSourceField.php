@@ -18,6 +18,7 @@
 
 class SubscriberSourceField
 {
+
     /**
      * @var string $name
      * @access public

@@ -18,6 +18,7 @@
 
 class findPeriodicCampaigns
 {
+
     /**
      * @var AuthToken $token
      * @access public

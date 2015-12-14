@@ -18,6 +18,7 @@
 
 class addCampaignNote
 {
+
     /**
      * @var AuthToken $token
      * @access public

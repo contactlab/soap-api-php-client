@@ -18,6 +18,7 @@
 
 class updateSubscriber
 {
+
     /**
      * @var AuthToken $token
      * @access public

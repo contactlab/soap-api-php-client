@@ -18,6 +18,7 @@
 
 class getXMLDeliveryTransitionsResponse
 {
+
     /**
      * @var xmlDeliveryTransitionInfo[] $return
      * @access public

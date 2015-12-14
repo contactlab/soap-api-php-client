@@ -18,6 +18,7 @@
 
 class components
 {
+
     /**
      * @var entry $entry
      * @access public

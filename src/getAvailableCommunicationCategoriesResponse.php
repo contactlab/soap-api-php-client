@@ -18,6 +18,7 @@
 
 class getAvailableCommunicationCategoriesResponse
 {
+
     /**
      * @var CommunicationCategory[] $return
      * @access public

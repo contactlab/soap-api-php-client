@@ -20,6 +20,7 @@ include_once('Message.php');
 
 class EmailMessage extends Message
 {
+
     /**
      * @var string $subject
      * @access public

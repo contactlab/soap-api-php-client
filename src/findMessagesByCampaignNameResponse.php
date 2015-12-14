@@ -18,6 +18,7 @@
 
 class findMessagesByCampaignNameResponse
 {
+
     /**
      * @var MessageModels $return
      * @access public

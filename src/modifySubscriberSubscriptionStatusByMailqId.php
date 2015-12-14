@@ -18,6 +18,7 @@
 
 class modifySubscriberSubscriptionStatusByMailqId
 {
+
     /**
      * @var AuthToken $token
      * @access public

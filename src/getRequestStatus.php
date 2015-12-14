@@ -18,6 +18,7 @@
 
 class getRequestStatus
 {
+
     /**
      * @var AuthToken $token
      * @access public
