@@ -16,48 +16,30 @@
  * limitations under the License.
  */
 
-class SubscriberSourceField
+class addSelectionSubscribers
 {
 
     /**
-     * @var string $name
+     * @var AuthToken $token
      * @access public
      */
-    public $name = null;
+    public $token = null;
 
     /**
-     * @var field $type
+     * @var int $selectionId
      * @access public
      */
-    public $type = null;
+    public $selectionId = null;
 
     /**
-     * @var boolean $emailField
+     * @var boolean $isTest
      * @access public
      */
-    public $emailField = null;
+    public $isTest = null;
 
     /**
-     * @var boolean $phoneField
+     * @var int[] $recipientIds
      * @access public
      */
-    public $phoneField = null;
-
-    /**
-     * @var boolean $faxField
-     * @access public
-     */
-    public $faxField = null;
-
-    /**
-     * @var boolean $pushField
-     * @access public
-     */
-    public $pushField = null;
-
-    /**
-     * @var string $fieldType
-     * @access public
-     */
-    public $fieldType = null;
+    public $recipientIds = null;
 }

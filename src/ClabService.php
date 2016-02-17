@@ -83,6 +83,10 @@ include_once('pushTemplate.php');
 include_once('customData.php');
 include_once('trackableLink.php');
 include_once('gcMsPushTemplate.php');
+include_once('getSelectionTestFilterId.php');
+include_once('getSelectionTestFilterIdResponse.php');
+include_once('rollbackSelection.php');
+include_once('rollbackSelectionResponse.php');
 include_once('addSubscriberSourceFilter.php');
 include_once('addSubscriberSourceFilterResponse.php');
 include_once('sendImmediateByCampaignAliasToSubscriber.php');
@@ -115,12 +119,16 @@ include_once('sendImmediateMessageSDataCDataCA.php');
 include_once('sendImmediateMessageSDataCDataCAResponse.php');
 include_once('findMessagesInfoByChannel.php');
 include_once('findMessagesInfoByChannelResponse.php');
+include_once('renameSubscriberSourceFilter.php');
+include_once('renameSubscriberSourceFilterResponse.php');
 include_once('sendImmediateMessageSDataCIdCA.php');
 include_once('sendImmediateMessageSDataCIdCAResponse.php');
 include_once('getAttachmentByCampaignId.php');
 include_once('getAttachmentByCampaignIdResponse.php');
 include_once('getSubscriber.php');
 include_once('getSubscriberResponse.php');
+include_once('getSelectionStatus.php');
+include_once('getSelectionStatusResponse.php');
 include_once('findPeriodicCampaigns.php');
 include_once('findPeriodicCampaignsResponse.php');
 include_once('modifySubscriberSubscriptionStatus.php');
@@ -133,13 +141,13 @@ include_once('sendImmediateByCampaignAliasToSubscriberId.php');
 include_once('sendImmediateByCampaignAliasToSubscriberIdResponse.php');
 include_once('isSubscriberSourceLocked.php');
 include_once('isSubscriberSourceLockedResponse.php');
+include_once('getDeliveryStatus.php');
+include_once('getDeliveryStatusResponse.php');
+include_once('deliveryInformation.php');
 include_once('removeSubscriber.php');
 include_once('removeSubscriberResponse.php');
 include_once('getCampaignDeliveryStatus.php');
 include_once('getCampaignDeliveryStatusResponse.php');
-include_once('getDeliveryStatus.php');
-include_once('getDeliveryStatusResponse.php');
-include_once('deliveryInformation.php');
 include_once('addAttachment.php');
 include_once('addAttachmentResponse.php');
 include_once('findSubscriberSources.php');
@@ -158,6 +166,8 @@ include_once('sendImmediateMessageSIdCData.php');
 include_once('sendImmediateMessageSIdCDataResponse.php');
 include_once('createSplitTest.php');
 include_once('createSplitTestResponse.php');
+include_once('addSelectionSubscribers.php');
+include_once('addSelectionSubscribersResponse.php');
 include_once('findCampaignsByStatus.php');
 include_once('findCampaignsByStatusResponse.php');
 include_once('findSubscribers.php');
@@ -181,10 +191,12 @@ include_once('getXMLDeliveriesResponse.php');
 include_once('xmlDeliveryInfo.php');
 include_once('scheduleCampaignFeedbackReport.php');
 include_once('scheduleCampaignFeedbackReportResponse.php');
-include_once('sendCampaign.php');
-include_once('sendCampaignResponse.php');
+include_once('commitSelection.php');
+include_once('commitSelectionResponse.php');
 include_once('getEmptyPushTemplate.php');
 include_once('getEmptyPushTemplateResponse.php');
+include_once('sendCampaign.php');
+include_once('sendCampaignResponse.php');
 include_once('findCampaignsSentBetween.php');
 include_once('findCampaignsSentBetweenResponse.php');
 include_once('findCampaignsByNameOrSubject.php');
@@ -217,6 +229,8 @@ include_once('sendSplitTest.php');
 include_once('sendSplitTestResponse.php');
 include_once('borrowToken.php');
 include_once('borrowTokenResponse.php');
+include_once('startSelection.php');
+include_once('startSelectionResponse.php');
 include_once('sendImmediateByCampaignIdToSubscriber.php');
 include_once('sendImmediateByCampaignIdToSubscriberResponse.php');
 include_once('unmarshalPushTemplateEnvelope.php');
@@ -235,6 +249,8 @@ include_once('countSubscribersIncludedInFilter.php');
 include_once('countSubscribersIncludedInFilterResponse.php');
 include_once('sendImmediateMessageSidCidCA.php');
 include_once('sendImmediateMessageSidCidCAResponse.php');
+include_once('getSelectionRealFilterId.php');
+include_once('getSelectionRealFilterIdResponse.php');
 include_once('findCampaignsByModel.php');
 include_once('findCampaignsByModelResponse.php');
 include_once('sendImmediateMessageSdataCAl.php');
@@ -243,6 +259,8 @@ include_once('getSubscriberDataExchangeStatus.php');
 include_once('getSubscriberDataExchangeStatusResponse.php');
 include_once('sendImmediateMessage.php');
 include_once('sendImmediateMessageResponse.php');
+include_once('createSelection.php');
+include_once('createSelectionResponse.php');
 include_once('findMessagesInfoByCampaignName.php');
 include_once('findMessagesInfoByCampaignNameResponse.php');
 include_once('findCampaignsBySubscriberSourceFilter.php');
@@ -344,6 +362,10 @@ class ClabService extends \SoapClient
       'customData' => '\customData',
       'trackableLink' => '\trackableLink',
       'gcMsPushTemplate' => '\gcMsPushTemplate',
+      'getSelectionTestFilterId' => '\getSelectionTestFilterId',
+      'getSelectionTestFilterIdResponse' => '\getSelectionTestFilterIdResponse',
+      'rollbackSelection' => '\rollbackSelection',
+      'rollbackSelectionResponse' => '\rollbackSelectionResponse',
       'addSubscriberSourceFilter' => '\addSubscriberSourceFilter',
       'addSubscriberSourceFilterResponse' => '\addSubscriberSourceFilterResponse',
       'sendImmediateByCampaignAliasToSubscriber' => '\sendImmediateByCampaignAliasToSubscriber',
@@ -376,12 +398,16 @@ class ClabService extends \SoapClient
       'sendImmediateMessageSDataCDataCAResponse' => '\sendImmediateMessageSDataCDataCAResponse',
       'findMessagesInfoByChannel' => '\findMessagesInfoByChannel',
       'findMessagesInfoByChannelResponse' => '\findMessagesInfoByChannelResponse',
+      'renameSubscriberSourceFilter' => '\renameSubscriberSourceFilter',
+      'renameSubscriberSourceFilterResponse' => '\renameSubscriberSourceFilterResponse',
       'sendImmediateMessageSDataCIdCA' => '\sendImmediateMessageSDataCIdCA',
       'sendImmediateMessageSDataCIdCAResponse' => '\sendImmediateMessageSDataCIdCAResponse',
       'getAttachmentByCampaignId' => '\getAttachmentByCampaignId',
       'getAttachmentByCampaignIdResponse' => '\getAttachmentByCampaignIdResponse',
       'getSubscriber' => '\getSubscriber',
       'getSubscriberResponse' => '\getSubscriberResponse',
+      'getSelectionStatus' => '\getSelectionStatus',
+      'getSelectionStatusResponse' => '\getSelectionStatusResponse',
       'findPeriodicCampaigns' => '\findPeriodicCampaigns',
       'findPeriodicCampaignsResponse' => '\findPeriodicCampaignsResponse',
       'modifySubscriberSubscriptionStatus' => '\modifySubscriberSubscriptionStatus',
@@ -394,13 +420,13 @@ class ClabService extends \SoapClient
       'sendImmediateByCampaignAliasToSubscriberIdResponse' => '\sendImmediateByCampaignAliasToSubscriberIdResponse',
       'isSubscriberSourceLocked' => '\isSubscriberSourceLocked',
       'isSubscriberSourceLockedResponse' => '\isSubscriberSourceLockedResponse',
+      'getDeliveryStatus' => '\getDeliveryStatus',
+      'getDeliveryStatusResponse' => '\getDeliveryStatusResponse',
+      'deliveryInformation' => '\deliveryInformation',
       'removeSubscriber' => '\removeSubscriber',
       'removeSubscriberResponse' => '\removeSubscriberResponse',
       'getCampaignDeliveryStatus' => '\getCampaignDeliveryStatus',
       'getCampaignDeliveryStatusResponse' => '\getCampaignDeliveryStatusResponse',
-      'getDeliveryStatus' => '\getDeliveryStatus',
-      'getDeliveryStatusResponse' => '\getDeliveryStatusResponse',
-      'deliveryInformation' => '\deliveryInformation',
       'addAttachment' => '\addAttachment',
       'addAttachmentResponse' => '\addAttachmentResponse',
       'findSubscriberSources' => '\findSubscriberSources',
@@ -419,6 +445,8 @@ class ClabService extends \SoapClient
       'sendImmediateMessageSIdCDataResponse' => '\sendImmediateMessageSIdCDataResponse',
       'createSplitTest' => '\createSplitTest',
       'createSplitTestResponse' => '\createSplitTestResponse',
+      'addSelectionSubscribers' => '\addSelectionSubscribers',
+      'addSelectionSubscribersResponse' => '\addSelectionSubscribersResponse',
       'findCampaignsByStatus' => '\findCampaignsByStatus',
       'findCampaignsByStatusResponse' => '\findCampaignsByStatusResponse',
       'findSubscribers' => '\findSubscribers',
@@ -442,10 +470,12 @@ class ClabService extends \SoapClient
       'xmlDeliveryInfo' => '\xmlDeliveryInfo',
       'scheduleCampaignFeedbackReport' => '\scheduleCampaignFeedbackReport',
       'scheduleCampaignFeedbackReportResponse' => '\scheduleCampaignFeedbackReportResponse',
-      'sendCampaign' => '\sendCampaign',
-      'sendCampaignResponse' => '\sendCampaignResponse',
+      'commitSelection' => '\commitSelection',
+      'commitSelectionResponse' => '\commitSelectionResponse',
       'getEmptyPushTemplate' => '\getEmptyPushTemplate',
       'getEmptyPushTemplateResponse' => '\getEmptyPushTemplateResponse',
+      'sendCampaign' => '\sendCampaign',
+      'sendCampaignResponse' => '\sendCampaignResponse',
       'findCampaignsSentBetween' => '\findCampaignsSentBetween',
       'findCampaignsSentBetweenResponse' => '\findCampaignsSentBetweenResponse',
       'findCampaignsByNameOrSubject' => '\findCampaignsByNameOrSubject',
@@ -478,6 +508,8 @@ class ClabService extends \SoapClient
       'sendSplitTestResponse' => '\sendSplitTestResponse',
       'borrowToken' => '\borrowToken',
       'borrowTokenResponse' => '\borrowTokenResponse',
+      'startSelection' => '\startSelection',
+      'startSelectionResponse' => '\startSelectionResponse',
       'sendImmediateByCampaignIdToSubscriber' => '\sendImmediateByCampaignIdToSubscriber',
       'sendImmediateByCampaignIdToSubscriberResponse' => '\sendImmediateByCampaignIdToSubscriberResponse',
       'unmarshalPushTemplateEnvelope' => '\unmarshalPushTemplateEnvelope',
@@ -496,6 +528,8 @@ class ClabService extends \SoapClient
       'countSubscribersIncludedInFilterResponse' => '\countSubscribersIncludedInFilterResponse',
       'sendImmediateMessageSidCidCA' => '\sendImmediateMessageSidCidCA',
       'sendImmediateMessageSidCidCAResponse' => '\sendImmediateMessageSidCidCAResponse',
+      'getSelectionRealFilterId' => '\getSelectionRealFilterId',
+      'getSelectionRealFilterIdResponse' => '\getSelectionRealFilterIdResponse',
       'findCampaignsByModel' => '\findCampaignsByModel',
       'findCampaignsByModelResponse' => '\findCampaignsByModelResponse',
       'sendImmediateMessageSdataCAl' => '\sendImmediateMessageSdataCAl',
@@ -504,6 +538,8 @@ class ClabService extends \SoapClient
       'getSubscriberDataExchangeStatusResponse' => '\getSubscriberDataExchangeStatusResponse',
       'sendImmediateMessage' => '\sendImmediateMessage',
       'sendImmediateMessageResponse' => '\sendImmediateMessageResponse',
+      'createSelection' => '\createSelection',
+      'createSelectionResponse' => '\createSelectionResponse',
       'findMessagesInfoByCampaignName' => '\findMessagesInfoByCampaignName',
       'findMessagesInfoByCampaignNameResponse' => '\findMessagesInfoByCampaignNameResponse',
       'findCampaignsBySubscriberSourceFilter' => '\findCampaignsBySubscriberSourceFilter',
@@ -749,6 +785,16 @@ class ClabService extends \SoapClient
     public function findFiltersBySubscriberSource(findFiltersBySubscriberSource $parameters)
     {
         return $this->__soapCall('findFiltersBySubscriberSource', array($parameters));
+    }
+
+    /**
+     * @param renameSubscriberSourceFilter $parameters
+     * @access public
+     * @return renameSubscriberSourceFilterResponse
+     */
+    public function renameSubscriberSourceFilter(renameSubscriberSourceFilter $parameters)
+    {
+        return $this->__soapCall('renameSubscriberSourceFilter', array($parameters));
     }
 
     /**
@@ -1242,6 +1288,36 @@ class ClabService extends \SoapClient
     }
 
     /**
+     * @param createSelection $parameters
+     * @access public
+     * @return createSelectionResponse
+     */
+    public function createSelection(createSelection $parameters)
+    {
+        return $this->__soapCall('createSelection', array($parameters));
+    }
+
+    /**
+     * @param startSelection $parameters
+     * @access public
+     * @return startSelectionResponse
+     */
+    public function startSelection(startSelection $parameters)
+    {
+        return $this->__soapCall('startSelection', array($parameters));
+    }
+
+    /**
+     * @param addSelectionSubscribers $parameters
+     * @access public
+     * @return addSelectionSubscribersResponse
+     */
+    public function addSelectionSubscribers(addSelectionSubscribers $parameters)
+    {
+        return $this->__soapCall('addSelectionSubscribers', array($parameters));
+    }
+
+    /**
      * @param sendSplitTestWinner $parameters
      * @access public
      * @return sendSplitTestWinnerResponse
@@ -1529,5 +1605,55 @@ class ClabService extends \SoapClient
     public function getEmptyPushTemplate(getEmptyPushTemplate $parameters)
     {
         return $this->__soapCall('getEmptyPushTemplate', array($parameters));
+    }
+
+    /**
+     * @param commitSelection $parameters
+     * @access public
+     * @return commitSelectionResponse
+     */
+    public function commitSelection(commitSelection $parameters)
+    {
+        return $this->__soapCall('commitSelection', array($parameters));
+    }
+
+    /**
+     * @param rollbackSelection $parameters
+     * @access public
+     * @return rollbackSelectionResponse
+     */
+    public function rollbackSelection(rollbackSelection $parameters)
+    {
+        return $this->__soapCall('rollbackSelection', array($parameters));
+    }
+
+    /**
+     * @param getSelectionStatus $parameters
+     * @access public
+     * @return getSelectionStatusResponse
+     */
+    public function getSelectionStatus(getSelectionStatus $parameters)
+    {
+        return $this->__soapCall('getSelectionStatus', array($parameters));
+    }
+
+    /**
+     * @param getSelectionRealFilterId $parameters
+     * @access public
+     * @return getSelectionRealFilterIdResponse
+     */
+    public function getSelectionRealFilterId(getSelectionRealFilterId $parameters)
+    {
+        return $this->__soapCall('getSelectionRealFilterId', array($parameters));
+    }
+
+    /**
+     * @param getSelectionTestFilterId $parameters
+     * @access public
+     * @return getSelectionTestFilterIdResponse
+     */
+    public function getSelectionTestFilterId(getSelectionTestFilterId $parameters)
+    {
+        return $this->__soapCall('getSelectionTestFilterId', array($parameters));
     }
 }
