@@ -28,6 +28,8 @@ include_once('PushLink.php');
 include_once('APNsPushTemplate.php');
 include_once('variants.php');
 include_once('entry.php');
+include_once('PushNotificationMessage.php');
+include_once('PushEndPointEntry.php');
 include_once('SubscriberSourceFilter.php');
 include_once('Subscriber.php');
 include_once('SubscriberAttribute.php');
@@ -102,11 +104,11 @@ include_once('addCampaignNote.php');
 include_once('addCampaignNoteResponse.php');
 include_once('sendImmediateMessageSidCAlCA.php');
 include_once('sendImmediateMessageSidCAlCAResponse.php');
-include_once('updateSubscriber.php');
-include_once('updateSubscriberResponse.php');
 include_once('getMobileApplicationByCode.php');
 include_once('getMobileApplicationByCodeResponse.php');
 include_once('mobileApplication.php');
+include_once('updateSubscriber.php');
+include_once('updateSubscriberResponse.php');
 include_once('getCryptoKey.php');
 include_once('getCryptoKeyResponse.php');
 include_once('findMessageModels.php');
@@ -324,6 +326,8 @@ class ClabService extends \SoapClient
       'APNsPushTemplate' => '\APNsPushTemplate',
       'variants' => '\variants',
       'entry' => '\entry',
+      'PushNotificationMessage' => '\PushNotificationMessage',
+      'PushEndPointEntry' => '\PushEndPointEntry',
       'SubscriberSourceFilter' => '\SubscriberSourceFilter',
       'Subscriber' => '\Subscriber',
       'SubscriberAttribute' => '\SubscriberAttribute',
@@ -381,11 +385,11 @@ class ClabService extends \SoapClient
       'addCampaignNoteResponse' => '\addCampaignNoteResponse',
       'sendImmediateMessageSidCAlCA' => '\sendImmediateMessageSidCAlCA',
       'sendImmediateMessageSidCAlCAResponse' => '\sendImmediateMessageSidCAlCAResponse',
-      'updateSubscriber' => '\updateSubscriber',
-      'updateSubscriberResponse' => '\updateSubscriberResponse',
       'getMobileApplicationByCode' => '\getMobileApplicationByCode',
       'getMobileApplicationByCodeResponse' => '\getMobileApplicationByCodeResponse',
       'mobileApplication' => '\mobileApplication',
+      'updateSubscriber' => '\updateSubscriber',
+      'updateSubscriberResponse' => '\updateSubscriberResponse',
       'getCryptoKey' => '\getCryptoKey',
       'getCryptoKeyResponse' => '\getCryptoKeyResponse',
       'findMessageModels' => '\findMessageModels',
@@ -745,16 +749,6 @@ class ClabService extends \SoapClient
     public function findMessagesInfoByChannel(findMessagesInfoByChannel $parameters)
     {
         return $this->__soapCall('findMessagesInfoByChannel', array($parameters));
-    }
-
-    /**
-     * @param getMobileApplicationByCode $parameters
-     * @access public
-     * @return getMobileApplicationByCodeResponse
-     */
-    public function getMobileApplicationByCode(getMobileApplicationByCode $parameters)
-    {
-        return $this->__soapCall('getMobileApplicationByCode', array($parameters));
     }
 
     /**
@@ -1318,16 +1312,6 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param sendSplitTestWinner $parameters
-     * @access public
-     * @return sendSplitTestWinnerResponse
-     */
-    public function sendSplitTestWinner(sendSplitTestWinner $parameters)
-    {
-        return $this->__soapCall('sendSplitTestWinner', array($parameters));
-    }
-
-    /**
      * @param createSplitTest $parameters
      * @access public
      * @return createSplitTestResponse
@@ -1335,6 +1319,76 @@ class ClabService extends \SoapClient
     public function createSplitTest(createSplitTest $parameters)
     {
         return $this->__soapCall('createSplitTest', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateMessageSDataCData $parameters
+     * @access public
+     * @return sendImmediateMessageSDataCDataResponse
+     */
+    public function sendImmediateMessageSDataCData(sendImmediateMessageSDataCData $parameters)
+    {
+        return $this->__soapCall('sendImmediateMessageSDataCData', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateMessageSIdCData $parameters
+     * @access public
+     * @return sendImmediateMessageSIdCDataResponse
+     */
+    public function sendImmediateMessageSIdCData(sendImmediateMessageSIdCData $parameters)
+    {
+        return $this->__soapCall('sendImmediateMessageSIdCData', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateMessageSDataCDataCA $parameters
+     * @access public
+     * @return sendImmediateMessageSDataCDataCAResponse
+     */
+    public function sendImmediateMessageSDataCDataCA(sendImmediateMessageSDataCDataCA $parameters)
+    {
+        return $this->__soapCall('sendImmediateMessageSDataCDataCA', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateMessageSIdCDataCA $parameters
+     * @access public
+     * @return sendImmediateMessageSIdCDataCAResponse
+     */
+    public function sendImmediateMessageSIdCDataCA(sendImmediateMessageSIdCDataCA $parameters)
+    {
+        return $this->__soapCall('sendImmediateMessageSIdCDataCA', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateByCampaignToSubscriber $parameters
+     * @access public
+     * @return sendImmediateByCampaignToSubscriberResponse
+     */
+    public function sendImmediateByCampaignToSubscriber(sendImmediateByCampaignToSubscriber $parameters)
+    {
+        return $this->__soapCall('sendImmediateByCampaignToSubscriber', array($parameters));
+    }
+
+    /**
+     * @param sendImmediateByCampaignToSubscriberId $parameters
+     * @access public
+     * @return sendImmediateByCampaignToSubscriberIdResponse
+     */
+    public function sendImmediateByCampaignToSubscriberId(sendImmediateByCampaignToSubscriberId $parameters)
+    {
+        return $this->__soapCall('sendImmediateByCampaignToSubscriberId', array($parameters));
+    }
+
+    /**
+     * @param sendSplitTestWinner $parameters
+     * @access public
+     * @return sendSplitTestWinnerResponse
+     */
+    public function sendSplitTestWinner(sendSplitTestWinner $parameters)
+    {
+        return $this->__soapCall('sendSplitTestWinner', array($parameters));
     }
 
     /**
@@ -1428,26 +1482,6 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param sendImmediateMessageSDataCData $parameters
-     * @access public
-     * @return sendImmediateMessageSDataCDataResponse
-     */
-    public function sendImmediateMessageSDataCData(sendImmediateMessageSDataCData $parameters)
-    {
-        return $this->__soapCall('sendImmediateMessageSDataCData', array($parameters));
-    }
-
-    /**
-     * @param sendImmediateMessageSIdCData $parameters
-     * @access public
-     * @return sendImmediateMessageSIdCDataResponse
-     */
-    public function sendImmediateMessageSIdCData(sendImmediateMessageSIdCData $parameters)
-    {
-        return $this->__soapCall('sendImmediateMessageSIdCData', array($parameters));
-    }
-
-    /**
      * @param sendImmediateMessageSdataCAl $parameters
      * @access public
      * @return sendImmediateMessageSdataCAlResponse
@@ -1488,26 +1522,6 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param sendImmediateMessageSDataCDataCA $parameters
-     * @access public
-     * @return sendImmediateMessageSDataCDataCAResponse
-     */
-    public function sendImmediateMessageSDataCDataCA(sendImmediateMessageSDataCDataCA $parameters)
-    {
-        return $this->__soapCall('sendImmediateMessageSDataCDataCA', array($parameters));
-    }
-
-    /**
-     * @param sendImmediateMessageSIdCDataCA $parameters
-     * @access public
-     * @return sendImmediateMessageSIdCDataCAResponse
-     */
-    public function sendImmediateMessageSIdCDataCA(sendImmediateMessageSIdCDataCA $parameters)
-    {
-        return $this->__soapCall('sendImmediateMessageSIdCDataCA', array($parameters));
-    }
-
-    /**
      * @param sendImmediateMessageSdataCAlCA $parameters
      * @access public
      * @return sendImmediateMessageSdataCAlCAResponse
@@ -1535,26 +1549,6 @@ class ClabService extends \SoapClient
     public function sendImmediateByCampaignIdToSubscriber(sendImmediateByCampaignIdToSubscriber $parameters)
     {
         return $this->__soapCall('sendImmediateByCampaignIdToSubscriber', array($parameters));
-    }
-
-    /**
-     * @param sendImmediateByCampaignToSubscriber $parameters
-     * @access public
-     * @return sendImmediateByCampaignToSubscriberResponse
-     */
-    public function sendImmediateByCampaignToSubscriber(sendImmediateByCampaignToSubscriber $parameters)
-    {
-        return $this->__soapCall('sendImmediateByCampaignToSubscriber', array($parameters));
-    }
-
-    /**
-     * @param sendImmediateByCampaignToSubscriberId $parameters
-     * @access public
-     * @return sendImmediateByCampaignToSubscriberIdResponse
-     */
-    public function sendImmediateByCampaignToSubscriberId(sendImmediateByCampaignToSubscriberId $parameters)
-    {
-        return $this->__soapCall('sendImmediateByCampaignToSubscriberId', array($parameters));
     }
 
     /**
@@ -1605,6 +1599,16 @@ class ClabService extends \SoapClient
     public function getEmptyPushTemplate(getEmptyPushTemplate $parameters)
     {
         return $this->__soapCall('getEmptyPushTemplate', array($parameters));
+    }
+
+    /**
+     * @param getMobileApplicationByCode $parameters
+     * @access public
+     * @return getMobileApplicationByCodeResponse
+     */
+    public function getMobileApplicationByCode(getMobileApplicationByCode $parameters)
+    {
+        return $this->__soapCall('getMobileApplicationByCode', array($parameters));
     }
 
     /**
