@@ -55,6 +55,9 @@ include_once('CampaignNotes.php');
 include_once('TrackedLinks.php');
 include_once('TrackedLink.php');
 include_once('Subscribers.php');
+include_once('SubscriberAttributeFilter.php');
+include_once('Pagination.php');
+include_once('Sorting.php');
 include_once('SplitTestCampaign.php');
 include_once('DeliverySplitConfig.php');
 include_once('CommunicationCategory.php');
@@ -164,6 +167,8 @@ include_once('sendImmediateMessageSDataCData.php');
 include_once('sendImmediateMessageSDataCDataResponse.php');
 include_once('sendImmediateMessageSIdCDataCA.php');
 include_once('sendImmediateMessageSIdCDataCAResponse.php');
+include_once('findSubscribersBy.php');
+include_once('findSubscribersByResponse.php');
 include_once('sendImmediateMessageSIdCData.php');
 include_once('sendImmediateMessageSIdCDataResponse.php');
 include_once('createSplitTest.php');
@@ -176,6 +181,8 @@ include_once('findSubscribers.php');
 include_once('findSubscribersResponse.php');
 include_once('reuseSubscriberSourceFilter.php');
 include_once('reuseSubscriberSourceFilterResponse.php');
+include_once('countSubscribersBy.php');
+include_once('countSubscribersByResponse.php');
 include_once('createMessageModel.php');
 include_once('createMessageModelResponse.php');
 include_once('findSubscribersIncludedInFilter.php');
@@ -353,6 +360,9 @@ class ClabService extends \SoapClient
       'TrackedLinks' => '\TrackedLinks',
       'TrackedLink' => '\TrackedLink',
       'Subscribers' => '\Subscribers',
+      'SubscriberAttributeFilter' => '\SubscriberAttributeFilter',
+      'Pagination' => '\Pagination',
+      'Sorting' => '\Sorting',
       'SplitTestCampaign' => '\SplitTestCampaign',
       'DeliverySplitConfig' => '\DeliverySplitConfig',
       'CommunicationCategory' => '\CommunicationCategory',
@@ -445,6 +455,8 @@ class ClabService extends \SoapClient
       'sendImmediateMessageSDataCDataResponse' => '\sendImmediateMessageSDataCDataResponse',
       'sendImmediateMessageSIdCDataCA' => '\sendImmediateMessageSIdCDataCA',
       'sendImmediateMessageSIdCDataCAResponse' => '\sendImmediateMessageSIdCDataCAResponse',
+      'findSubscribersBy' => '\findSubscribersBy',
+      'findSubscribersByResponse' => '\findSubscribersByResponse',
       'sendImmediateMessageSIdCData' => '\sendImmediateMessageSIdCData',
       'sendImmediateMessageSIdCDataResponse' => '\sendImmediateMessageSIdCDataResponse',
       'createSplitTest' => '\createSplitTest',
@@ -457,6 +469,8 @@ class ClabService extends \SoapClient
       'findSubscribersResponse' => '\findSubscribersResponse',
       'reuseSubscriberSourceFilter' => '\reuseSubscriberSourceFilter',
       'reuseSubscriberSourceFilterResponse' => '\reuseSubscriberSourceFilterResponse',
+      'countSubscribersBy' => '\countSubscribersBy',
+      'countSubscribersByResponse' => '\countSubscribersByResponse',
       'createMessageModel' => '\createMessageModel',
       'createMessageModelResponse' => '\createMessageModelResponse',
       'findSubscribersIncludedInFilter' => '\findSubscribersIncludedInFilter',
@@ -642,6 +656,16 @@ class ClabService extends \SoapClient
     }
 
     /**
+     * @param findSubscribersBy $parameters
+     * @access public
+     * @return findSubscribersByResponse
+     */
+    public function findSubscribersBy(findSubscribersBy $parameters)
+    {
+        return $this->__soapCall('findSubscribersBy', array($parameters));
+    }
+
+    /**
      * @param updateSubscriber $parameters
      * @access public
      * @return updateSubscriberResponse
@@ -659,6 +683,16 @@ class ClabService extends \SoapClient
     public function modifySubscriberSubscriptionStatus(modifySubscriberSubscriptionStatus $parameters)
     {
         return $this->__soapCall('modifySubscriberSubscriptionStatus', array($parameters));
+    }
+
+    /**
+     * @param countSubscribersBy $parameters
+     * @access public
+     * @return countSubscribersByResponse
+     */
+    public function countSubscribersBy(countSubscribersBy $parameters)
+    {
+        return $this->__soapCall('countSubscribersBy', array($parameters));
     }
 
     /**
@@ -1232,16 +1266,6 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param findSubscribers $parameters
-     * @access public
-     * @return findSubscribersResponse
-     */
-    public function findSubscribers(findSubscribers $parameters)
-    {
-        return $this->__soapCall('findSubscribers', array($parameters));
-    }
-
-    /**
      * @param getCryptoKey $parameters
      * @access public
      * @return getCryptoKeyResponse
@@ -1439,6 +1463,16 @@ class ClabService extends \SoapClient
     public function findArchivedFiltersBySubscriberSource(findArchivedFiltersBySubscriberSource $parameters)
     {
         return $this->__soapCall('findArchivedFiltersBySubscriberSource', array($parameters));
+    }
+
+    /**
+     * @param findSubscribers $parameters
+     * @access public
+     * @return findSubscribersResponse
+     */
+    public function findSubscribers(findSubscribers $parameters)
+    {
+        return $this->__soapCall('findSubscribers', array($parameters));
     }
 
     /**
