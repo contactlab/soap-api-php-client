@@ -36,6 +36,22 @@ include_once('SubscriberAttribute.php');
 include_once('SendImmediateOptions.php');
 include_once('Attachment.php');
 include_once('CampaignNote.php');
+include_once('Pagination.php');
+include_once('Sorting.php');
+include_once('PageBuilderPages.php');
+include_once('SlicedDataSet.php');
+include_once('PageBuilderPage.php');
+include_once('Campaigns.php');
+include_once('Campaign.php');
+include_once('SubscriberSources.php');
+include_once('SubscriberSource.php');
+include_once('SubscriberSourceField.php');
+include_once('MessageModels.php');
+include_once('SubscriberSourceFilters.php');
+include_once('CampaignNotes.php');
+include_once('TrackedLinks.php');
+include_once('TrackedLink.php');
+include_once('Subscribers.php');
 include_once('MobileApplicationCertificate.php');
 include_once('MobileApplicationCertificateAssignment.php');
 include_once('APNsMobileApplicationCertificate.php');
@@ -43,21 +59,9 @@ include_once('components.php');
 include_once('GCMsMobileApplicationCertificate.php');
 include_once('LookupPreferences.php');
 include_once('CampaignLookupPreferences.php');
-include_once('MessageModels.php');
-include_once('SlicedDataSet.php');
-include_once('Campaigns.php');
-include_once('Campaign.php');
-include_once('SubscriberSources.php');
-include_once('SubscriberSource.php');
-include_once('SubscriberSourceField.php');
-include_once('SubscriberSourceFilters.php');
-include_once('CampaignNotes.php');
-include_once('TrackedLinks.php');
-include_once('TrackedLink.php');
-include_once('Subscribers.php');
+include_once('PageBuilderTemplates.php');
+include_once('PageBuilderTemplate.php');
 include_once('SubscriberAttributeFilter.php');
-include_once('Pagination.php');
-include_once('Sorting.php');
 include_once('SplitTestCampaign.php');
 include_once('DeliverySplitConfig.php');
 include_once('CommunicationCategory.php');
@@ -71,15 +75,15 @@ include_once('PushEndpointType.php');
 include_once('APNsPushStandardFieldEnum.php');
 include_once('GCMsPushStandardFieldEnum.php');
 include_once('SubscriberSourceFilterType.php');
+include_once('CampaignType.php');
+include_once('deliveryStatus.php');
+include_once('field.php');
 include_once('APNsMobileApplicationCertificateComponentEnum.php');
 include_once('GCMsMobileApplicationCertificateComponentEnum.php');
 include_once('channel.php');
 include_once('LookupMatchingMode.php');
 include_once('LookupSortingMode.php');
 include_once('CampaignSortingOption.php');
-include_once('CampaignType.php');
-include_once('deliveryStatus.php');
-include_once('field.php');
 include_once('ActivityStatus.php');
 include_once('findMessageInfoByCampaignId.php');
 include_once('findMessageInfoByCampaignIdResponse.php');
@@ -98,6 +102,8 @@ include_once('sendImmediateByCampaignAliasToSubscriber.php');
 include_once('sendImmediateByCampaignAliasToSubscriberResponse.php');
 include_once('countSubscribers.php');
 include_once('countSubscribersResponse.php');
+include_once('getPageBuilderPageContent.php');
+include_once('getPageBuilderPageContentResponse.php');
 include_once('getXMLDeliveryTransitions.php');
 include_once('getXMLDeliveryTransitionsResponse.php');
 include_once('xmlDeliveryTransitionInfo.php');
@@ -107,6 +113,8 @@ include_once('addCampaignNote.php');
 include_once('addCampaignNoteResponse.php');
 include_once('sendImmediateMessageSidCAlCA.php');
 include_once('sendImmediateMessageSidCAlCAResponse.php');
+include_once('findPageBuilderPages.php');
+include_once('findPageBuilderPagesResponse.php');
 include_once('getMobileApplicationByCode.php');
 include_once('getMobileApplicationByCodeResponse.php');
 include_once('mobileApplication.php');
@@ -155,6 +163,8 @@ include_once('getCampaignDeliveryStatus.php');
 include_once('getCampaignDeliveryStatusResponse.php');
 include_once('addAttachment.php');
 include_once('addAttachmentResponse.php');
+include_once('findPageBuilderTemplates.php');
+include_once('findPageBuilderTemplatesResponse.php');
 include_once('findSubscriberSources.php');
 include_once('findSubscriberSourcesResponse.php');
 include_once('findMessageModelsBySubscriberSource.php');
@@ -307,8 +317,8 @@ include_once('requestCampaignFeedbackReportResponse.php');
 include_once('cancelCampaign.php');
 include_once('cancelCampaignResponse.php');
 include_once('xmlDeliverySubStatusType.php');
-include_once('mobileApplicationEnvironmentEnum.php');
 include_once('deliveryRoleType.php');
+include_once('mobileApplicationEnvironmentEnum.php');
 include_once('winningCriterion.php');
 include_once('deliverySplitType.php');
 include_once('xmlDeliveryStatusType.php');
@@ -341,6 +351,22 @@ class ClabService extends \SoapClient
       'SendImmediateOptions' => '\SendImmediateOptions',
       'Attachment' => '\Attachment',
       'CampaignNote' => '\CampaignNote',
+      'Pagination' => '\Pagination',
+      'Sorting' => '\Sorting',
+      'PageBuilderPages' => '\PageBuilderPages',
+      'SlicedDataSet' => '\SlicedDataSet',
+      'PageBuilderPage' => '\PageBuilderPage',
+      'Campaigns' => '\Campaigns',
+      'Campaign' => '\Campaign',
+      'SubscriberSources' => '\SubscriberSources',
+      'SubscriberSource' => '\SubscriberSource',
+      'SubscriberSourceField' => '\SubscriberSourceField',
+      'MessageModels' => '\MessageModels',
+      'SubscriberSourceFilters' => '\SubscriberSourceFilters',
+      'CampaignNotes' => '\CampaignNotes',
+      'TrackedLinks' => '\TrackedLinks',
+      'TrackedLink' => '\TrackedLink',
+      'Subscribers' => '\Subscribers',
       'MobileApplicationCertificate' => '\MobileApplicationCertificate',
       'MobileApplicationCertificateAssignment' => '\MobileApplicationCertificateAssignment',
       'APNsMobileApplicationCertificate' => '\APNsMobileApplicationCertificate',
@@ -348,21 +374,9 @@ class ClabService extends \SoapClient
       'GCMsMobileApplicationCertificate' => '\GCMsMobileApplicationCertificate',
       'LookupPreferences' => '\LookupPreferences',
       'CampaignLookupPreferences' => '\CampaignLookupPreferences',
-      'MessageModels' => '\MessageModels',
-      'SlicedDataSet' => '\SlicedDataSet',
-      'Campaigns' => '\Campaigns',
-      'Campaign' => '\Campaign',
-      'SubscriberSources' => '\SubscriberSources',
-      'SubscriberSource' => '\SubscriberSource',
-      'SubscriberSourceField' => '\SubscriberSourceField',
-      'SubscriberSourceFilters' => '\SubscriberSourceFilters',
-      'CampaignNotes' => '\CampaignNotes',
-      'TrackedLinks' => '\TrackedLinks',
-      'TrackedLink' => '\TrackedLink',
-      'Subscribers' => '\Subscribers',
+      'PageBuilderTemplates' => '\PageBuilderTemplates',
+      'PageBuilderTemplate' => '\PageBuilderTemplate',
       'SubscriberAttributeFilter' => '\SubscriberAttributeFilter',
-      'Pagination' => '\Pagination',
-      'Sorting' => '\Sorting',
       'SplitTestCampaign' => '\SplitTestCampaign',
       'DeliverySplitConfig' => '\DeliverySplitConfig',
       'CommunicationCategory' => '\CommunicationCategory',
@@ -386,6 +400,8 @@ class ClabService extends \SoapClient
       'sendImmediateByCampaignAliasToSubscriberResponse' => '\sendImmediateByCampaignAliasToSubscriberResponse',
       'countSubscribers' => '\countSubscribers',
       'countSubscribersResponse' => '\countSubscribersResponse',
+      'getPageBuilderPageContent' => '\getPageBuilderPageContent',
+      'getPageBuilderPageContentResponse' => '\getPageBuilderPageContentResponse',
       'getXMLDeliveryTransitions' => '\getXMLDeliveryTransitions',
       'getXMLDeliveryTransitionsResponse' => '\getXMLDeliveryTransitionsResponse',
       'xmlDeliveryTransitionInfo' => '\xmlDeliveryTransitionInfo',
@@ -395,6 +411,8 @@ class ClabService extends \SoapClient
       'addCampaignNoteResponse' => '\addCampaignNoteResponse',
       'sendImmediateMessageSidCAlCA' => '\sendImmediateMessageSidCAlCA',
       'sendImmediateMessageSidCAlCAResponse' => '\sendImmediateMessageSidCAlCAResponse',
+      'findPageBuilderPages' => '\findPageBuilderPages',
+      'findPageBuilderPagesResponse' => '\findPageBuilderPagesResponse',
       'getMobileApplicationByCode' => '\getMobileApplicationByCode',
       'getMobileApplicationByCodeResponse' => '\getMobileApplicationByCodeResponse',
       'mobileApplication' => '\mobileApplication',
@@ -443,6 +461,8 @@ class ClabService extends \SoapClient
       'getCampaignDeliveryStatusResponse' => '\getCampaignDeliveryStatusResponse',
       'addAttachment' => '\addAttachment',
       'addAttachmentResponse' => '\addAttachmentResponse',
+      'findPageBuilderTemplates' => '\findPageBuilderTemplates',
+      'findPageBuilderTemplatesResponse' => '\findPageBuilderTemplatesResponse',
       'findSubscriberSources' => '\findSubscriberSources',
       'findSubscriberSourcesResponse' => '\findSubscriberSourcesResponse',
       'findMessageModelsBySubscriberSource' => '\findMessageModelsBySubscriberSource',
@@ -1266,6 +1286,16 @@ class ClabService extends \SoapClient
     }
 
     /**
+     * @param findSubscribers $parameters
+     * @access public
+     * @return findSubscribersResponse
+     */
+    public function findSubscribers(findSubscribers $parameters)
+    {
+        return $this->__soapCall('findSubscribers', array($parameters));
+    }
+
+    /**
      * @param getCryptoKey $parameters
      * @access public
      * @return getCryptoKeyResponse
@@ -1463,16 +1493,6 @@ class ClabService extends \SoapClient
     public function findArchivedFiltersBySubscriberSource(findArchivedFiltersBySubscriberSource $parameters)
     {
         return $this->__soapCall('findArchivedFiltersBySubscriberSource', array($parameters));
-    }
-
-    /**
-     * @param findSubscribers $parameters
-     * @access public
-     * @return findSubscribersResponse
-     */
-    public function findSubscribers(findSubscribers $parameters)
-    {
-        return $this->__soapCall('findSubscribers', array($parameters));
     }
 
     /**
@@ -1693,5 +1713,35 @@ class ClabService extends \SoapClient
     public function getSelectionTestFilterId(getSelectionTestFilterId $parameters)
     {
         return $this->__soapCall('getSelectionTestFilterId', array($parameters));
+    }
+
+    /**
+     * @param findPageBuilderTemplates $parameters
+     * @access public
+     * @return findPageBuilderTemplatesResponse
+     */
+    public function findPageBuilderTemplates(findPageBuilderTemplates $parameters)
+    {
+        return $this->__soapCall('findPageBuilderTemplates', array($parameters));
+    }
+
+    /**
+     * @param findPageBuilderPages $parameters
+     * @access public
+     * @return findPageBuilderPagesResponse
+     */
+    public function findPageBuilderPages(findPageBuilderPages $parameters)
+    {
+        return $this->__soapCall('findPageBuilderPages', array($parameters));
+    }
+
+    /**
+     * @param getPageBuilderPageContent $parameters
+     * @access public
+     * @return getPageBuilderPageContentResponse
+     */
+    public function getPageBuilderPageContent(getPageBuilderPageContent $parameters)
+    {
+        return $this->__soapCall('getPageBuilderPageContent', array($parameters));
     }
 }
