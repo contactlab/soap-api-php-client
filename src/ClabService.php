@@ -52,6 +52,8 @@ include_once('CampaignNotes.php');
 include_once('TrackedLinks.php');
 include_once('TrackedLink.php');
 include_once('Subscribers.php');
+include_once('Subscriptions.php');
+include_once('Subscription.php');
 include_once('MobileApplicationCertificate.php');
 include_once('MobileApplicationCertificateAssignment.php');
 include_once('APNsMobileApplicationCertificate.php');
@@ -65,6 +67,7 @@ include_once('SubscriberAttributeFilter.php');
 include_once('SplitTestCampaign.php');
 include_once('DeliverySplitConfig.php');
 include_once('CommunicationCategory.php');
+include_once('SubscriptionAttributes.php');
 include_once('XMLDeliveryInfos.php');
 include_once('CampaignFeedback.php');
 include_once('BounceDetail.php');
@@ -102,17 +105,21 @@ include_once('sendImmediateByCampaignAliasToSubscriber.php');
 include_once('sendImmediateByCampaignAliasToSubscriberResponse.php');
 include_once('countSubscribers.php');
 include_once('countSubscribersResponse.php');
+include_once('getDeliveryMailQ.php');
+include_once('getDeliveryMailQResponse.php');
 include_once('getPageBuilderPageContent.php');
 include_once('getPageBuilderPageContentResponse.php');
+include_once('sendImmediateMessageSdataCAlCA.php');
+include_once('sendImmediateMessageSdataCAlCAResponse.php');
 include_once('getXMLDeliveryTransitions.php');
 include_once('getXMLDeliveryTransitionsResponse.php');
 include_once('xmlDeliveryTransitionInfo.php');
-include_once('sendImmediateMessageSdataCAlCA.php');
-include_once('sendImmediateMessageSdataCAlCAResponse.php');
-include_once('addCampaignNote.php');
-include_once('addCampaignNoteResponse.php');
+include_once('getUnsubscribeLink.php');
+include_once('getUnsubscribeLinkResponse.php');
 include_once('sendImmediateMessageSidCAlCA.php');
 include_once('sendImmediateMessageSidCAlCAResponse.php');
+include_once('addCampaignNote.php');
+include_once('addCampaignNoteResponse.php');
 include_once('findPageBuilderPages.php');
 include_once('findPageBuilderPagesResponse.php');
 include_once('getMobileApplicationByCode.php');
@@ -122,10 +129,10 @@ include_once('updateSubscriber.php');
 include_once('updateSubscriberResponse.php');
 include_once('getCryptoKey.php');
 include_once('getCryptoKeyResponse.php');
-include_once('findMessageModels.php');
-include_once('findMessageModelsResponse.php');
 include_once('uploadMediaContent.php');
 include_once('uploadMediaContentResponse.php');
+include_once('findMessageModels.php');
+include_once('findMessageModelsResponse.php');
 include_once('archiveSubscriberSourceFilter.php');
 include_once('archiveSubscriberSourceFilterResponse.php');
 include_once('sendImmediateMessageSDataCDataCA.php');
@@ -203,6 +210,8 @@ include_once('triggerDeliveryByAlias.php');
 include_once('triggerDeliveryByAliasResponse.php');
 include_once('getAvailableCommunicationCategories.php');
 include_once('getAvailableCommunicationCategoriesResponse.php');
+include_once('findSubscriptionsBy.php');
+include_once('findSubscriptionsByResponse.php');
 include_once('getArchivedSubscriberSourceFilter.php');
 include_once('getArchivedSubscriberSourceFilterResponse.php');
 include_once('getXMLDeliveries.php');
@@ -248,10 +257,10 @@ include_once('sendSplitTest.php');
 include_once('sendSplitTestResponse.php');
 include_once('borrowToken.php');
 include_once('borrowTokenResponse.php');
-include_once('startSelection.php');
-include_once('startSelectionResponse.php');
 include_once('sendImmediateByCampaignIdToSubscriber.php');
 include_once('sendImmediateByCampaignIdToSubscriberResponse.php');
+include_once('startSelection.php');
+include_once('startSelectionResponse.php');
 include_once('unmarshalPushTemplateEnvelope.php');
 include_once('unmarshalPushTemplateEnvelopeResponse.php');
 include_once('startSubscriberDataExchange.php');
@@ -367,6 +376,8 @@ class ClabService extends \SoapClient
       'TrackedLinks' => '\TrackedLinks',
       'TrackedLink' => '\TrackedLink',
       'Subscribers' => '\Subscribers',
+      'Subscriptions' => '\Subscriptions',
+      'Subscription' => '\Subscription',
       'MobileApplicationCertificate' => '\MobileApplicationCertificate',
       'MobileApplicationCertificateAssignment' => '\MobileApplicationCertificateAssignment',
       'APNsMobileApplicationCertificate' => '\APNsMobileApplicationCertificate',
@@ -380,6 +391,7 @@ class ClabService extends \SoapClient
       'SplitTestCampaign' => '\SplitTestCampaign',
       'DeliverySplitConfig' => '\DeliverySplitConfig',
       'CommunicationCategory' => '\CommunicationCategory',
+      'SubscriptionAttributes' => '\SubscriptionAttributes',
       'XMLDeliveryInfos' => '\XMLDeliveryInfos',
       'CampaignFeedback' => '\CampaignFeedback',
       'BounceDetail' => '\BounceDetail',
@@ -400,17 +412,21 @@ class ClabService extends \SoapClient
       'sendImmediateByCampaignAliasToSubscriberResponse' => '\sendImmediateByCampaignAliasToSubscriberResponse',
       'countSubscribers' => '\countSubscribers',
       'countSubscribersResponse' => '\countSubscribersResponse',
+      'getDeliveryMailQ' => '\getDeliveryMailQ',
+      'getDeliveryMailQResponse' => '\getDeliveryMailQResponse',
       'getPageBuilderPageContent' => '\getPageBuilderPageContent',
       'getPageBuilderPageContentResponse' => '\getPageBuilderPageContentResponse',
+      'sendImmediateMessageSdataCAlCA' => '\sendImmediateMessageSdataCAlCA',
+      'sendImmediateMessageSdataCAlCAResponse' => '\sendImmediateMessageSdataCAlCAResponse',
       'getXMLDeliveryTransitions' => '\getXMLDeliveryTransitions',
       'getXMLDeliveryTransitionsResponse' => '\getXMLDeliveryTransitionsResponse',
       'xmlDeliveryTransitionInfo' => '\xmlDeliveryTransitionInfo',
-      'sendImmediateMessageSdataCAlCA' => '\sendImmediateMessageSdataCAlCA',
-      'sendImmediateMessageSdataCAlCAResponse' => '\sendImmediateMessageSdataCAlCAResponse',
-      'addCampaignNote' => '\addCampaignNote',
-      'addCampaignNoteResponse' => '\addCampaignNoteResponse',
+      'getUnsubscribeLink' => '\getUnsubscribeLink',
+      'getUnsubscribeLinkResponse' => '\getUnsubscribeLinkResponse',
       'sendImmediateMessageSidCAlCA' => '\sendImmediateMessageSidCAlCA',
       'sendImmediateMessageSidCAlCAResponse' => '\sendImmediateMessageSidCAlCAResponse',
+      'addCampaignNote' => '\addCampaignNote',
+      'addCampaignNoteResponse' => '\addCampaignNoteResponse',
       'findPageBuilderPages' => '\findPageBuilderPages',
       'findPageBuilderPagesResponse' => '\findPageBuilderPagesResponse',
       'getMobileApplicationByCode' => '\getMobileApplicationByCode',
@@ -420,10 +436,10 @@ class ClabService extends \SoapClient
       'updateSubscriberResponse' => '\updateSubscriberResponse',
       'getCryptoKey' => '\getCryptoKey',
       'getCryptoKeyResponse' => '\getCryptoKeyResponse',
-      'findMessageModels' => '\findMessageModels',
-      'findMessageModelsResponse' => '\findMessageModelsResponse',
       'uploadMediaContent' => '\uploadMediaContent',
       'uploadMediaContentResponse' => '\uploadMediaContentResponse',
+      'findMessageModels' => '\findMessageModels',
+      'findMessageModelsResponse' => '\findMessageModelsResponse',
       'archiveSubscriberSourceFilter' => '\archiveSubscriberSourceFilter',
       'archiveSubscriberSourceFilterResponse' => '\archiveSubscriberSourceFilterResponse',
       'sendImmediateMessageSDataCDataCA' => '\sendImmediateMessageSDataCDataCA',
@@ -501,6 +517,8 @@ class ClabService extends \SoapClient
       'triggerDeliveryByAliasResponse' => '\triggerDeliveryByAliasResponse',
       'getAvailableCommunicationCategories' => '\getAvailableCommunicationCategories',
       'getAvailableCommunicationCategoriesResponse' => '\getAvailableCommunicationCategoriesResponse',
+      'findSubscriptionsBy' => '\findSubscriptionsBy',
+      'findSubscriptionsByResponse' => '\findSubscriptionsByResponse',
       'getArchivedSubscriberSourceFilter' => '\getArchivedSubscriberSourceFilter',
       'getArchivedSubscriberSourceFilterResponse' => '\getArchivedSubscriberSourceFilterResponse',
       'getXMLDeliveries' => '\getXMLDeliveries',
@@ -546,10 +564,10 @@ class ClabService extends \SoapClient
       'sendSplitTestResponse' => '\sendSplitTestResponse',
       'borrowToken' => '\borrowToken',
       'borrowTokenResponse' => '\borrowTokenResponse',
-      'startSelection' => '\startSelection',
-      'startSelectionResponse' => '\startSelectionResponse',
       'sendImmediateByCampaignIdToSubscriber' => '\sendImmediateByCampaignIdToSubscriber',
       'sendImmediateByCampaignIdToSubscriberResponse' => '\sendImmediateByCampaignIdToSubscriberResponse',
+      'startSelection' => '\startSelection',
+      'startSelectionResponse' => '\startSelectionResponse',
       'unmarshalPushTemplateEnvelope' => '\unmarshalPushTemplateEnvelope',
       'unmarshalPushTemplateEnvelopeResponse' => '\unmarshalPushTemplateEnvelopeResponse',
       'startSubscriberDataExchange' => '\startSubscriberDataExchange',
@@ -1066,6 +1084,26 @@ class ClabService extends \SoapClient
     }
 
     /**
+     * @param findSubscriptionsBy $parameters
+     * @access public
+     * @return findSubscriptionsByResponse
+     */
+    public function findSubscriptionsBy(findSubscriptionsBy $parameters)
+    {
+        return $this->__soapCall('findSubscriptionsBy', array($parameters));
+    }
+
+    /**
+     * @param getUnsubscribeLink $parameters
+     * @access public
+     * @return getUnsubscribeLinkResponse
+     */
+    public function getUnsubscribeLink(getUnsubscribeLink $parameters)
+    {
+        return $this->__soapCall('getUnsubscribeLink', array($parameters));
+    }
+
+    /**
      * @param startSubscriberDataExchange $parameters
      * @access public
      * @return startSubscriberDataExchangeResponse
@@ -1303,6 +1341,16 @@ class ClabService extends \SoapClient
     public function getCryptoKey(getCryptoKey $parameters)
     {
         return $this->__soapCall('getCryptoKey', array($parameters));
+    }
+
+    /**
+     * @param getDeliveryMailQ $parameters
+     * @access public
+     * @return getDeliveryMailQResponse
+     */
+    public function getDeliveryMailQ(getDeliveryMailQ $parameters)
+    {
+        return $this->__soapCall('getDeliveryMailQ', array($parameters));
     }
 
     /**
