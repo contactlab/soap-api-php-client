@@ -35,13 +35,15 @@ include_once('Subscriber.php');
 include_once('SubscriberAttribute.php');
 include_once('SendImmediateOptions.php');
 include_once('Attachment.php');
-include_once('CampaignNote.php');
+include_once('CampaignAttributes.php');
+include_once('LookupIdentifiers.php');
+include_once('LookupField.php');
+include_once('LookupDate.php');
+include_once('LookupNote.php');
 include_once('Pagination.php');
 include_once('Sorting.php');
-include_once('PageBuilderPages.php');
-include_once('SlicedDataSet.php');
-include_once('PageBuilderPage.php');
 include_once('Campaigns.php');
+include_once('SlicedDataSet.php');
 include_once('Campaign.php');
 include_once('SubscriberSources.php');
 include_once('SubscriberSource.php');
@@ -49,11 +51,14 @@ include_once('SubscriberSourceField.php');
 include_once('MessageModels.php');
 include_once('SubscriberSourceFilters.php');
 include_once('CampaignNotes.php');
+include_once('CampaignNote.php');
 include_once('TrackedLinks.php');
 include_once('TrackedLink.php');
 include_once('Subscribers.php');
 include_once('Subscriptions.php');
 include_once('Subscription.php');
+include_once('PageBuilderPages.php');
+include_once('PageBuilderPage.php');
 include_once('MobileApplicationCertificate.php');
 include_once('MobileApplicationCertificateAssignment.php');
 include_once('APNsMobileApplicationCertificate.php');
@@ -78,13 +83,14 @@ include_once('PushEndpointType.php');
 include_once('APNsPushStandardFieldEnum.php');
 include_once('GCMsPushStandardFieldEnum.php');
 include_once('SubscriberSourceFilterType.php');
-include_once('CampaignType.php');
+include_once('channel.php');
+include_once('AttributeMatchingMode.php');
+include_once('LookupMatchingMode.php');
 include_once('deliveryStatus.php');
+include_once('CampaignType.php');
 include_once('field.php');
 include_once('APNsMobileApplicationCertificateComponentEnum.php');
 include_once('GCMsMobileApplicationCertificateComponentEnum.php');
-include_once('channel.php');
-include_once('LookupMatchingMode.php');
 include_once('LookupSortingMode.php');
 include_once('CampaignSortingOption.php');
 include_once('ActivityStatus.php');
@@ -103,6 +109,8 @@ include_once('addSubscriberSourceFilter.php');
 include_once('addSubscriberSourceFilterResponse.php');
 include_once('sendImmediateByCampaignAliasToSubscriber.php');
 include_once('sendImmediateByCampaignAliasToSubscriberResponse.php');
+include_once('findCampaignsBy.php');
+include_once('findCampaignsByResponse.php');
 include_once('countSubscribers.php');
 include_once('countSubscribersResponse.php');
 include_once('getDeliveryMailQ.php');
@@ -325,8 +333,8 @@ include_once('requestCampaignFeedbackReport.php');
 include_once('requestCampaignFeedbackReportResponse.php');
 include_once('cancelCampaign.php');
 include_once('cancelCampaignResponse.php');
-include_once('xmlDeliverySubStatusType.php');
 include_once('deliveryRoleType.php');
+include_once('xmlDeliverySubStatusType.php');
 include_once('mobileApplicationEnvironmentEnum.php');
 include_once('winningCriterion.php');
 include_once('deliverySplitType.php');
@@ -359,13 +367,15 @@ class ClabService extends \SoapClient
       'SubscriberAttribute' => '\SubscriberAttribute',
       'SendImmediateOptions' => '\SendImmediateOptions',
       'Attachment' => '\Attachment',
-      'CampaignNote' => '\CampaignNote',
+      'CampaignAttributes' => '\CampaignAttributes',
+      'LookupIdentifiers' => '\LookupIdentifiers',
+      'LookupField' => '\LookupField',
+      'LookupDate' => '\LookupDate',
+      'LookupNote' => '\LookupNote',
       'Pagination' => '\Pagination',
       'Sorting' => '\Sorting',
-      'PageBuilderPages' => '\PageBuilderPages',
-      'SlicedDataSet' => '\SlicedDataSet',
-      'PageBuilderPage' => '\PageBuilderPage',
       'Campaigns' => '\Campaigns',
+      'SlicedDataSet' => '\SlicedDataSet',
       'Campaign' => '\Campaign',
       'SubscriberSources' => '\SubscriberSources',
       'SubscriberSource' => '\SubscriberSource',
@@ -373,11 +383,14 @@ class ClabService extends \SoapClient
       'MessageModels' => '\MessageModels',
       'SubscriberSourceFilters' => '\SubscriberSourceFilters',
       'CampaignNotes' => '\CampaignNotes',
+      'CampaignNote' => '\CampaignNote',
       'TrackedLinks' => '\TrackedLinks',
       'TrackedLink' => '\TrackedLink',
       'Subscribers' => '\Subscribers',
       'Subscriptions' => '\Subscriptions',
       'Subscription' => '\Subscription',
+      'PageBuilderPages' => '\PageBuilderPages',
+      'PageBuilderPage' => '\PageBuilderPage',
       'MobileApplicationCertificate' => '\MobileApplicationCertificate',
       'MobileApplicationCertificateAssignment' => '\MobileApplicationCertificateAssignment',
       'APNsMobileApplicationCertificate' => '\APNsMobileApplicationCertificate',
@@ -410,6 +423,8 @@ class ClabService extends \SoapClient
       'addSubscriberSourceFilterResponse' => '\addSubscriberSourceFilterResponse',
       'sendImmediateByCampaignAliasToSubscriber' => '\sendImmediateByCampaignAliasToSubscriber',
       'sendImmediateByCampaignAliasToSubscriberResponse' => '\sendImmediateByCampaignAliasToSubscriberResponse',
+      'findCampaignsBy' => '\findCampaignsBy',
+      'findCampaignsByResponse' => '\findCampaignsByResponse',
       'countSubscribers' => '\countSubscribers',
       'countSubscribersResponse' => '\countSubscribersResponse',
       'getDeliveryMailQ' => '\getDeliveryMailQ',
@@ -861,6 +876,16 @@ class ClabService extends \SoapClient
     public function renameSubscriberSourceFilter(renameSubscriberSourceFilter $parameters)
     {
         return $this->__soapCall('renameSubscriberSourceFilter', array($parameters));
+    }
+
+    /**
+     * @param findCampaignsBy $parameters
+     * @access public
+     * @return findCampaignsByResponse
+     */
+    public function findCampaignsBy(findCampaignsBy $parameters)
+    {
+        return $this->__soapCall('findCampaignsBy', array($parameters));
     }
 
     /**
