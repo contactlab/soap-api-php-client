@@ -71,6 +71,9 @@ include_once('PageBuilderTemplate.php');
 include_once('SubscriberAttributeFilter.php');
 include_once('SplitTestCampaign.php');
 include_once('DeliverySplitConfig.php');
+include_once('SubscriberSourceDescription.php');
+include_once('FieldDescription.php');
+include_once('IndexDescription.php');
 include_once('CommunicationCategory.php');
 include_once('SubscriptionAttributes.php');
 include_once('XMLDeliveryInfos.php');
@@ -208,6 +211,8 @@ include_once('reuseSubscriberSourceFilter.php');
 include_once('reuseSubscriberSourceFilterResponse.php');
 include_once('countSubscribersBy.php');
 include_once('countSubscribersByResponse.php');
+include_once('getSubscriberSourceDescription.php');
+include_once('getSubscriberSourceDescriptionResponse.php');
 include_once('createMessageModel.php');
 include_once('createMessageModelResponse.php');
 include_once('findSubscribersIncludedInFilter.php');
@@ -277,10 +282,10 @@ include_once('sendSplitTestWinner.php');
 include_once('sendSplitTestWinnerResponse.php');
 include_once('sendImmediateByCampaignIdToSubscriberId.php');
 include_once('sendImmediateByCampaignIdToSubscriberIdResponse.php');
-include_once('setCampaignRecurrency.php');
-include_once('setCampaignRecurrencyResponse.php');
 include_once('findFiltersBySubscriberSource.php');
 include_once('findFiltersBySubscriberSourceResponse.php');
+include_once('setCampaignRecurrency.php');
+include_once('setCampaignRecurrencyResponse.php');
 include_once('countSubscribersIncludedInFilter.php');
 include_once('countSubscribersIncludedInFilterResponse.php');
 include_once('sendImmediateMessageSidCidCA.php');
@@ -403,6 +408,9 @@ class ClabService extends \SoapClient
       'SubscriberAttributeFilter' => '\SubscriberAttributeFilter',
       'SplitTestCampaign' => '\SplitTestCampaign',
       'DeliverySplitConfig' => '\DeliverySplitConfig',
+      'SubscriberSourceDescription' => '\SubscriberSourceDescription',
+      'FieldDescription' => '\FieldDescription',
+      'IndexDescription' => '\IndexDescription',
       'CommunicationCategory' => '\CommunicationCategory',
       'SubscriptionAttributes' => '\SubscriptionAttributes',
       'XMLDeliveryInfos' => '\XMLDeliveryInfos',
@@ -522,6 +530,8 @@ class ClabService extends \SoapClient
       'reuseSubscriberSourceFilterResponse' => '\reuseSubscriberSourceFilterResponse',
       'countSubscribersBy' => '\countSubscribersBy',
       'countSubscribersByResponse' => '\countSubscribersByResponse',
+      'getSubscriberSourceDescription' => '\getSubscriberSourceDescription',
+      'getSubscriberSourceDescriptionResponse' => '\getSubscriberSourceDescriptionResponse',
       'createMessageModel' => '\createMessageModel',
       'createMessageModelResponse' => '\createMessageModelResponse',
       'findSubscribersIncludedInFilter' => '\findSubscribersIncludedInFilter',
@@ -591,10 +601,10 @@ class ClabService extends \SoapClient
       'sendSplitTestWinnerResponse' => '\sendSplitTestWinnerResponse',
       'sendImmediateByCampaignIdToSubscriberId' => '\sendImmediateByCampaignIdToSubscriberId',
       'sendImmediateByCampaignIdToSubscriberIdResponse' => '\sendImmediateByCampaignIdToSubscriberIdResponse',
-      'setCampaignRecurrency' => '\setCampaignRecurrency',
-      'setCampaignRecurrencyResponse' => '\setCampaignRecurrencyResponse',
       'findFiltersBySubscriberSource' => '\findFiltersBySubscriberSource',
       'findFiltersBySubscriberSourceResponse' => '\findFiltersBySubscriberSourceResponse',
+      'setCampaignRecurrency' => '\setCampaignRecurrency',
+      'setCampaignRecurrencyResponse' => '\setCampaignRecurrencyResponse',
       'countSubscribersIncludedInFilter' => '\countSubscribersIncludedInFilter',
       'countSubscribersIncludedInFilterResponse' => '\countSubscribersIncludedInFilterResponse',
       'sendImmediateMessageSidCidCA' => '\sendImmediateMessageSidCidCA',
@@ -666,6 +676,16 @@ class ClabService extends \SoapClient
         }
     
         parent::__construct($wsdl, $options);
+    }
+
+    /**
+     * @param getSubscriberSourceDescription $parameters
+     * @access public
+     * @return getSubscriberSourceDescriptionResponse
+     */
+    public function getSubscriberSourceDescription(getSubscriberSourceDescription $parameters)
+    {
+        return $this->__soapCall('getSubscriberSourceDescription', array($parameters));
     }
 
     /**
