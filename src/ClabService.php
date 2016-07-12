@@ -164,6 +164,8 @@ include_once('findPeriodicCampaigns.php');
 include_once('findPeriodicCampaignsResponse.php');
 include_once('modifySubscriberSubscriptionStatus.php');
 include_once('modifySubscriberSubscriptionStatusResponse.php');
+include_once('createSelectionBySubscriberSourceId.php');
+include_once('createSelectionBySubscriberSourceIdResponse.php');
 include_once('findNotesByCampaign.php');
 include_once('findNotesByCampaignResponse.php');
 include_once('modifySubscriberSubscriptionStatusByMailqId.php');
@@ -483,6 +485,8 @@ class ClabService extends \SoapClient
       'findPeriodicCampaignsResponse' => '\findPeriodicCampaignsResponse',
       'modifySubscriberSubscriptionStatus' => '\modifySubscriberSubscriptionStatus',
       'modifySubscriberSubscriptionStatusResponse' => '\modifySubscriberSubscriptionStatusResponse',
+      'createSelectionBySubscriberSourceId' => '\createSelectionBySubscriberSourceId',
+      'createSelectionBySubscriberSourceIdResponse' => '\createSelectionBySubscriberSourceIdResponse',
       'findNotesByCampaign' => '\findNotesByCampaign',
       'findNotesByCampaignResponse' => '\findNotesByCampaignResponse',
       'modifySubscriberSubscriptionStatusByMailqId' => '\modifySubscriberSubscriptionStatusByMailqId',
@@ -1436,6 +1440,16 @@ class ClabService extends \SoapClient
     public function createSelection(createSelection $parameters)
     {
         return $this->__soapCall('createSelection', array($parameters));
+    }
+
+    /**
+     * @param createSelectionBySubscriberSourceId $parameters
+     * @access public
+     * @return createSelectionBySubscriberSourceIdResponse
+     */
+    public function createSelectionBySubscriberSourceId(createSelectionBySubscriberSourceId $parameters)
+    {
+        return $this->__soapCall('createSelectionBySubscriberSourceId', array($parameters));
     }
 
     /**
