@@ -16,30 +16,24 @@
  * limitations under the License.
  */
 
-class Subscription
+class getDeliveryFeedback
 {
 
     /**
-     * @var int $id
+     * @var string $apiKey
      * @access public
      */
-    public $id = null;
+    public $apiKey = null;
 
     /**
-     * @var string $name
+     * @var string $userKey
      * @access public
      */
-    public $name = null;
+    public $userKey = null;
 
     /**
-     * @var string $registrationField
+     * @var string $uuid
      * @access public
      */
-    public $registrationField = null;
-
-    /**
-     * @var string $webformCode
-     * @access public
-     */
-    public $webformCode = null;
+    public $uuid = null;
 }

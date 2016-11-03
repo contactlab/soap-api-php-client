@@ -24,4 +24,10 @@ class SubscriptionAttributes
      * @access public
      */
     public $modelId = null;
+
+    /**
+     * @var int $subscriberSourceId
+     * @access public
+     */
+    public $subscriberSourceId = null;
 }

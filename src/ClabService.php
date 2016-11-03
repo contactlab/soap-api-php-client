@@ -77,8 +77,9 @@ include_once('IndexDescription.php');
 include_once('CommunicationCategory.php');
 include_once('SubscriptionAttributes.php');
 include_once('XMLDeliveryInfos.php');
-include_once('CampaignFeedback.php');
+include_once('DeliveryFeedback.php');
 include_once('BounceDetail.php');
+include_once('CampaignFeedback.php');
 include_once('charset.php');
 include_once('PreferredContent.php');
 include_once('MimeType.php');
@@ -294,10 +295,10 @@ include_once('sendImmediateMessageSidCidCA.php');
 include_once('sendImmediateMessageSidCidCAResponse.php');
 include_once('getSelectionRealFilterId.php');
 include_once('getSelectionRealFilterIdResponse.php');
-include_once('findCampaignsByModel.php');
-include_once('findCampaignsByModelResponse.php');
 include_once('sendImmediateMessageSdataCAl.php');
 include_once('sendImmediateMessageSdataCAlResponse.php');
+include_once('findCampaignsByModel.php');
+include_once('findCampaignsByModelResponse.php');
 include_once('getSubscriberDataExchangeStatus.php');
 include_once('getSubscriberDataExchangeStatusResponse.php');
 include_once('sendImmediateMessage.php');
@@ -332,6 +333,8 @@ include_once('createCampaign.php');
 include_once('createCampaignResponse.php');
 include_once('addSubscriber.php');
 include_once('addSubscriberResponse.php');
+include_once('getDeliveryFeedback.php');
+include_once('getDeliveryFeedbackResponse.php');
 include_once('getTrackedLinks.php');
 include_once('getTrackedLinksResponse.php');
 include_once('getCampaignFeedback.php');
@@ -416,8 +419,9 @@ class ClabService extends \SoapClient
       'CommunicationCategory' => '\CommunicationCategory',
       'SubscriptionAttributes' => '\SubscriptionAttributes',
       'XMLDeliveryInfos' => '\XMLDeliveryInfos',
-      'CampaignFeedback' => '\CampaignFeedback',
+      'DeliveryFeedback' => '\DeliveryFeedback',
       'BounceDetail' => '\BounceDetail',
+      'CampaignFeedback' => '\CampaignFeedback',
       'findMessageInfoByCampaignId' => '\findMessageInfoByCampaignId',
       'findMessageInfoByCampaignIdResponse' => '\findMessageInfoByCampaignIdResponse',
       'pushTemplateEnvelope' => '\pushTemplateEnvelope',
@@ -615,10 +619,10 @@ class ClabService extends \SoapClient
       'sendImmediateMessageSidCidCAResponse' => '\sendImmediateMessageSidCidCAResponse',
       'getSelectionRealFilterId' => '\getSelectionRealFilterId',
       'getSelectionRealFilterIdResponse' => '\getSelectionRealFilterIdResponse',
-      'findCampaignsByModel' => '\findCampaignsByModel',
-      'findCampaignsByModelResponse' => '\findCampaignsByModelResponse',
       'sendImmediateMessageSdataCAl' => '\sendImmediateMessageSdataCAl',
       'sendImmediateMessageSdataCAlResponse' => '\sendImmediateMessageSdataCAlResponse',
+      'findCampaignsByModel' => '\findCampaignsByModel',
+      'findCampaignsByModelResponse' => '\findCampaignsByModelResponse',
       'getSubscriberDataExchangeStatus' => '\getSubscriberDataExchangeStatus',
       'getSubscriberDataExchangeStatusResponse' => '\getSubscriberDataExchangeStatusResponse',
       'sendImmediateMessage' => '\sendImmediateMessage',
@@ -653,6 +657,8 @@ class ClabService extends \SoapClient
       'createCampaignResponse' => '\createCampaignResponse',
       'addSubscriber' => '\addSubscriber',
       'addSubscriberResponse' => '\addSubscriberResponse',
+      'getDeliveryFeedback' => '\getDeliveryFeedback',
+      'getDeliveryFeedbackResponse' => '\getDeliveryFeedbackResponse',
       'getTrackedLinks' => '\getTrackedLinks',
       'getTrackedLinksResponse' => '\getTrackedLinksResponse',
       'getCampaignFeedback' => '\getCampaignFeedback',
@@ -1400,6 +1406,16 @@ class ClabService extends \SoapClient
     public function getDeliveryMailQ(getDeliveryMailQ $parameters)
     {
         return $this->__soapCall('getDeliveryMailQ', array($parameters));
+    }
+
+    /**
+     * @param getDeliveryFeedback $parameters
+     * @access public
+     * @return getDeliveryFeedbackResponse
+     */
+    public function getDeliveryFeedback(getDeliveryFeedback $parameters)
+    {
+        return $this->__soapCall('getDeliveryFeedback', array($parameters));
     }
 
     /**
