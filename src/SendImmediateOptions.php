@@ -42,4 +42,10 @@ class SendImmediateOptions
      * @access public
      */
     public $customAttachments = null;
+
+    /**
+     * @var boolean $useUserPk
+     * @access public
+     */
+    public $useUserPk = null;
 }

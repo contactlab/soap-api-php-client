@@ -684,7 +684,7 @@ class ClabService extends \SoapClient
         if (isset($options['features']) == false) {
             $options['features'] = SOAP_SINGLE_ELEMENT_ARRAYS | SOAP_WAIT_ONE_WAY_CALLS;
         }
-    
+
         parent::__construct($wsdl, $options);
     }
 
