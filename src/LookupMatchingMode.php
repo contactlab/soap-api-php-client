@@ -20,4 +20,14 @@ class LookupMatchingMode
 {
     const EQUALS = 'EQUALS';
     const LIKE = 'LIKE';
+    const IS_NULL = 'IS_NULL';
+    const IS_NOT_NULL = 'IS_NOT_NULL';
+    const GREATER = 'GREATER';
+    const GREATER_EQUALS = 'GREATER_EQUALS';
+    const LESS = 'LESS';
+    const LESS_EQUALS = 'LESS_EQUALS';
+    const NOT_LIKE = 'NOT_LIKE';
+    const IN = 'IN';
+    const NOT_IN = 'NOT_IN';
+    const DIFFERENT = 'DIFFERENT';
 }

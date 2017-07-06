@@ -16,29 +16,11 @@
  * limitations under the License.
  */
 
-class SubscriberAttributeFilter
+class ListAttributeValues
 {
 
     /**
-     * @var string $attributeName
-     * @access public
-     */
-    public $attributeName = null;
-
-    /**
-     * @var mixed $attributeValue
-     * @access public
-     */
-    public $attributeValue = null;
-
-    /**
-     * @var LookupMatchingMode $lookupMatchingMode
-     * @access public
-     */
-    public $lookupMatchingMode = null;
-
-    /**
-     * @var ListAttributeValues $attributeValues
+     * @var anyType[] $attributeValues
      * @access public
      */
     public $attributeValues = null;

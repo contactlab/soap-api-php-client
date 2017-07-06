@@ -71,6 +71,7 @@ include_once('ActivityDetails.php');
 include_once('PageBuilderTemplates.php');
 include_once('PageBuilderTemplate.php');
 include_once('SubscriberAttributeFilter.php');
+include_once('ListAttributeValues.php');
 include_once('SplitTestCampaign.php');
 include_once('DeliverySplitConfig.php');
 include_once('SubscriberSourceDescription.php');
@@ -417,6 +418,7 @@ class ClabService extends \SoapClient
       'PageBuilderTemplates' => '\PageBuilderTemplates',
       'PageBuilderTemplate' => '\PageBuilderTemplate',
       'SubscriberAttributeFilter' => '\SubscriberAttributeFilter',
+      'ListAttributeValues' => '\ListAttributeValues',
       'SplitTestCampaign' => '\SplitTestCampaign',
       'DeliverySplitConfig' => '\DeliverySplitConfig',
       'SubscriberSourceDescription' => '\SubscriberSourceDescription',
