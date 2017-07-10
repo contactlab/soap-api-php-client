@@ -144,10 +144,10 @@ include_once('updateSubscriber.php');
 include_once('updateSubscriberResponse.php');
 include_once('getCryptoKey.php');
 include_once('getCryptoKeyResponse.php');
-include_once('findMessageModels.php');
-include_once('findMessageModelsResponse.php');
 include_once('uploadMediaContent.php');
 include_once('uploadMediaContentResponse.php');
+include_once('findMessageModels.php');
+include_once('findMessageModelsResponse.php');
 include_once('archiveSubscriberSourceFilter.php');
 include_once('archiveSubscriberSourceFilterResponse.php');
 include_once('sendImmediateMessageSDataCDataCA.php');
@@ -164,10 +164,10 @@ include_once('getSubscriber.php');
 include_once('getSubscriberResponse.php');
 include_once('getSelectionStatus.php');
 include_once('getSelectionStatusResponse.php');
-include_once('modifySubscriberSubscriptionStatus.php');
-include_once('modifySubscriberSubscriptionStatusResponse.php');
 include_once('findPeriodicCampaigns.php');
 include_once('findPeriodicCampaignsResponse.php');
+include_once('modifySubscriberSubscriptionStatus.php');
+include_once('modifySubscriberSubscriptionStatusResponse.php');
 include_once('createSelectionBySubscriberSourceId.php');
 include_once('createSelectionBySubscriberSourceIdResponse.php');
 include_once('findNotesByCampaign.php');
@@ -183,10 +183,10 @@ include_once('getSubscriberDataExchangeDetailedStatusResponse.php');
 include_once('getDeliveryStatus.php');
 include_once('getDeliveryStatusResponse.php');
 include_once('deliveryInformation.php');
-include_once('getCampaignDeliveryStatus.php');
-include_once('getCampaignDeliveryStatusResponse.php');
 include_once('removeSubscriber.php');
 include_once('removeSubscriberResponse.php');
+include_once('getCampaignDeliveryStatus.php');
+include_once('getCampaignDeliveryStatusResponse.php');
 include_once('addAttachment.php');
 include_once('addAttachmentResponse.php');
 include_once('findPageBuilderTemplates.php');
@@ -290,10 +290,10 @@ include_once('sendSplitTestWinner.php');
 include_once('sendSplitTestWinnerResponse.php');
 include_once('sendImmediateByCampaignIdToSubscriberId.php');
 include_once('sendImmediateByCampaignIdToSubscriberIdResponse.php');
-include_once('setCampaignRecurrency.php');
-include_once('setCampaignRecurrencyResponse.php');
 include_once('findFiltersBySubscriberSource.php');
 include_once('findFiltersBySubscriberSourceResponse.php');
+include_once('setCampaignRecurrency.php');
+include_once('setCampaignRecurrencyResponse.php');
 include_once('countSubscribersIncludedInFilter.php');
 include_once('countSubscribersIncludedInFilterResponse.php');
 include_once('sendImmediateMessageSidCidCA.php');
@@ -473,10 +473,10 @@ class ClabService extends \SoapClient
       'updateSubscriberResponse' => '\updateSubscriberResponse',
       'getCryptoKey' => '\getCryptoKey',
       'getCryptoKeyResponse' => '\getCryptoKeyResponse',
-      'findMessageModels' => '\findMessageModels',
-      'findMessageModelsResponse' => '\findMessageModelsResponse',
       'uploadMediaContent' => '\uploadMediaContent',
       'uploadMediaContentResponse' => '\uploadMediaContentResponse',
+      'findMessageModels' => '\findMessageModels',
+      'findMessageModelsResponse' => '\findMessageModelsResponse',
       'archiveSubscriberSourceFilter' => '\archiveSubscriberSourceFilter',
       'archiveSubscriberSourceFilterResponse' => '\archiveSubscriberSourceFilterResponse',
       'sendImmediateMessageSDataCDataCA' => '\sendImmediateMessageSDataCDataCA',
@@ -493,10 +493,10 @@ class ClabService extends \SoapClient
       'getSubscriberResponse' => '\getSubscriberResponse',
       'getSelectionStatus' => '\getSelectionStatus',
       'getSelectionStatusResponse' => '\getSelectionStatusResponse',
-      'modifySubscriberSubscriptionStatus' => '\modifySubscriberSubscriptionStatus',
-      'modifySubscriberSubscriptionStatusResponse' => '\modifySubscriberSubscriptionStatusResponse',
       'findPeriodicCampaigns' => '\findPeriodicCampaigns',
       'findPeriodicCampaignsResponse' => '\findPeriodicCampaignsResponse',
+      'modifySubscriberSubscriptionStatus' => '\modifySubscriberSubscriptionStatus',
+      'modifySubscriberSubscriptionStatusResponse' => '\modifySubscriberSubscriptionStatusResponse',
       'createSelectionBySubscriberSourceId' => '\createSelectionBySubscriberSourceId',
       'createSelectionBySubscriberSourceIdResponse' => '\createSelectionBySubscriberSourceIdResponse',
       'findNotesByCampaign' => '\findNotesByCampaign',
@@ -512,10 +512,10 @@ class ClabService extends \SoapClient
       'getDeliveryStatus' => '\getDeliveryStatus',
       'getDeliveryStatusResponse' => '\getDeliveryStatusResponse',
       'deliveryInformation' => '\deliveryInformation',
-      'getCampaignDeliveryStatus' => '\getCampaignDeliveryStatus',
-      'getCampaignDeliveryStatusResponse' => '\getCampaignDeliveryStatusResponse',
       'removeSubscriber' => '\removeSubscriber',
       'removeSubscriberResponse' => '\removeSubscriberResponse',
+      'getCampaignDeliveryStatus' => '\getCampaignDeliveryStatus',
+      'getCampaignDeliveryStatusResponse' => '\getCampaignDeliveryStatusResponse',
       'addAttachment' => '\addAttachment',
       'addAttachmentResponse' => '\addAttachmentResponse',
       'findPageBuilderTemplates' => '\findPageBuilderTemplates',
@@ -619,10 +619,10 @@ class ClabService extends \SoapClient
       'sendSplitTestWinnerResponse' => '\sendSplitTestWinnerResponse',
       'sendImmediateByCampaignIdToSubscriberId' => '\sendImmediateByCampaignIdToSubscriberId',
       'sendImmediateByCampaignIdToSubscriberIdResponse' => '\sendImmediateByCampaignIdToSubscriberIdResponse',
-      'setCampaignRecurrency' => '\setCampaignRecurrency',
-      'setCampaignRecurrencyResponse' => '\setCampaignRecurrencyResponse',
       'findFiltersBySubscriberSource' => '\findFiltersBySubscriberSource',
       'findFiltersBySubscriberSourceResponse' => '\findFiltersBySubscriberSourceResponse',
+      'setCampaignRecurrency' => '\setCampaignRecurrency',
+      'setCampaignRecurrencyResponse' => '\setCampaignRecurrencyResponse',
       'countSubscribersIncludedInFilter' => '\countSubscribersIncludedInFilter',
       'countSubscribersIncludedInFilterResponse' => '\countSubscribersIncludedInFilterResponse',
       'sendImmediateMessageSidCidCA' => '\sendImmediateMessageSidCidCA',
