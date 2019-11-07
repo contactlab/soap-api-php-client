@@ -130,6 +130,8 @@ include_once('sendImmediateMessageSdataCAlCAResponse.php');
 include_once('getXMLDeliveryTransitions.php');
 include_once('getXMLDeliveryTransitionsResponse.php');
 include_once('xmlDeliveryTransitionInfo.php');
+include_once('removeSelection.php');
+include_once('removeSelectionResponse.php');
 include_once('getUnsubscribeLink.php');
 include_once('getUnsubscribeLinkResponse.php');
 include_once('sendImmediateMessageSidCAlCA.php');
@@ -470,6 +472,8 @@ class ClabService extends \SoapClient
       'getXMLDeliveryTransitions' => '\getXMLDeliveryTransitions',
       'getXMLDeliveryTransitionsResponse' => '\getXMLDeliveryTransitionsResponse',
       'xmlDeliveryTransitionInfo' => '\xmlDeliveryTransitionInfo',
+      'removeSelection' => '\removeSelection',
+      'removeSelectionResponse' => '\removeSelectionResponse',
       'getUnsubscribeLink' => '\getUnsubscribeLink',
       'getUnsubscribeLinkResponse' => '\getUnsubscribeLinkResponse',
       'sendImmediateMessageSidCAlCA' => '\sendImmediateMessageSidCAlCA',
@@ -1558,6 +1562,16 @@ class ClabService extends \SoapClient
     public function addSelectionSubscribers(addSelectionSubscribers $parameters)
     {
         return $this->__soapCall('addSelectionSubscribers', array($parameters));
+    }
+
+    /**
+     * @param removeSelection $parameters
+     * @access public
+     * @return removeSelectionResponse
+     */
+    public function removeSelection(removeSelection $parameters)
+    {
+        return $this->__soapCall('removeSelection', array($parameters));
     }
 
     /**

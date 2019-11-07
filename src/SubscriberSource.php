@@ -66,4 +66,10 @@ class SubscriberSource
      * @access public
      */
     public $readOnly = null;
+
+    /**
+     * @var boolean $hasExternalKey
+     * @access public
+     */
+    public $hasExternalKey = null;
 }
