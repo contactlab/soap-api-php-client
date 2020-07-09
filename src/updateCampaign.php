@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-class addSelectionSubscribers
+class updateCampaign
 {
 
     /**
@@ -26,20 +26,8 @@ class addSelectionSubscribers
     public $token = null;
 
     /**
-     * @var int $selectionId
+     * @var CampaignUpdate $campaignUpdate
      * @access public
      */
-    public $selectionId = null;
-
-    /**
-     * @var boolean $isTest
-     * @access public
-     */
-    public $isTest = null;
-
-    /**
-     * @var long[] $recipientIds
-     * @access public
-     */
-    public $recipientIds = null;
+    public $campaignUpdate = null;
 }

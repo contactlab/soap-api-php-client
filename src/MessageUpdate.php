@@ -16,30 +16,6 @@
  * limitations under the License.
  */
 
-class addSelectionSubscribers
+class MessageUpdate
 {
-
-    /**
-     * @var AuthToken $token
-     * @access public
-     */
-    public $token = null;
-
-    /**
-     * @var int $selectionId
-     * @access public
-     */
-    public $selectionId = null;
-
-    /**
-     * @var boolean $isTest
-     * @access public
-     */
-    public $isTest = null;
-
-    /**
-     * @var long[] $recipientIds
-     * @access public
-     */
-    public $recipientIds = null;
 }

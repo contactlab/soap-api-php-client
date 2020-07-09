@@ -16,30 +16,12 @@
  * limitations under the License.
  */
 
-class addSelectionSubscribers
+class updateCampaignResponse
 {
 
     /**
-     * @var AuthToken $token
+     * @var Campaign $return
      * @access public
      */
-    public $token = null;
-
-    /**
-     * @var int $selectionId
-     * @access public
-     */
-    public $selectionId = null;
-
-    /**
-     * @var boolean $isTest
-     * @access public
-     */
-    public $isTest = null;
-
-    /**
-     * @var long[] $recipientIds
-     * @access public
-     */
-    public $recipientIds = null;
+    public $return = null;
 }

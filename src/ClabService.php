@@ -35,6 +35,11 @@ include_once('Subscriber.php');
 include_once('SubscriberAttribute.php');
 include_once('SendImmediateOptions.php');
 include_once('Attachment.php');
+include_once('CampaignUpdate.php');
+include_once('EmailMessageUpdate.php');
+include_once('MessageUpdate.php');
+include_once('SenderUpdate.php');
+include_once('Campaign.php');
 include_once('CampaignAttributes.php');
 include_once('LookupIdentifiers.php');
 include_once('LookupField.php');
@@ -44,7 +49,6 @@ include_once('Pagination.php');
 include_once('Sorting.php');
 include_once('Campaigns.php');
 include_once('SlicedDataSet.php');
-include_once('Campaign.php');
 include_once('SubscriberSources.php');
 include_once('SubscriberSource.php');
 include_once('SubscriberSourceField.php');
@@ -91,11 +95,11 @@ include_once('PushEndpointType.php');
 include_once('APNsPushStandardFieldEnum.php');
 include_once('GCMsPushStandardFieldEnum.php');
 include_once('SubscriberSourceFilterType.php');
+include_once('CampaignType.php');
+include_once('deliveryStatus.php');
 include_once('channel.php');
 include_once('AttributeMatchingMode.php');
 include_once('LookupMatchingMode.php');
-include_once('deliveryStatus.php');
-include_once('CampaignType.php');
 include_once('field.php');
 include_once('APNsMobileApplicationCertificateComponentEnum.php');
 include_once('GCMsMobileApplicationCertificateComponentEnum.php');
@@ -117,6 +121,9 @@ include_once('addSubscriberSourceFilter.php');
 include_once('addSubscriberSourceFilterResponse.php');
 include_once('sendImmediateByCampaignAliasToSubscriber.php');
 include_once('sendImmediateByCampaignAliasToSubscriberResponse.php');
+include_once('updateCampaign.php');
+include_once('stringValueHolderWS.php');
+include_once('updateCampaignResponse.php');
 include_once('findCampaignsBy.php');
 include_once('findCampaignsByResponse.php');
 include_once('countSubscribers.php');
@@ -147,12 +154,12 @@ include_once('updateSubscriber.php');
 include_once('updateSubscriberResponse.php');
 include_once('getCryptoKey.php');
 include_once('getCryptoKeyResponse.php');
-include_once('uploadMediaContent.php');
-include_once('uploadMediaContentResponse.php');
-include_once('findMessageModels.php');
-include_once('findMessageModelsResponse.php');
 include_once('archiveSubscriberSourceFilter.php');
 include_once('archiveSubscriberSourceFilterResponse.php');
+include_once('findMessageModels.php');
+include_once('findMessageModelsResponse.php');
+include_once('uploadMediaContent.php');
+include_once('uploadMediaContentResponse.php');
 include_once('sendImmediateMessageSDataCDataCA.php');
 include_once('sendImmediateMessageSDataCDataCAResponse.php');
 include_once('findMessagesInfoByChannel.php');
@@ -167,10 +174,10 @@ include_once('getSubscriber.php');
 include_once('getSubscriberResponse.php');
 include_once('getSelectionStatus.php');
 include_once('getSelectionStatusResponse.php');
-include_once('findPeriodicCampaigns.php');
-include_once('findPeriodicCampaignsResponse.php');
 include_once('modifySubscriberSubscriptionStatus.php');
 include_once('modifySubscriberSubscriptionStatusResponse.php');
+include_once('findPeriodicCampaigns.php');
+include_once('findPeriodicCampaignsResponse.php');
 include_once('createSelectionBySubscriberSourceId.php');
 include_once('createSelectionBySubscriberSourceIdResponse.php');
 include_once('findNotesByCampaign.php');
@@ -186,10 +193,10 @@ include_once('getSubscriberDataExchangeDetailedStatusResponse.php');
 include_once('getDeliveryStatus.php');
 include_once('getDeliveryStatusResponse.php');
 include_once('deliveryInformation.php');
-include_once('removeSubscriber.php');
-include_once('removeSubscriberResponse.php');
 include_once('getCampaignDeliveryStatus.php');
 include_once('getCampaignDeliveryStatusResponse.php');
+include_once('removeSubscriber.php');
+include_once('removeSubscriberResponse.php');
 include_once('addAttachment.php');
 include_once('addAttachmentResponse.php');
 include_once('findPageBuilderTemplates.php');
@@ -297,10 +304,10 @@ include_once('sendSplitTestWinner.php');
 include_once('sendSplitTestWinnerResponse.php');
 include_once('sendImmediateByCampaignIdToSubscriberId.php');
 include_once('sendImmediateByCampaignIdToSubscriberIdResponse.php');
-include_once('findFiltersBySubscriberSource.php');
-include_once('findFiltersBySubscriberSourceResponse.php');
 include_once('setCampaignRecurrency.php');
 include_once('setCampaignRecurrencyResponse.php');
+include_once('findFiltersBySubscriberSource.php');
+include_once('findFiltersBySubscriberSourceResponse.php');
 include_once('countSubscribersIncludedInFilter.php');
 include_once('countSubscribersIncludedInFilterResponse.php');
 include_once('sendImmediateMessageSidCidCA.php');
@@ -395,6 +402,11 @@ class ClabService extends \SoapClient
       'SubscriberAttribute' => '\SubscriberAttribute',
       'SendImmediateOptions' => '\SendImmediateOptions',
       'Attachment' => '\Attachment',
+      'CampaignUpdate' => '\CampaignUpdate',
+      'EmailMessageUpdate' => '\EmailMessageUpdate',
+      'MessageUpdate' => '\MessageUpdate',
+      'SenderUpdate' => '\SenderUpdate',
+      'Campaign' => '\Campaign',
       'CampaignAttributes' => '\CampaignAttributes',
       'LookupIdentifiers' => '\LookupIdentifiers',
       'LookupField' => '\LookupField',
@@ -404,7 +416,6 @@ class ClabService extends \SoapClient
       'Sorting' => '\Sorting',
       'Campaigns' => '\Campaigns',
       'SlicedDataSet' => '\SlicedDataSet',
-      'Campaign' => '\Campaign',
       'SubscriberSources' => '\SubscriberSources',
       'SubscriberSource' => '\SubscriberSource',
       'SubscriberSourceField' => '\SubscriberSourceField',
@@ -459,6 +470,9 @@ class ClabService extends \SoapClient
       'addSubscriberSourceFilterResponse' => '\addSubscriberSourceFilterResponse',
       'sendImmediateByCampaignAliasToSubscriber' => '\sendImmediateByCampaignAliasToSubscriber',
       'sendImmediateByCampaignAliasToSubscriberResponse' => '\sendImmediateByCampaignAliasToSubscriberResponse',
+      'updateCampaign' => '\updateCampaign',
+      'stringValueHolderWS' => '\stringValueHolderWS',
+      'updateCampaignResponse' => '\updateCampaignResponse',
       'findCampaignsBy' => '\findCampaignsBy',
       'findCampaignsByResponse' => '\findCampaignsByResponse',
       'countSubscribers' => '\countSubscribers',
@@ -489,12 +503,12 @@ class ClabService extends \SoapClient
       'updateSubscriberResponse' => '\updateSubscriberResponse',
       'getCryptoKey' => '\getCryptoKey',
       'getCryptoKeyResponse' => '\getCryptoKeyResponse',
-      'uploadMediaContent' => '\uploadMediaContent',
-      'uploadMediaContentResponse' => '\uploadMediaContentResponse',
-      'findMessageModels' => '\findMessageModels',
-      'findMessageModelsResponse' => '\findMessageModelsResponse',
       'archiveSubscriberSourceFilter' => '\archiveSubscriberSourceFilter',
       'archiveSubscriberSourceFilterResponse' => '\archiveSubscriberSourceFilterResponse',
+      'findMessageModels' => '\findMessageModels',
+      'findMessageModelsResponse' => '\findMessageModelsResponse',
+      'uploadMediaContent' => '\uploadMediaContent',
+      'uploadMediaContentResponse' => '\uploadMediaContentResponse',
       'sendImmediateMessageSDataCDataCA' => '\sendImmediateMessageSDataCDataCA',
       'sendImmediateMessageSDataCDataCAResponse' => '\sendImmediateMessageSDataCDataCAResponse',
       'findMessagesInfoByChannel' => '\findMessagesInfoByChannel',
@@ -509,10 +523,10 @@ class ClabService extends \SoapClient
       'getSubscriberResponse' => '\getSubscriberResponse',
       'getSelectionStatus' => '\getSelectionStatus',
       'getSelectionStatusResponse' => '\getSelectionStatusResponse',
-      'findPeriodicCampaigns' => '\findPeriodicCampaigns',
-      'findPeriodicCampaignsResponse' => '\findPeriodicCampaignsResponse',
       'modifySubscriberSubscriptionStatus' => '\modifySubscriberSubscriptionStatus',
       'modifySubscriberSubscriptionStatusResponse' => '\modifySubscriberSubscriptionStatusResponse',
+      'findPeriodicCampaigns' => '\findPeriodicCampaigns',
+      'findPeriodicCampaignsResponse' => '\findPeriodicCampaignsResponse',
       'createSelectionBySubscriberSourceId' => '\createSelectionBySubscriberSourceId',
       'createSelectionBySubscriberSourceIdResponse' => '\createSelectionBySubscriberSourceIdResponse',
       'findNotesByCampaign' => '\findNotesByCampaign',
@@ -528,10 +542,10 @@ class ClabService extends \SoapClient
       'getDeliveryStatus' => '\getDeliveryStatus',
       'getDeliveryStatusResponse' => '\getDeliveryStatusResponse',
       'deliveryInformation' => '\deliveryInformation',
-      'removeSubscriber' => '\removeSubscriber',
-      'removeSubscriberResponse' => '\removeSubscriberResponse',
       'getCampaignDeliveryStatus' => '\getCampaignDeliveryStatus',
       'getCampaignDeliveryStatusResponse' => '\getCampaignDeliveryStatusResponse',
+      'removeSubscriber' => '\removeSubscriber',
+      'removeSubscriberResponse' => '\removeSubscriberResponse',
       'addAttachment' => '\addAttachment',
       'addAttachmentResponse' => '\addAttachmentResponse',
       'findPageBuilderTemplates' => '\findPageBuilderTemplates',
@@ -639,10 +653,10 @@ class ClabService extends \SoapClient
       'sendSplitTestWinnerResponse' => '\sendSplitTestWinnerResponse',
       'sendImmediateByCampaignIdToSubscriberId' => '\sendImmediateByCampaignIdToSubscriberId',
       'sendImmediateByCampaignIdToSubscriberIdResponse' => '\sendImmediateByCampaignIdToSubscriberIdResponse',
-      'findFiltersBySubscriberSource' => '\findFiltersBySubscriberSource',
-      'findFiltersBySubscriberSourceResponse' => '\findFiltersBySubscriberSourceResponse',
       'setCampaignRecurrency' => '\setCampaignRecurrency',
       'setCampaignRecurrencyResponse' => '\setCampaignRecurrencyResponse',
+      'findFiltersBySubscriberSource' => '\findFiltersBySubscriberSource',
+      'findFiltersBySubscriberSourceResponse' => '\findFiltersBySubscriberSourceResponse',
       'countSubscribersIncludedInFilter' => '\countSubscribersIncludedInFilter',
       'countSubscribersIncludedInFilterResponse' => '\countSubscribersIncludedInFilterResponse',
       'sendImmediateMessageSidCidCA' => '\sendImmediateMessageSidCidCA',
@@ -725,23 +739,53 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param getSubscriberSourceDescription $parameters
+     * @param findSubscribersBy $parameters
      * @access public
-     * @return getSubscriberSourceDescriptionResponse
+     * @return findSubscribersByResponse
      */
-    public function getSubscriberSourceDescription(getSubscriberSourceDescription $parameters)
+    public function findSubscribersBy(findSubscribersBy $parameters)
     {
-        return $this->__soapCall('getSubscriberSourceDescription', array($parameters));
+        return $this->__soapCall('findSubscribersBy', array($parameters));
     }
 
     /**
-     * @param isSubscriberSourceLocked $parameters
+     * @param countSubscribers $parameters
      * @access public
-     * @return isSubscriberSourceLockedResponse
+     * @return countSubscribersResponse
      */
-    public function isSubscriberSourceLocked(isSubscriberSourceLocked $parameters)
+    public function countSubscribers(countSubscribers $parameters)
     {
-        return $this->__soapCall('isSubscriberSourceLocked', array($parameters));
+        return $this->__soapCall('countSubscribers', array($parameters));
+    }
+
+    /**
+     * @param countSubscribersBy $parameters
+     * @access public
+     * @return countSubscribersByResponse
+     */
+    public function countSubscribersBy(countSubscribersBy $parameters)
+    {
+        return $this->__soapCall('countSubscribersBy', array($parameters));
+    }
+
+    /**
+     * @param publishOnWeb $parameters
+     * @access public
+     * @return publishOnWebResponse
+     */
+    public function publishOnWeb(publishOnWeb $parameters)
+    {
+        return $this->__soapCall('publishOnWeb', array($parameters));
+    }
+
+    /**
+     * @param updateCampaign $parameters
+     * @access public
+     * @return updateCampaignResponse
+     */
+    public function updateCampaign(updateCampaign $parameters)
+    {
+        return $this->__soapCall('updateCampaign', array($parameters));
     }
 
     /**
@@ -765,63 +809,23 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param countSubscribers $parameters
+     * @param getSubscriberSourceDescription $parameters
      * @access public
-     * @return countSubscribersResponse
+     * @return getSubscriberSourceDescriptionResponse
      */
-    public function countSubscribers(countSubscribers $parameters)
+    public function getSubscriberSourceDescription(getSubscriberSourceDescription $parameters)
     {
-        return $this->__soapCall('countSubscribers', array($parameters));
+        return $this->__soapCall('getSubscriberSourceDescription', array($parameters));
     }
 
     /**
-     * @param findSubscribersBy $parameters
+     * @param isSubscriberSourceLocked $parameters
      * @access public
-     * @return findSubscribersByResponse
+     * @return isSubscriberSourceLockedResponse
      */
-    public function findSubscribersBy(findSubscribersBy $parameters)
+    public function isSubscriberSourceLocked(isSubscriberSourceLocked $parameters)
     {
-        return $this->__soapCall('findSubscribersBy', array($parameters));
-    }
-
-    /**
-     * @param updateSubscriber $parameters
-     * @access public
-     * @return updateSubscriberResponse
-     */
-    public function updateSubscriber(updateSubscriber $parameters)
-    {
-        return $this->__soapCall('updateSubscriber', array($parameters));
-    }
-
-    /**
-     * @param modifySubscriberSubscriptionStatus $parameters
-     * @access public
-     * @return modifySubscriberSubscriptionStatusResponse
-     */
-    public function modifySubscriberSubscriptionStatus(modifySubscriberSubscriptionStatus $parameters)
-    {
-        return $this->__soapCall('modifySubscriberSubscriptionStatus', array($parameters));
-    }
-
-    /**
-     * @param countSubscribersBy $parameters
-     * @access public
-     * @return countSubscribersByResponse
-     */
-    public function countSubscribersBy(countSubscribersBy $parameters)
-    {
-        return $this->__soapCall('countSubscribersBy', array($parameters));
-    }
-
-    /**
-     * @param publishOnWeb $parameters
-     * @access public
-     * @return publishOnWebResponse
-     */
-    public function publishOnWeb(publishOnWeb $parameters)
-    {
-        return $this->__soapCall('publishOnWeb', array($parameters));
+        return $this->__soapCall('isSubscriberSourceLocked', array($parameters));
     }
 
     /**
@@ -905,6 +909,106 @@ class ClabService extends \SoapClient
     }
 
     /**
+     * @param updateSubscriber $parameters
+     * @access public
+     * @return updateSubscriberResponse
+     */
+    public function updateSubscriber(updateSubscriber $parameters)
+    {
+        return $this->__soapCall('updateSubscriber', array($parameters));
+    }
+
+    /**
+     * @param modifySubscriberSubscriptionStatus $parameters
+     * @access public
+     * @return modifySubscriberSubscriptionStatusResponse
+     */
+    public function modifySubscriberSubscriptionStatus(modifySubscriberSubscriptionStatus $parameters)
+    {
+        return $this->__soapCall('modifySubscriberSubscriptionStatus', array($parameters));
+    }
+
+    /**
+     * @param addCampaignNote $parameters
+     * @access public
+     * @return addCampaignNoteResponse
+     */
+    public function addCampaignNote(addCampaignNote $parameters)
+    {
+        return $this->__soapCall('addCampaignNote', array($parameters));
+    }
+
+    /**
+     * @param removeCampaignNote $parameters
+     * @access public
+     * @return removeCampaignNoteResponse
+     */
+    public function removeCampaignNote(removeCampaignNote $parameters)
+    {
+        return $this->__soapCall('removeCampaignNote', array($parameters));
+    }
+
+    /**
+     * @param findNotesByCampaign $parameters
+     * @access public
+     * @return findNotesByCampaignResponse
+     */
+    public function findNotesByCampaign(findNotesByCampaign $parameters)
+    {
+        return $this->__soapCall('findNotesByCampaign', array($parameters));
+    }
+
+    /**
+     * @param addAttachment $parameters
+     * @access public
+     * @return addAttachmentResponse
+     */
+    public function addAttachment(addAttachment $parameters)
+    {
+        return $this->__soapCall('addAttachment', array($parameters));
+    }
+
+    /**
+     * @param getCampaignFeedback $parameters
+     * @access public
+     * @return getCampaignFeedbackResponse
+     */
+    public function getCampaignFeedback(getCampaignFeedback $parameters)
+    {
+        return $this->__soapCall('getCampaignFeedback', array($parameters));
+    }
+
+    /**
+     * @param requestCampaignFeedbackReport $parameters
+     * @access public
+     * @return requestCampaignFeedbackReportResponse
+     */
+    public function requestCampaignFeedbackReport(requestCampaignFeedbackReport $parameters)
+    {
+        return $this->__soapCall('requestCampaignFeedbackReport', array($parameters));
+    }
+
+    /**
+     * @param uploadMediaContent $parameters
+     * @access public
+     * @return uploadMediaContentResponse
+     */
+    public function uploadMediaContent(uploadMediaContent $parameters)
+    {
+        return $this->__soapCall('uploadMediaContent', array($parameters));
+    }
+
+    /**
+     * @param getCampaign $parameters
+     * @access public
+     * @return getCampaignResponse
+     */
+    public function getCampaign(getCampaign $parameters)
+    {
+        return $this->__soapCall('getCampaign', array($parameters));
+    }
+
+    /**
      * @param getSubscriberSourceFilter $parameters
      * @access public
      * @return getSubscriberSourceFilterResponse
@@ -952,6 +1056,226 @@ class ClabService extends \SoapClient
     public function renameSubscriberSourceFilter(renameSubscriberSourceFilter $parameters)
     {
         return $this->__soapCall('renameSubscriberSourceFilter', array($parameters));
+    }
+
+    /**
+     * @param getSubscriberSource $parameters
+     * @access public
+     * @return getSubscriberSourceResponse
+     */
+    public function getSubscriberSource(getSubscriberSource $parameters)
+    {
+        return $this->__soapCall('getSubscriberSource', array($parameters));
+    }
+
+    /**
+     * @param findSubscriberSources $parameters
+     * @access public
+     * @return findSubscriberSourcesResponse
+     */
+    public function findSubscriberSources(findSubscriberSources $parameters)
+    {
+        return $this->__soapCall('findSubscriberSources', array($parameters));
+    }
+
+    /**
+     * @param getMessageModelById $parameters
+     * @access public
+     * @return getMessageModelByIdResponse
+     */
+    public function getMessageModelById(getMessageModelById $parameters)
+    {
+        return $this->__soapCall('getMessageModelById', array($parameters));
+    }
+
+    /**
+     * @param createMessageModel $parameters
+     * @access public
+     * @return createMessageModelResponse
+     */
+    public function createMessageModel(createMessageModel $parameters)
+    {
+        return $this->__soapCall('createMessageModel', array($parameters));
+    }
+
+    /**
+     * @param findMessageModels $parameters
+     * @access public
+     * @return findMessageModelsResponse
+     */
+    public function findMessageModels(findMessageModels $parameters)
+    {
+        return $this->__soapCall('findMessageModels', array($parameters));
+    }
+
+    /**
+     * @param findMessageModelsBySubscriberSource $parameters
+     * @access public
+     * @return findMessageModelsBySubscriberSourceResponse
+     */
+    public function findMessageModelsBySubscriberSource(findMessageModelsBySubscriberSource $parameters)
+    {
+        return $this->__soapCall('findMessageModelsBySubscriberSource', array($parameters));
+    }
+
+    /**
+     * @param findSubscriptionsBy $parameters
+     * @access public
+     * @return findSubscriptionsByResponse
+     */
+    public function findSubscriptionsBy(findSubscriptionsBy $parameters)
+    {
+        return $this->__soapCall('findSubscriptionsBy', array($parameters));
+    }
+
+    /**
+     * @param getUnsubscribeLink $parameters
+     * @access public
+     * @return getUnsubscribeLinkResponse
+     */
+    public function getUnsubscribeLink(getUnsubscribeLink $parameters)
+    {
+        return $this->__soapCall('getUnsubscribeLink', array($parameters));
+    }
+
+    /**
+     * @param setCampaignRecurrency $parameters
+     * @access public
+     * @return setCampaignRecurrencyResponse
+     */
+    public function setCampaignRecurrency(setCampaignRecurrency $parameters)
+    {
+        return $this->__soapCall('setCampaignRecurrency', array($parameters));
+    }
+
+    /**
+     * @param sendCampaign $parameters
+     * @access public
+     * @return sendCampaignResponse
+     */
+    public function sendCampaign(sendCampaign $parameters)
+    {
+        return $this->__soapCall('sendCampaign', array($parameters));
+    }
+
+    /**
+     * @param sendSplitTest $parameters
+     * @access public
+     * @return sendSplitTestResponse
+     */
+    public function sendSplitTest(sendSplitTest $parameters)
+    {
+        return $this->__soapCall('sendSplitTest', array($parameters));
+    }
+
+    /**
+     * @param cloneAndSendCampaign $parameters
+     * @access public
+     * @return cloneAndSendCampaignResponse
+     */
+    public function cloneAndSendCampaign(cloneAndSendCampaign $parameters)
+    {
+        return $this->__soapCall('cloneAndSendCampaign', array($parameters));
+    }
+
+    /**
+     * @param getRequestStatus $parameters
+     * @access public
+     * @return getRequestStatusResponse
+     */
+    public function getRequestStatus(getRequestStatus $parameters)
+    {
+        return $this->__soapCall('getRequestStatus', array($parameters));
+    }
+
+    /**
+     * @param createCampaign $parameters
+     * @access public
+     * @return createCampaignResponse
+     */
+    public function createCampaign(createCampaign $parameters)
+    {
+        return $this->__soapCall('createCampaign', array($parameters));
+    }
+
+    /**
+     * @param getXMLDeliveries $parameters
+     * @access public
+     * @return getXMLDeliveriesResponse
+     */
+    public function getXMLDeliveries(getXMLDeliveries $parameters)
+    {
+        return $this->__soapCall('getXMLDeliveries', array($parameters));
+    }
+
+    /**
+     * @param getXMLDeliveryTransitions $parameters
+     * @access public
+     * @return getXMLDeliveryTransitionsResponse
+     */
+    public function getXMLDeliveryTransitions(getXMLDeliveryTransitions $parameters)
+    {
+        return $this->__soapCall('getXMLDeliveryTransitions', array($parameters));
+    }
+
+    /**
+     * @param cancelCampaign $parameters
+     * @access public
+     * @return cancelCampaignResponse
+     */
+    public function cancelCampaign(cancelCampaign $parameters)
+    {
+        return $this->__soapCall('cancelCampaign', array($parameters));
+    }
+
+    /**
+     * @param getSubscriber $parameters
+     * @access public
+     * @return getSubscriberResponse
+     */
+    public function getSubscriber(getSubscriber $parameters)
+    {
+        return $this->__soapCall('getSubscriber', array($parameters));
+    }
+
+    /**
+     * @param addSubscriber $parameters
+     * @access public
+     * @return addSubscriberResponse
+     */
+    public function addSubscriber(addSubscriber $parameters)
+    {
+        return $this->__soapCall('addSubscriber', array($parameters));
+    }
+
+    /**
+     * @param addSubscribers $parameters
+     * @access public
+     * @return addSubscribersResponse
+     */
+    public function addSubscribers(addSubscribers $parameters)
+    {
+        return $this->__soapCall('addSubscribers', array($parameters));
+    }
+
+    /**
+     * @param removeSubscriber $parameters
+     * @access public
+     * @return removeSubscriberResponse
+     */
+    public function removeSubscriber(removeSubscriber $parameters)
+    {
+        return $this->__soapCall('removeSubscriber', array($parameters));
+    }
+
+    /**
+     * @param findSubscribersIncludedInFilter $parameters
+     * @access public
+     * @return findSubscribersIncludedInFilterResponse
+     */
+    public function findSubscribersIncludedInFilter(findSubscribersIncludedInFilter $parameters)
+    {
+        return $this->__soapCall('findSubscribersIncludedInFilter', array($parameters));
     }
 
     /**
@@ -1045,176 +1369,6 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param getSubscriber $parameters
-     * @access public
-     * @return getSubscriberResponse
-     */
-    public function getSubscriber(getSubscriber $parameters)
-    {
-        return $this->__soapCall('getSubscriber', array($parameters));
-    }
-
-    /**
-     * @param addSubscriber $parameters
-     * @access public
-     * @return addSubscriberResponse
-     */
-    public function addSubscriber(addSubscriber $parameters)
-    {
-        return $this->__soapCall('addSubscriber', array($parameters));
-    }
-
-    /**
-     * @param addSubscribers $parameters
-     * @access public
-     * @return addSubscribersResponse
-     */
-    public function addSubscribers(addSubscribers $parameters)
-    {
-        return $this->__soapCall('addSubscribers', array($parameters));
-    }
-
-    /**
-     * @param removeSubscriber $parameters
-     * @access public
-     * @return removeSubscriberResponse
-     */
-    public function removeSubscriber(removeSubscriber $parameters)
-    {
-        return $this->__soapCall('removeSubscriber', array($parameters));
-    }
-
-    /**
-     * @param findSubscribersIncludedInFilter $parameters
-     * @access public
-     * @return findSubscribersIncludedInFilterResponse
-     */
-    public function findSubscribersIncludedInFilter(findSubscribersIncludedInFilter $parameters)
-    {
-        return $this->__soapCall('findSubscribersIncludedInFilter', array($parameters));
-    }
-
-    /**
-     * @param addCampaignNote $parameters
-     * @access public
-     * @return addCampaignNoteResponse
-     */
-    public function addCampaignNote(addCampaignNote $parameters)
-    {
-        return $this->__soapCall('addCampaignNote', array($parameters));
-    }
-
-    /**
-     * @param removeCampaignNote $parameters
-     * @access public
-     * @return removeCampaignNoteResponse
-     */
-    public function removeCampaignNote(removeCampaignNote $parameters)
-    {
-        return $this->__soapCall('removeCampaignNote', array($parameters));
-    }
-
-    /**
-     * @param findNotesByCampaign $parameters
-     * @access public
-     * @return findNotesByCampaignResponse
-     */
-    public function findNotesByCampaign(findNotesByCampaign $parameters)
-    {
-        return $this->__soapCall('findNotesByCampaign', array($parameters));
-    }
-
-    /**
-     * @param addAttachment $parameters
-     * @access public
-     * @return addAttachmentResponse
-     */
-    public function addAttachment(addAttachment $parameters)
-    {
-        return $this->__soapCall('addAttachment', array($parameters));
-    }
-
-    /**
-     * @param getCampaignFeedback $parameters
-     * @access public
-     * @return getCampaignFeedbackResponse
-     */
-    public function getCampaignFeedback(getCampaignFeedback $parameters)
-    {
-        return $this->__soapCall('getCampaignFeedback', array($parameters));
-    }
-
-    /**
-     * @param requestCampaignFeedbackReport $parameters
-     * @access public
-     * @return requestCampaignFeedbackReportResponse
-     */
-    public function requestCampaignFeedbackReport(requestCampaignFeedbackReport $parameters)
-    {
-        return $this->__soapCall('requestCampaignFeedbackReport', array($parameters));
-    }
-
-    /**
-     * @param uploadMediaContent $parameters
-     * @access public
-     * @return uploadMediaContentResponse
-     */
-    public function uploadMediaContent(uploadMediaContent $parameters)
-    {
-        return $this->__soapCall('uploadMediaContent', array($parameters));
-    }
-
-    /**
-     * @param getCampaign $parameters
-     * @access public
-     * @return getCampaignResponse
-     */
-    public function getCampaign(getCampaign $parameters)
-    {
-        return $this->__soapCall('getCampaign', array($parameters));
-    }
-
-    /**
-     * @param getSubscriberSource $parameters
-     * @access public
-     * @return getSubscriberSourceResponse
-     */
-    public function getSubscriberSource(getSubscriberSource $parameters)
-    {
-        return $this->__soapCall('getSubscriberSource', array($parameters));
-    }
-
-    /**
-     * @param findSubscriberSources $parameters
-     * @access public
-     * @return findSubscriberSourcesResponse
-     */
-    public function findSubscriberSources(findSubscriberSources $parameters)
-    {
-        return $this->__soapCall('findSubscriberSources', array($parameters));
-    }
-
-    /**
-     * @param findSubscriptionsBy $parameters
-     * @access public
-     * @return findSubscriptionsByResponse
-     */
-    public function findSubscriptionsBy(findSubscriptionsBy $parameters)
-    {
-        return $this->__soapCall('findSubscriptionsBy', array($parameters));
-    }
-
-    /**
-     * @param getUnsubscribeLink $parameters
-     * @access public
-     * @return getUnsubscribeLinkResponse
-     */
-    public function getUnsubscribeLink(getUnsubscribeLink $parameters)
-    {
-        return $this->__soapCall('getUnsubscribeLink', array($parameters));
-    }
-
-    /**
      * @param startSubscriberDataExchange $parameters
      * @access public
      * @return startSubscriberDataExchangeResponse
@@ -1245,136 +1399,6 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param setCampaignRecurrency $parameters
-     * @access public
-     * @return setCampaignRecurrencyResponse
-     */
-    public function setCampaignRecurrency(setCampaignRecurrency $parameters)
-    {
-        return $this->__soapCall('setCampaignRecurrency', array($parameters));
-    }
-
-    /**
-     * @param getMessageModelById $parameters
-     * @access public
-     * @return getMessageModelByIdResponse
-     */
-    public function getMessageModelById(getMessageModelById $parameters)
-    {
-        return $this->__soapCall('getMessageModelById', array($parameters));
-    }
-
-    /**
-     * @param createMessageModel $parameters
-     * @access public
-     * @return createMessageModelResponse
-     */
-    public function createMessageModel(createMessageModel $parameters)
-    {
-        return $this->__soapCall('createMessageModel', array($parameters));
-    }
-
-    /**
-     * @param findMessageModels $parameters
-     * @access public
-     * @return findMessageModelsResponse
-     */
-    public function findMessageModels(findMessageModels $parameters)
-    {
-        return $this->__soapCall('findMessageModels', array($parameters));
-    }
-
-    /**
-     * @param findMessageModelsBySubscriberSource $parameters
-     * @access public
-     * @return findMessageModelsBySubscriberSourceResponse
-     */
-    public function findMessageModelsBySubscriberSource(findMessageModelsBySubscriberSource $parameters)
-    {
-        return $this->__soapCall('findMessageModelsBySubscriberSource', array($parameters));
-    }
-
-    /**
-     * @param sendCampaign $parameters
-     * @access public
-     * @return sendCampaignResponse
-     */
-    public function sendCampaign(sendCampaign $parameters)
-    {
-        return $this->__soapCall('sendCampaign', array($parameters));
-    }
-
-    /**
-     * @param sendSplitTest $parameters
-     * @access public
-     * @return sendSplitTestResponse
-     */
-    public function sendSplitTest(sendSplitTest $parameters)
-    {
-        return $this->__soapCall('sendSplitTest', array($parameters));
-    }
-
-    /**
-     * @param cloneAndSendCampaign $parameters
-     * @access public
-     * @return cloneAndSendCampaignResponse
-     */
-    public function cloneAndSendCampaign(cloneAndSendCampaign $parameters)
-    {
-        return $this->__soapCall('cloneAndSendCampaign', array($parameters));
-    }
-
-    /**
-     * @param getRequestStatus $parameters
-     * @access public
-     * @return getRequestStatusResponse
-     */
-    public function getRequestStatus(getRequestStatus $parameters)
-    {
-        return $this->__soapCall('getRequestStatus', array($parameters));
-    }
-
-    /**
-     * @param createCampaign $parameters
-     * @access public
-     * @return createCampaignResponse
-     */
-    public function createCampaign(createCampaign $parameters)
-    {
-        return $this->__soapCall('createCampaign', array($parameters));
-    }
-
-    /**
-     * @param getXMLDeliveries $parameters
-     * @access public
-     * @return getXMLDeliveriesResponse
-     */
-    public function getXMLDeliveries(getXMLDeliveries $parameters)
-    {
-        return $this->__soapCall('getXMLDeliveries', array($parameters));
-    }
-
-    /**
-     * @param getXMLDeliveryTransitions $parameters
-     * @access public
-     * @return getXMLDeliveryTransitionsResponse
-     */
-    public function getXMLDeliveryTransitions(getXMLDeliveryTransitions $parameters)
-    {
-        return $this->__soapCall('getXMLDeliveryTransitions', array($parameters));
-    }
-
-    /**
-     * @param cancelCampaign $parameters
-     * @access public
-     * @return cancelCampaignResponse
-     */
-    public function cancelCampaign(cancelCampaign $parameters)
-    {
-        return $this->__soapCall('cancelCampaign', array($parameters));
-    }
-
-    /**
      * @param countSubscribersIncludedInFilter $parameters
      * @access public
      * @return countSubscribersIncludedInFilterResponse
@@ -1385,13 +1409,53 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param testConnection $parameters
+     * @param borrowToken $parameters
      * @access public
-     * @return testConnectionResponse
+     * @return borrowTokenResponse
      */
-    public function testConnection(testConnection $parameters)
+    public function borrowToken(borrowToken $parameters)
     {
-        return $this->__soapCall('testConnection', array($parameters));
+        return $this->__soapCall('borrowToken', array($parameters));
+    }
+
+    /**
+     * @param keepaliveToken $parameters
+     * @access public
+     * @return keepaliveTokenResponse
+     */
+    public function keepaliveToken(keepaliveToken $parameters)
+    {
+        return $this->__soapCall('keepaliveToken', array($parameters));
+    }
+
+    /**
+     * @param invalidateToken $parameters
+     * @access public
+     * @return invalidateTokenResponse
+     */
+    public function invalidateToken(invalidateToken $parameters)
+    {
+        return $this->__soapCall('invalidateToken', array($parameters));
+    }
+
+    /**
+     * @param sendSplitTestWinner $parameters
+     * @access public
+     * @return sendSplitTestWinnerResponse
+     */
+    public function sendSplitTestWinner(sendSplitTestWinner $parameters)
+    {
+        return $this->__soapCall('sendSplitTestWinner', array($parameters));
+    }
+
+    /**
+     * @param createSplitTest $parameters
+     * @access public
+     * @return createSplitTestResponse
+     */
+    public function createSplitTest(createSplitTest $parameters)
+    {
+        return $this->__soapCall('createSplitTest', array($parameters));
     }
 
     /**
@@ -1445,86 +1509,6 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param addSubscriberSource $parameters
-     * @access public
-     * @return addSubscriberSourceResponse
-     */
-    public function addSubscriberSource(addSubscriberSource $parameters)
-    {
-        return $this->__soapCall('addSubscriberSource', array($parameters));
-    }
-
-    /**
-     * @param findSubscribers $parameters
-     * @access public
-     * @return findSubscribersResponse
-     */
-    public function findSubscribers(findSubscribers $parameters)
-    {
-        return $this->__soapCall('findSubscribers', array($parameters));
-    }
-
-    /**
-     * @param getCryptoKey $parameters
-     * @access public
-     * @return getCryptoKeyResponse
-     */
-    public function getCryptoKey(getCryptoKey $parameters)
-    {
-        return $this->__soapCall('getCryptoKey', array($parameters));
-    }
-
-    /**
-     * @param getDeliveryMailQ $parameters
-     * @access public
-     * @return getDeliveryMailQResponse
-     */
-    public function getDeliveryMailQ(getDeliveryMailQ $parameters)
-    {
-        return $this->__soapCall('getDeliveryMailQ', array($parameters));
-    }
-
-    /**
-     * @param getDeliveryFeedback $parameters
-     * @access public
-     * @return getDeliveryFeedbackResponse
-     */
-    public function getDeliveryFeedback(getDeliveryFeedback $parameters)
-    {
-        return $this->__soapCall('getDeliveryFeedback', array($parameters));
-    }
-
-    /**
-     * @param borrowToken $parameters
-     * @access public
-     * @return borrowTokenResponse
-     */
-    public function borrowToken(borrowToken $parameters)
-    {
-        return $this->__soapCall('borrowToken', array($parameters));
-    }
-
-    /**
-     * @param keepaliveToken $parameters
-     * @access public
-     * @return keepaliveTokenResponse
-     */
-    public function keepaliveToken(keepaliveToken $parameters)
-    {
-        return $this->__soapCall('keepaliveToken', array($parameters));
-    }
-
-    /**
-     * @param invalidateToken $parameters
-     * @access public
-     * @return invalidateTokenResponse
-     */
-    public function invalidateToken(invalidateToken $parameters)
-    {
-        return $this->__soapCall('invalidateToken', array($parameters));
-    }
-
-    /**
      * @param createSelection $parameters
      * @access public
      * @return createSelectionResponse
@@ -1575,13 +1559,63 @@ class ClabService extends \SoapClient
     }
 
     /**
-     * @param createSplitTest $parameters
+     * @param getDeliveryMailQ $parameters
      * @access public
-     * @return createSplitTestResponse
+     * @return getDeliveryMailQResponse
      */
-    public function createSplitTest(createSplitTest $parameters)
+    public function getDeliveryMailQ(getDeliveryMailQ $parameters)
     {
-        return $this->__soapCall('createSplitTest', array($parameters));
+        return $this->__soapCall('getDeliveryMailQ', array($parameters));
+    }
+
+    /**
+     * @param getDeliveryFeedback $parameters
+     * @access public
+     * @return getDeliveryFeedbackResponse
+     */
+    public function getDeliveryFeedback(getDeliveryFeedback $parameters)
+    {
+        return $this->__soapCall('getDeliveryFeedback', array($parameters));
+    }
+
+    /**
+     * @param testConnection $parameters
+     * @access public
+     * @return testConnectionResponse
+     */
+    public function testConnection(testConnection $parameters)
+    {
+        return $this->__soapCall('testConnection', array($parameters));
+    }
+
+    /**
+     * @param addSubscriberSource $parameters
+     * @access public
+     * @return addSubscriberSourceResponse
+     */
+    public function addSubscriberSource(addSubscriberSource $parameters)
+    {
+        return $this->__soapCall('addSubscriberSource', array($parameters));
+    }
+
+    /**
+     * @param findSubscribers $parameters
+     * @access public
+     * @return findSubscribersResponse
+     */
+    public function findSubscribers(findSubscribers $parameters)
+    {
+        return $this->__soapCall('findSubscribers', array($parameters));
+    }
+
+    /**
+     * @param getCryptoKey $parameters
+     * @access public
+     * @return getCryptoKeyResponse
+     */
+    public function getCryptoKey(getCryptoKey $parameters)
+    {
+        return $this->__soapCall('getCryptoKey', array($parameters));
     }
 
     /**
@@ -1652,16 +1686,6 @@ class ClabService extends \SoapClient
     public function sendImmediateByCampaignToSubscriberId(sendImmediateByCampaignToSubscriberId $parameters)
     {
         return $this->__soapCall('sendImmediateByCampaignToSubscriberId', array($parameters));
-    }
-
-    /**
-     * @param sendSplitTestWinner $parameters
-     * @access public
-     * @return sendSplitTestWinnerResponse
-     */
-    public function sendSplitTestWinner(sendSplitTestWinner $parameters)
-    {
-        return $this->__soapCall('sendSplitTestWinner', array($parameters));
     }
 
     /**

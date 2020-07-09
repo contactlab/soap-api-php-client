@@ -16,30 +16,18 @@
  * limitations under the License.
  */
 
-class addSelectionSubscribers
+class stringValueHolderWS
 {
 
     /**
-     * @var AuthToken $token
+     * @var string $_
      * @access public
      */
-    public $token = null;
+    public $_ = null;
 
     /**
-     * @var int $selectionId
+     * @var boolean $present
      * @access public
      */
-    public $selectionId = null;
-
-    /**
-     * @var boolean $isTest
-     * @access public
-     */
-    public $isTest = null;
-
-    /**
-     * @var long[] $recipientIds
-     * @access public
-     */
-    public $recipientIds = null;
+    public $present = null;
 }

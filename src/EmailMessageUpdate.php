@@ -16,30 +16,32 @@
  * limitations under the License.
  */
 
-class addSelectionSubscribers
+include_once('MessageUpdate.php');
+
+class EmailMessageUpdate extends MessageUpdate
 {
 
     /**
-     * @var AuthToken $token
+     * @var SenderUpdate $senderUpdate
      * @access public
      */
-    public $token = null;
+    public $senderUpdate = null;
 
     /**
-     * @var int $selectionId
+     * @var stringValueHolderWS $subject
      * @access public
      */
-    public $selectionId = null;
+    public $subject = null;
 
     /**
-     * @var boolean $isTest
+     * @var stringValueHolderWS $htmlContent
      * @access public
      */
-    public $isTest = null;
+    public $htmlContent = null;
 
     /**
-     * @var long[] $recipientIds
+     * @var stringValueHolderWS $textContent
      * @access public
      */
-    public $recipientIds = null;
+    public $textContent = null;
 }

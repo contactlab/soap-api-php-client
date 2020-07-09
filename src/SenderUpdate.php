@@ -16,30 +16,24 @@
  * limitations under the License.
  */
 
-class addSelectionSubscribers
+class SenderUpdate
 {
 
     /**
-     * @var AuthToken $token
+     * @var stringValueHolderWS $email
      * @access public
      */
-    public $token = null;
+    public $email = null;
 
     /**
-     * @var int $selectionId
+     * @var stringValueHolderWS $name
      * @access public
      */
-    public $selectionId = null;
+    public $name = null;
 
     /**
-     * @var boolean $isTest
+     * @var stringValueHolderWS $replyTo
      * @access public
      */
-    public $isTest = null;
-
-    /**
-     * @var long[] $recipientIds
-     * @access public
-     */
-    public $recipientIds = null;
+    public $replyTo = null;
 }
