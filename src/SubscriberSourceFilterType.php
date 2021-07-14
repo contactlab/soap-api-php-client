@@ -18,6 +18,7 @@
 
 class SubscriberSourceFilterType
 {
+    const __default = 'NORMAL';
     const NORMAL = 'NORMAL';
     const TEST = 'TEST';
     const BOTH = 'BOTH';

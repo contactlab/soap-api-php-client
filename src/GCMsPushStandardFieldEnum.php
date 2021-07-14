@@ -18,6 +18,7 @@
 
 class GCMsPushStandardFieldEnum
 {
+    const __default = 'ALERT';
     const ALERT = 'ALERT';
     const TIME = 'TIME';
 }

@@ -18,6 +18,7 @@
 
 class field
 {
+    const __default = 'FLAG';
     const FLAG = 'FLAG';
     const DATE = 'DATE';
     const DATETIME = 'DATETIME';

@@ -26,7 +26,7 @@ class SubscriberAttributeFilter
     public $attributeName = null;
 
     /**
-     * @var mixed $attributeValue
+     * @var anyType $attributeValue
      * @access public
      */
     public $attributeValue = null;

@@ -18,6 +18,7 @@
 
 class xmlDeliveryStatusType
 {
+    const __default = 'SUCCESS';
     const SUCCESS = 'SUCCESS';
     const LOADING = 'LOADING';
     const ERROR = 'ERROR';

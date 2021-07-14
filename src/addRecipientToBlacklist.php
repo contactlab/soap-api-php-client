@@ -16,30 +16,18 @@
  * limitations under the License.
  */
 
-class SenderUpdate
+class addRecipientToBlacklist
 {
 
     /**
-     * @var stringValueHolderWS $phone
+     * @var AuthToken $token
      * @access public
      */
-    public $phone = null;
+    public $token = null;
 
     /**
-     * @var stringValueHolderWS $email
+     * @var string $recipient
      * @access public
      */
-    public $email = null;
-
-    /**
-     * @var stringValueHolderWS $name
-     * @access public
-     */
-    public $name = null;
-
-    /**
-     * @var stringValueHolderWS $replyTo
-     * @access public
-     */
-    public $replyTo = null;
+    public $recipient = null;
 }

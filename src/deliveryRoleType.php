@@ -18,6 +18,7 @@
 
 class deliveryRoleType
 {
+    const __default = 'DELIVERY_ROLE_NONE';
     const DELIVERY_ROLE_NONE = 'DELIVERY_ROLE_NONE';
     const DELIVERY_ROLE_MASTER = 'DELIVERY_ROLE_MASTER';
     const DELIVERY_ROLE_SPLIT_BASE = 'DELIVERY_ROLE_SPLIT_BASE';

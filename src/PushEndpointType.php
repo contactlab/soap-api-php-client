@@ -18,6 +18,7 @@
 
 class PushEndpointType
 {
+    const __default = 'APN';
     const APN = 'APN';
     const GCM = 'GCM';
 }

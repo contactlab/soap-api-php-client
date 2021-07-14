@@ -18,6 +18,7 @@
 
 class charset
 {
+    const __default = 'Cp1252';
     const Cp1252 = 'Cp1252';
     const ISO_8859_15 = 'ISO_8859_15';
     const ISO_8859_1 = 'ISO_8859_1';

@@ -18,6 +18,7 @@
 
 class CampaignSortingOption
 {
+    const __default = 'IDENTIFIER';
     const IDENTIFIER = 'IDENTIFIER';
     const SUBJECT = 'SUBJECT';
     const START_DATE = 'START_DATE';

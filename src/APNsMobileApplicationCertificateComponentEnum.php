@@ -18,6 +18,7 @@
 
 class APNsMobileApplicationCertificateComponentEnum
 {
+    const __default = 'CERTIFICATE';
     const CERTIFICATE = 'CERTIFICATE';
     const CRYPTOGRAPHIC_KEY = 'CRYPTOGRAPHIC_KEY';
     const P12_PATH = 'P12_PATH';

@@ -18,6 +18,7 @@
 
 class deliverySplitType
 {
+    const __default = 'DELIVERY_SPLIT_TYPE_PARTED';
     const DELIVERY_SPLIT_TYPE_PARTED = 'DELIVERY_SPLIT_TYPE_PARTED';
     const DELIVERY_SPLIT_TYPE_TEST = 'DELIVERY_SPLIT_TYPE_TEST';
 }

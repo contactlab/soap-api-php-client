@@ -18,6 +18,7 @@
 
 class CampaignType
 {
+    const __default = 'NORMAL';
     const NORMAL = 'NORMAL';
     const TEST = 'TEST';
     const TRIGGERED = 'TRIGGERED';

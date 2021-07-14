@@ -16,30 +16,20 @@
  * limitations under the License.
  */
 
-class SenderUpdate
+include_once('MessageUpdate.php');
+
+class TextMessageUpdate extends MessageUpdate
 {
 
     /**
-     * @var stringValueHolderWS $phone
+     * @var SenderUpdate $senderUpdate
      * @access public
      */
-    public $phone = null;
+    public $senderUpdate = null;
 
     /**
-     * @var stringValueHolderWS $email
+     * @var stringValueHolderWS $content
      * @access public
      */
-    public $email = null;
-
-    /**
-     * @var stringValueHolderWS $name
-     * @access public
-     */
-    public $name = null;
-
-    /**
-     * @var stringValueHolderWS $replyTo
-     * @access public
-     */
-    public $replyTo = null;
+    public $content = null;
 }

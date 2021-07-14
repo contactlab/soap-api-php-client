@@ -26,7 +26,7 @@ class SubscriberAttribute
     public $key = null;
 
     /**
-     * @var mixed $value
+     * @var anyType $value
      * @access public
      */
     public $value = null;

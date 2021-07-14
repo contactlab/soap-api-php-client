@@ -18,6 +18,7 @@
 
 class mobileApplicationEnvironmentEnum
 {
+    const __default = 'DEV';
     const DEV = 'DEV';
     const PROD = 'PROD';
 }

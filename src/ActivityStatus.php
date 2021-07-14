@@ -18,6 +18,7 @@
 
 class ActivityStatus
 {
+    const __default = 'INREQUEST';
     const INREQUEST = 'INREQUEST';
     const RUNNING = 'RUNNING';
     const COMPLETED = 'COMPLETED';

@@ -18,5 +18,6 @@
 
 class GCMsMobileApplicationCertificateComponentEnum
 {
+    const __default = 'AUTHORIZATION_TOKEN_ID';
     const AUTHORIZATION_TOKEN_ID = 'AUTHORIZATION_TOKEN_ID';
 }

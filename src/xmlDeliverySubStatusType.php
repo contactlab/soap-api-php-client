@@ -18,6 +18,7 @@
 
 class xmlDeliverySubStatusType
 {
+    const __default = 'DELIVERY_STARTED';
     const DELIVERY_STARTED = 'DELIVERY_STARTED';
     const DELIVERY_FINISHED = 'DELIVERY_FINISHED';
     const RECIPIENTS_ADDED = 'RECIPIENTS_ADDED';

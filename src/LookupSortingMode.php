@@ -18,6 +18,7 @@
 
 class LookupSortingMode
 {
+    const __default = 'ASCENDING';
     const ASCENDING = 'ASCENDING';
     const DESCENDING = 'DESCENDING';
 }

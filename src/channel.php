@@ -18,6 +18,7 @@
 
 class channel
 {
+    const __default = 'EMAIL';
     const EMAIL = 'EMAIL';
     const SMS = 'SMS';
     const FAX = 'FAX';

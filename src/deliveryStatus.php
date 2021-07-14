@@ -18,10 +18,11 @@
 
 class deliveryStatus
 {
+    const __default = 'INTERRUPTED';
     const INTERRUPTED = 'INTERRUPTED';
     const DEAD = 'DEAD';
     const FAILED = 'FAILED';
-    const _NEW = 'NEW';
+    const aNEW = 'NEW';
     const READY = 'READY';
     const RUNNING = 'RUNNING';
     const FINISHED = 'FINISHED';

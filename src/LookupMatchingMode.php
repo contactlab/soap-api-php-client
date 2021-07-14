@@ -18,6 +18,7 @@
 
 class LookupMatchingMode
 {
+    const __default = 'EQUALS';
     const EQUALS = 'EQUALS';
     const LIKE = 'LIKE';
     const IS_NULL = 'IS_NULL';

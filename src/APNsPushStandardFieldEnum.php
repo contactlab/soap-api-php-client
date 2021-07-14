@@ -18,6 +18,7 @@
 
 class APNsPushStandardFieldEnum
 {
+    const __default = 'ALERT';
     const ALERT = 'ALERT';
     const BADGE = 'BADGE';
     const SOUND = 'SOUND';

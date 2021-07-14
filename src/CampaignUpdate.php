@@ -26,7 +26,7 @@ class CampaignUpdate
     public $identifier = null;
 
     /**
-     * @var EmailMessageUpdate $messageUpdate
+     * @var MessageUpdate $messageUpdate
      * @access public
      */
     public $messageUpdate = null;

@@ -18,6 +18,7 @@
 
 class MimeType
 {
+    const __default = 'TIFF';
     const TIFF = 'TIFF';
     const MS_WORD = 'MS_WORD';
     const MS_EXCEL = 'MS_EXCEL';

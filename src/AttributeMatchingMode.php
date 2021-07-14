@@ -18,6 +18,7 @@
 
 class AttributeMatchingMode
 {
+    const __default = 'ANY';
     const ANY = 'ANY';
     const ALL = 'ALL';
 }

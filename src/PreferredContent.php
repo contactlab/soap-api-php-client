@@ -18,6 +18,7 @@
 
 class PreferredContent
 {
+    const __default = 'SIMPLE_TEXT';
     const SIMPLE_TEXT = 'SIMPLE_TEXT';
     const RICH_TEXT = 'RICH_TEXT';
     const BOTH = 'BOTH';
